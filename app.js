@@ -7,7 +7,7 @@ import * as THREE from 'three';
    3 · «It does not digest it. It keeps it.» / «No la digiere. La guarda.» — la membrana se invagina y lo envuelve; la cámara entra con él.
    4 · «The guest becomes an organ: it works, and it is measured.» / «El huésped se vuelve órgano: trabaja, y se mide.»
    5 · «The pattern stays; the body that carries it is replaced.» / «El patrón queda; el cuerpo que lo lleva se reemplaza.» */
-/* Textos: el inglés vive en index.html (borrador de Marco, diseño Web.dc.html); aquí, el español neutro. Todo es BORRADOR-MARCO. */
+/* Textos: el inglés vive en index.html; aquí, el español. */
 const TXT = {
   es: {
     n_met: 'MÉTODO', n_pru: 'PRUEBAS', n_inv: 'INVESTIGACIÓN', n_emp: 'EMPEZAR',
