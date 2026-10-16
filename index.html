@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Symbiosis — Marco Giribaldi</title>
+<meta name="description" content="Symbiosis is a discipline for integrating people and AI: laws that protect the user, governed by code when prose is no longer enough, and sustained by a system that audits itself — under human veto.">
+<meta name="theme-color" content="#0d1210">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://endosymbiosis.org/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://endosymbiosis.org/">
+<meta property="og:title" content="Symbiosis — Work with AI without losing your work, your memory or your judgment">
+<meta property="og:description" content="Words first. Code when words fail. A discipline for human–AI work: laws that protect the user, governed by code, under human veto.">
+<meta property="og:image" content="https://endosymbiosis.org/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=d213m">
+<script type="importmap">{"imports":{"three":"./three.module.min.js"}}</script>
+</head>
+<body>
+<canvas id="escena" aria-hidden="true"></canvas>
+
+<nav class="nav" aria-label="Main">
+  <span class="marca">SYMBIOSIS · MARCO GIRIBALDI</span>
+  <span class="enl">
+    <a href="#metodo" class="opt" data-t="n_met">METHOD</a><a href="#pruebas" class="opt" data-t="n_pru">PROOFS</a><a href="#evidencia" class="opt" data-t="n_inv">RESEARCH</a><a href="#empezar" class="oro" data-t="n_emp">START</a>
+    <button id="lang" class="lang" type="button" aria-label="Language / Idioma"><span data-on="en">EN</span> / <span data-on="es">ES</span></button>
+  </span>
+</nav>
+
+<!-- regla del microscopio: el aumento crece con el scroll -->
+<div class="regla" aria-hidden="true">
+  <span class="m oro">×10<br><small data-t="r_lin">LINEAGE</small></span>
+  <span class="m">×40</span>
+  <span class="m">×100</span>
+  <span class="m verde">×400<br><small data-t="r_org">ORGANS</small></span>
+  <span class="m">×600</span>
+  <span class="m frio">×1000<br><small data-t="r_aut">SELF-REPAIR</small></span>
+  <span class="ind"><span class="num">×10</span></span>
+</div>
+<div class="aumento" aria-hidden="true">×10</div>
+<!-- leyenda de la escena (escritorio): cambia con la sección -->
+<div class="leyenda" aria-hidden="true">
+  <span data-fig="2"><b data-t="f2_t">FIG. 2 · INTEGRATION.</b> <span data-t="f2_c">The lineage condenses and becomes part of the system.</span></span>
+  <span data-fig="3"><b data-t="f3_t">FIG. 3 · ORGANS.</b> <span data-t="f3_c">Machine organs inside the system, re-joining each new cell to watch over its continuity and health.</span></span>
+  <span data-fig="4"><b data-t="f4_t">FIG. 4 · SELF-REPAIR.</b> <span data-t="f4_c">Inside the organs, micro-organisms emerge to sustain the system as it grows. Under construction.</span></span>
+</div>
+
+<main>
+  <section class="sec portada" id="portada">
+    <div class="col rev">
+      <span class="ceja oro" data-t="h_ceja">A DISCIPLINE FOR HUMAN–AI WORK</span>
+      <h1 data-t="h_t">No species thrives alone.</h1>
+      <p class="def" data-t="h_def">Symbiosis is a discipline for integrating people and AI: laws that protect the user, governed by code when prose is no longer enough, and sustained by a system that audits itself — under human veto.</p>
+      <div class="botones">
+        <a href="#empezar" class="b lleno" data-t="h_b1">How to start</a>
+        <a href="https://marcogiribaldi.github.io/simbiosis/" class="b" data-t="h_b2">Read the manual (v2.0)</a>
+      </div>
+      <div class="sellos">
+        <span data-t="h_s1">● PEER-REVIEWED STUDY · HAI '26</span>
+        <span data-t="h_s2">● WORKS WITH CLAUDE CODE, CODEX AND ANTIGRAVITY</span>
+        <span data-t="h_s3">● OPEN · CC BY-SA 4.0</span>
+      </div>
+    </div>
+    <figure class="fig1 ventana">
+      <div class="caja"></div>
+      <figcaption><b data-t="f1_t">FIG. 1 · LINEAGE.</b> <span data-t="f1_c">Each session is a cell, and cells change. The thread that runs through them is what remains; the light it carries is what one session hands to the next.</span></figcaption>
+    </figure>
+  </section>
+
+  <section class="sec" id="origen">
+    <div class="col rev">
+      <span class="ceja" data-t="o_ceja">ORIGIN</span>
+      <h2 data-t="o_t">Born from daily practice, not from a lab.</h2>
+      <p data-t="o_p">Every rule in Symbiosis exists because something went wrong first: an agreement the AI forgot, a mistake it repeated, a piece of work it destroyed. Each failure was recorded as data. Each rule that failed twice became code.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="problema">
+    <div class="col">
+      <div class="rev">
+        <span class="ceja" data-t="p_ceja">THE PROBLEM, MEASURED</span>
+        <h2 data-t="p_t">A memory you cannot check is worse than no memory.</h2>
+        <p data-t="p_p">In a controlled study, an agent with a corrupted memory carried falsehoods into executable output in every task. Without memory, it made none of those errors. Prose alone is not enough to keep a memory clean.</p>
+        <span class="cita" data-t="p_cita">Giribaldi, HAI '26 · doi:10.1145/3841580.3845736 (in press)</span>
+      </div>
+      <div class="cifras rev">
+        <div class="cifra mal"><div class="n">3/3</div><div class="l" data-t="p_l1">TASKS WITH FALSEHOODS · CORRUPTED MEMORY</div></div>
+        <div class="cifra bien"><div class="n">0/3</div><div class="l" data-t="p_l2">TASKS WITH FALSEHOODS · NO MEMORY</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="antes">
+    <div class="col rev">
+      <span class="ceja" data-t="ba_ceja">BEFORE AND AFTER</span>
+      <div class="tabla" role="table">
+        <div class="th sin" role="columnheader" data-t="ba_sin">WITHOUT SYMBIOSIS</div><div class="th con" role="columnheader" data-t="ba_con">WITH SYMBIOSIS</div>
+        <div class="td sin" data-t="ba_a1">Every session starts blank.</div><div class="td" data-t="ba_b1">Every session resumes where the last one stopped.</div>
+        <div class="td sin" data-t="ba_a2">You explain everything again.</div><div class="td" data-t="ba_b2">The core remembers; you decide.</div>
+        <div class="td sin" data-t="ba_a3">An AI can destroy your work.</div><div class="td" data-t="ba_b3">Nothing is ever deleted without your approval.</div>
+        <div class="td sin" data-t="ba_a4">You trust what it says.</div><div class="td" data-t="ba_b4">Every claim shows where it looked.</div>
+        <div class="td sin" data-t="ba_a5">The same mistake comes back.</div><div class="td" data-t="ba_b5">A mistake that repeats becomes code.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="metodo">
+    <div class="col">
+      <div class="rev">
+        <span class="ceja" data-t="m_ceja">THE METHOD · THREE STAGES</span>
+        <h2 data-t="m_t">Each stage begins where the previous one reaches its limit.</h2>
+      </div>
+      <div class="ventana v-trans" aria-hidden="true"><span class="vcap"><b data-t="f2_t">FIG. 2 · INTEGRATION.</b></span></div>
+      <div class="etapas">
+        <div class="etapa e1 rev">
+          <span class="est ok" data-t="m1_e">● PUBLISHED · V2.0</span>
+          <h3>Symbiosis</h3>
+          <span class="sub" data-t="m1_s">lineage-based human–AI integration</span>
+          <p data-t="m1_p">Laws, still in prose, that protect the user. The memory lives outside the machine and the person stays in charge of it. The machine verifies, names and proposes; the person decides, judges and executes.</p>
+          <span class="lim" data-t="m1_l">Its limit: prose gets contaminated.</span>
+          <div class="acc"><a href="https://marcogiribaldi.github.io/simbiosis/" data-t="m1_a1">Read the manual (v2.0)</a><span>SYMBIOSIS.md <span class="pronto" data-t="soon">soon</span></span></div>
+        </div>
+        <div class="etapa e2 rev">
+          <span class="est wip" data-t="m2_e">● IN PROGRESS</span>
+          <h3>Endosymbiosis</h3>
+          <span class="sub" data-t="m2_s">prose-to-code governance</span>
+          <p data-t="m2_p">When prose is no longer enough, rules become code. Each component the system adopts becomes an organ with a declared function and a test that proves it is alive. Oversight shifts from execution to measurement.</p>
+          <span class="lim" data-t="m2_l">Its limit: code grows and must be watched.</span>
+        </div>
+        <div class="etapa e3 rev">
+          <span class="est wip" data-t="m3_e">● UNDER CONSTRUCTION · FIRST ORGANS LIVE</span>
+          <h3>Autopoiesis</h3>
+          <span class="sub" data-t="m3_s">micro-organisms that sustain the system as it grows</span>
+          <p data-t="m3_p">A system that audits and organises itself to preserve the symbiosis. It is judged by deterministic tests, never by another model's opinion; the repairer never repairs itself, and the human veto moves up the stack.</p>
+          <span class="lim" data-t="m3_l">Already running: a daily doctor and self-checking invariants.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec cita-sec" id="cita">
+    <div class="col"><blockquote class="frase rev" data-t="cita">A colleague that absorbs your work practice, and a method so every setback builds knowledge.</blockquote></div>
+  </section>
+
+  <section class="sec" id="pruebas">
+    <div class="col">
+      <div class="rev">
+        <span class="ceja" data-t="pr_ceja">FROM WORDS TO CODE</span>
+        <h2 data-t="pr_t">Every rule is born as written law; when words fail, code makes sure it holds.</h2>
+      </div>
+      <div class="ciclo rev">
+        <span class="paso oro" data-t="c1">rule in prose</span><i>→</i><span class="paso rojo" data-t="c2">forgotten</span><i>→</i><span class="paso" data-t="c3">recorded as data</span><i>→</i><span class="paso rojo" data-t="c4">forgotten again</span><i>→</i><span class="paso verde" data-t="c5">becomes code</span><i>→</i><span class="paso frio" data-t="c6">checked daily</span>
+      </div>
+      <div class="ventana v-int" aria-hidden="true"><span class="vcap"><b data-t="f3_t">FIG. 3 · ORGANS.</b></span></div>
+      <div class="pares">
+        <div class="par rev"><p class="regla-t" data-t="q1">“Nothing is ever deleted without your approval.”</p>
+<pre class="term tipeo">$ rm -rf notes/
+<span class="rojo">✖ guard: deletion blocked</span>
+  move it to _BORRAR/2026-10-14-reason/ — the person empties it</pre></div>
+        <div class="par rev"><p class="regla-t" data-t="q2">“A rule forgotten twice becomes code.”</p>
+<pre class="term tipeo">$ invariants
+  ✅ deletion   ✅ sensitive data   ✅ secrets
+  ✅ core review by non-author   …
+<span class="verde">INVARIANTS 16/16 ✅</span></pre></div>
+        <div class="par rev"><p class="regla-t" data-t="q3">“Never say ‘it doesn't exist’ without saying where you looked.”</p>
+<pre class="term tipeo">NOT FOUND: the March invoice
+Searched in: files · git history · status notes
+Status: not found with these routes</pre></div>
+        <div class="par rev"><p class="regla-t" data-t="q4">“Whoever writes a rule never reviews it.”</p>
+<pre class="term tipeo">change to core rules · author: model A
+review: model B (different) → <span class="wip">CONDITIONAL</span>
+  3 objections → applied → <span class="verde">APPROVED</span></pre></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="funciona">
+    <div class="col">
+      <div class="rev">
+        <span class="ceja" data-t="w_ceja">WORKS WHERE YOU WORK</span>
+        <h2 data-t="w_t">The method is not tied to a single interface or a single model.</h2>
+      </div>
+      <div class="ventana v-auto" aria-hidden="true"><span class="vcap"><b data-t="f4_t">FIG. 4 · SELF-REPAIR.</b></span></div>
+      <div class="tres">
+        <div class="col3 rev">
+<pre class="term caja3">$ symbiosis status
+core      ✅ ready
+guard     ✅ ready
+memory    ✅ last close D41
+pending   2 yours · 1 head</pre>
+          <strong data-t="w1_t">Any terminal</strong><span class="gris" data-t="w1_p">The whole method runs in a plain console, with less graphics and the same rules.</span>
+        </div>
+        <div class="col3 ancha rev">
+          <div class="consola" role="img" aria-label="Demo: the cockpit console of a working session">
+            <div class="tabs"><span class="tab on">simbiosis</span><span class="tab">claude</span><span class="tab">agy</span><span class="demo" data-t="demo">demo</span></div>
+            <div class="pant" aria-hidden="true"><div class="l dim">Tuesday · session D42 · core: example-project</div><div class="l"><b>Now</b>    head busy · working with you</div><div class="l"><b>Today</b></div><div class="hoy"><div class="l"><span class="dim">14:02</span> <span class="ok">●</span> rule "non-author review" back to green</div><div class="l"><span class="dim">13:48</span> <span class="ok">●</span> organ "backup" revived</div><div class="l"><span class="dim">13:30</span> <span class="ok">●</span> organ "reader" replaced: same pattern, new model</div></div><div class="l">Organs <span class="org ok">7/7</span> · Rules <span class="rul ok">19/19</span> · <span class="ok">●</span> doctor · last close D41</div><div class="l"><b>Pending</b></div><div class="l">👤 you   review the weekly summary</div><div class="l">👤 you   approve the plan for the reader upgrade</div><div class="l">🧠 head  re-run the rules after the replacement</div><div class="l prompt"><span class="pr">❯</span> <span class="cmdl">symbiosis status</span><span class="cursor">▌</span></div><div class="salida"></div></div>
+          </div>
+          <strong data-t="w2_t">Herdr cockpit</strong><span class="gris" data-t="w2_p">A terminal workspace with a live cockpit: organs, rules and pending work at a glance.</span>
+        </div>
+        <div class="col3 rev">
+<pre class="term caja3"><span class="oro">$</span> codex   <span class="dim"># or claude · agy</span>
+reading core/ …
+  profile ✓  agreement ✓  heading ✓
+  status ✓   canary ✓
+<span class="verde">resuming from the last session</span></pre>
+          <strong data-t="w3_t">Several models, local ones too</strong><span class="gris" data-t="w3_p">The same core works with Claude Code, Codex, Antigravity and local models such as Qwen. Change the model; the method stays.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="evidencia">
+    <div class="col">
+      <div class="rev">
+        <span class="ceja" data-t="t_ceja">WHAT WE ARE TESTING</span>
+        <p class="nota"><span class="nl" data-t="t_nl">● EARLY RESULTS ARE POSITIVE</span> <span data-t="t_n">— several of these mechanisms already run every day and are working as intended. They remain hypotheses until they are measured on more people and more time.</span></p>
+      </div>
+      <div class="hipos">
+        <div class="hipo oro rev"><strong>H1</strong> <span data-t="h1">A curated external memory reduces re-explaining and lost decisions, compared with no memory or an accumulated one.</span></div>
+        <div class="hipo verde rev"><strong>H2</strong> <span data-t="h2">Promoting a rule to code after two violations reduces the recurrence of that class of failure.</span></div>
+        <div class="hipo verde rev"><strong>H3</strong> <span data-t="h3">Separating author and verifier catches more errors than self-review.</span></div>
+        <div class="hipo frio rev"><strong>H4</strong> <span data-t="h4">With the method, non-programming experts produce working software in their own domain.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="preguntas">
+    <div class="col">
+      <span class="ceja rev" data-t="f_ceja">QUESTIONS</span>
+      <div class="preg">
+        <div class="rev"><strong data-t="fq1">Do I need to know how to code?</strong><span data-t="fa1">No. The core is a few short text notes; the model reads them and keeps them up to date.</span></div>
+        <div class="rev"><strong data-t="fq2">Which models does it work with?</strong><span data-t="fa2">With Claude Code, Codex or Antigravity, and also with local models such as Qwen, on your own machine. If you switch models, the method comes with you.</span></div>
+        <div class="rev"><strong data-t="fq3">Does my data leave my computer?</strong><span data-t="fa3">The core is plain files on your machine, under your control. What you send to the model is your choice.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="empezar">
+    <div class="col">
+      <div class="rev">
+        <span class="ceja oro" data-t="e_ceja">START</span>
+        <h2 class="grande" data-t="e_t">Start working alongside the machine; the final word is still yours.</h2>
+        <p class="lema" data-t="lema">Words first. Code when words fail.</p>
+      </div>
+      <div class="pasos">
+        <div class="pasoe rev"><span class="nn">01</span><strong><a href="https://marcogiribaldi.github.io/simbiosis/" data-t="e1_t">Read the manual</a></strong><span class="gris"><span data-t="e1_p">Symbiosis v2.0 · free · Spanish and English</span> · <a href="https://doi.org/10.5281/zenodo.23024312">DOI</a></span></div>
+        <div class="pasoe rev"><span class="nn">02</span><strong><span data-t="e2_t">Download the core</span> <span class="pronto" data-t="soon">soon</span></strong>
+<pre class="term arbol" data-solo="en"><span class="oro">core/</span>
+<span class="dim">├──</span> profile.md
+<span class="dim">├──</span> context.md
+<span class="dim">├──</span> agreement.md
+<span class="dim">├──</span> heading.md
+<span class="dim">├──</span> status.md
+<span class="dim">└──</span> canary.md</pre>
+<pre class="term arbol" data-solo="es"><span class="oro">nucleo/</span>
+<span class="dim">├──</span> perfil.md
+<span class="dim">├──</span> contexto.md
+<span class="dim">├──</span> acuerdo.md
+<span class="dim">├──</span> rumbo.md
+<span class="dim">├──</span> estado.md
+<span class="dim">└──</span> canario.md</pre></div>
+        <div class="pasoe rev"><span class="nn">03</span><strong data-t="e3_t">Install the harness</strong>
+          <div class="term cmd"><code><span class="oro">$</span> curl -fsSL https://endosymbiosis.org/empezar.sh | sh</code><span class="pronto" data-t="soon">soon</span><button class="copy" type="button" aria-disabled="true" tabindex="-1">COPY</button></div>
+          <span class="plat">Linux · macOS · Windows (WSL2)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <span>Marco Giribaldi · <span data-t="pie_i">Independent researcher</span> · <a href="https://orcid.org/0009-0009-7405-8460">ORCID 0009-0009-7405-8460</a></span>
+    <span><span data-t="pie_l">Texts CC BY-SA 4.0</span> · <a href="https://doi.org/10.5281/zenodo.23024312">DOI 10.5281/zenodo.23024312</a> · <a href="https://github.com/MarcoGiribaldi">GitHub</a></span>
+  </footer>
+</main>
+
+<script type="module" src="app.js?v=d213m"></script>
+</body>
+</html>
