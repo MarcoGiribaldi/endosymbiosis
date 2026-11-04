@@ -1,0 +1,52 @@
+/* Endosimbiosis con el mismo estilo que el libro (lectura.css): columna, títulos, índice, citas, cajas y código. */
+:root[data-theme="dark"]{--bg:#0d1210;--paper:#131a17;--ink:#ece7dc;--muted:#8f9a93;--rule:#2c3b33;--prose:#e3b85c;--prose-soft:#131a17;
+  --code:#8fcf9f;--code-soft:#131a17;--limit:#e0b35a;--limit-soft:#2a2414;
+  --f-display:"Fraunces",Georgia,serif;--f-body:"IBM Plex Sans",system-ui,sans-serif;--f-mono:"JetBrains Mono",ui-monospace,monospace}
+body{color:#c9c2b4;font-size:18px;line-height:1.75}
+main{max-width:70ch;gap:0}
+section{gap:0}section>*+*{margin-top:1em}
+h1,h2,h3{color:#ece7dc}
+h1{font-weight:400;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1}
+h2{font-weight:400;font-size:1.7rem;margin-top:2.4em;padding-bottom:.3em;border-bottom:1px solid #2c3b33}
+h3{font-weight:600;font-size:1.22rem}
+p,dd{max-width:none}
+strong{color:#ece7dc;font-weight:500}
+.eyebrow{display:none}
+header .eyebrow{display:block;color:#8f9a93}
+.lede{font-size:1.1rem;color:#c9c2b4;max-width:none}
+/* el índice, como el «Contenido» del libro */
+nav.toc{display:block;columns:2;column-gap:2em;background:#131a17;border:1px solid #1f2a24;border-radius:8px;padding:14px 18px;margin-top:1.6em}
+nav.toc::before{content:attr(aria-label);display:block;column-span:all;font-family:var(--f-mono);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:#8f9a93;margin-bottom:.5em}
+nav.toc a{display:block;border:0;background:none;padding:.15em 0;border-radius:0;font-family:var(--f-body);font-size:.95rem;letter-spacing:0;color:#c9c2b4}
+nav.toc a:hover{color:#e3b85c}
+/* las citas de Simbiosis, como los recuadros del libro */
+.prosa{margin:0;background:#131a17;border-left:3px solid #e3b85c;border-radius:0 6px 6px 0;padding:.8em 1.2em;font-family:var(--f-body);font-style:normal;font-size:1rem;line-height:1.7;color:#c9c2b4}
+.piece .prosa{margin:0 20px}
+.prosa cite{color:#8f9a93}
+/* cajas y fichas, como las figuras del libro */
+.piece,.box,.tablewrap{background:#131a17;border:1px solid #1f2a24;border-radius:8px}
+.piece .kind,.box .kind,.grupo{color:#8f9a93}
+.grupo{font-size:.72rem;letter-spacing:2px;margin-top:2.4em}
+/* código, como en el libro */
+.cmd,code{background:#0f1613;color:#8fcf9f;border:1px solid #1f2a24}
+code{border:0;padding:1px 5px}
+a{color:#e3b85c}dd a.ir,.box a.ir{color:#ece7dc}
+th{color:#8f9a93}td,th{border-color:#2c3b33}
+footer{border-top-color:#2c3b33;color:#8f9a93}
+.nav-sitio{margin:-40px calc(-1 * max(16px,env(safe-area-inset-left,0px))) 32px}
+@media (max-width:640px){body{font-size:17px}nav.toc{columns:1}}
+/* la cabecera, igual a la del libro: título, línea de versión en cursiva, botones e índice numerado */
+header{gap:0!important}
+header>*+*{margin-top:.9em}
+header h1{order:1;margin:0}
+header .eyebrow{order:2;display:block;font-family:var(--f-body);font-style:italic;text-transform:none;letter-spacing:0;font-size:18px;color:#c9c2b4}
+header .lede{order:3}
+header .descargas{order:4}
+header nav.toc{order:5;margin-top:1.6em}
+.descargas{display:flex;flex-wrap:wrap;gap:10px}
+.descargas a{font-family:var(--f-mono);font-size:.78rem;letter-spacing:1px;padding:9px 16px;border:1px solid #e3b85c;border-radius:999px;color:#e3b85c;text-decoration:none}
+.descargas a:hover{background:rgba(227,184,92,.12)}
+nav.toc{counter-reset:toc}
+nav.toc a{counter-increment:toc;font-size:16.5px;line-height:1.75;padding:.15em 0 .15em 1.6em;text-indent:-1.6em}
+nav.toc a::before{content:counter(toc) ". ";display:inline-block;width:1.6em;text-indent:0;color:#c9c2b4}
+.descargas .doi{font-family:var(--f-mono);font-size:.78rem;letter-spacing:1px;padding:9px 4px;color:#9a9a9a;align-self:center}

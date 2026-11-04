@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Symbiosis — Marco Giribaldi</title>
-<meta name="description" content="Symbiosis is a discipline for integrating people and AI: laws that protect the user, governed by code when prose is no longer enough, and sustained by a system that audits itself — under human veto.">
+<meta name="description" content="Symbiosis is a pact of coexistence between people and AI: laws that protect the user, code when prose is no longer enough, and a system that audits itself — under human veto.">
 <meta name="theme-color" content="#0d1210">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://endosymbiosis.org/">
@@ -18,16 +18,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=d213m">
+<link rel="stylesheet" href="style.css?v=d229">
 <script type="importmap">{"imports":{"three":"./three.module.min.js"}}</script>
 </head>
 <body>
+<!-- BORRADOR-MARCO: los textos en inglés de esta página son el borrador de Marco (diseño Web.dc.html); el español está en app.js (TXT.es) -->
 <canvas id="escena" aria-hidden="true"></canvas>
 
 <nav class="nav" aria-label="Main">
   <span class="marca">SYMBIOSIS · MARCO GIRIBALDI</span>
   <span class="enl">
-    <a href="#metodo" class="opt" data-t="n_met">METHOD</a><a href="#pruebas" class="opt" data-t="n_pru">PROOFS</a><a href="#evidencia" class="opt" data-t="n_inv">RESEARCH</a><a href="#empezar" class="oro" data-t="n_emp">START</a>
+    <a href="#portada" class="opt" data-t="n_ini">HOME</a><a href="symbiosis/" data-href-es="simbiosis/" class="opt" data-t="n_sim">SYMBIOSIS</a><a href="endosymbiosis/" data-href-es="endosimbiosis/" class="opt" data-t="n_endo">ENDOSYMBIOSIS</a><a href="#empezar" class="oro" data-t="n_emp">START</a>
     <button id="lang" class="lang" type="button" aria-label="Language / Idioma"><span data-on="en">EN</span> / <span data-on="es">ES</span></button>
   </span>
 </nav>
@@ -55,14 +56,18 @@
     <div class="col rev">
       <span class="ceja oro" data-t="h_ceja">A DISCIPLINE FOR HUMAN–AI WORK</span>
       <h1 data-t="h_t">No species thrives alone.</h1>
-      <p class="def" data-t="h_def">Symbiosis is a discipline for integrating people and AI: laws that protect the user, governed by code when prose is no longer enough, and sustained by a system that audits itself — under human veto.</p>
+      <!-- D213: lema retirado de la portada (Marco: «se rompe un poco despues de ningfuna especie propesra sola»); sigue más abajo -->
+      <p class="def" data-t="h_def">Symbiosis is a pact of coexistence between people and AI: laws that protect the user, code when prose is no longer enough, and a system that audits itself — under human veto.</p>
       <div class="botones">
-        <a href="#empezar" class="b lleno" data-t="h_b1">How to start</a>
-        <a href="https://marcogiribaldi.github.io/simbiosis/" class="b" data-t="h_b2">Read the manual (v2.0)</a>
+        <a href="symbiosis/" data-href-es="simbiosis/" class="b" data-t="h_b2">Symbiosis · manual v2.1</a>
+        <a href="endosymbiosis/" data-href-es="endosimbiosis/" class="b" data-t="h_b3">Endosymbiosis 1.1</a>
+        <span class="b b-obra" aria-disabled="true"><svg class="celula" viewBox="0 0 24 24" aria-hidden="true"><circle class="mem" cx="12" cy="12" r="9"/><circle class="nuc" cx="12" cy="12" r="3"/></svg><span data-t="h_b4">Autopoiesis · under construction</span></span>
+        <a href="endosymbiosis/#instalar" data-href-es="endosimbiosis/#instalar" class="b lleno" data-t="h_b1">How to install</a>
       </div>
       <div class="sellos">
         <span data-t="h_s1">● PEER-REVIEWED STUDY · HAI '26</span>
         <span data-t="h_s2">● WORKS WITH CLAUDE CODE, CODEX AND ANTIGRAVITY</span>
+        <span data-t="h_s4">● LINUX · WINDOWS · MAC</span>
         <span data-t="h_s3">● OPEN · CC BY-SA 4.0</span>
       </div>
     </div>
@@ -85,7 +90,7 @@
       <div class="rev">
         <span class="ceja" data-t="p_ceja">THE PROBLEM, MEASURED</span>
         <h2 data-t="p_t">A memory you cannot check is worse than no memory.</h2>
-        <p data-t="p_p">In a controlled study, an agent with a corrupted memory carried falsehoods into executable output in every task. Without memory, it made none of those errors. Prose alone is not enough to keep a memory clean.</p>
+        <p data-t="p_p">In a controlled study, an agent with a corrupted memory carried falsehoods into executable output in all three tasks. Without memory, it made none of those errors. Prose alone is not enough to keep a memory clean.</p>
         <span class="cita" data-t="p_cita">Giribaldi, HAI '26 · doi:10.1145/3841580.3845736 (in press)</span>
       </div>
       <div class="cifras rev">
@@ -118,19 +123,21 @@
       <div class="ventana v-trans" aria-hidden="true"><span class="vcap"><b data-t="f2_t">FIG. 2 · INTEGRATION.</b></span></div>
       <div class="etapas">
         <div class="etapa e1 rev">
-          <span class="est ok" data-t="m1_e">● PUBLISHED · V2.0</span>
+          <span class="est ok" data-t="m1_e">● PUBLISHED · V2.1</span>
           <h3>Symbiosis</h3>
           <span class="sub" data-t="m1_s">lineage-based human–AI integration</span>
           <p data-t="m1_p">Laws, still in prose, that protect the user. The memory lives outside the machine and the person stays in charge of it. The machine verifies, names and proposes; the person decides, judges and executes.</p>
           <span class="lim" data-t="m1_l">Its limit: prose gets contaminated.</span>
-          <div class="acc"><a href="https://marcogiribaldi.github.io/simbiosis/" data-t="m1_a1">Read the manual (v2.0)</a><span>SYMBIOSIS.md <span class="pronto" data-t="soon">soon</span></span></div>
+          <div class="acc"><a href="symbiosis/" data-href-es="simbiosis/" data-t="m1_a1">Read the manual (v2.1)</a></div>
         </div>
         <div class="etapa e2 rev">
-          <span class="est wip" data-t="m2_e">● IN PROGRESS</span>
+          <span class="est ok" data-t="m2_e">● PUBLISHED · V1.1</span>
           <h3>Endosymbiosis</h3>
           <span class="sub" data-t="m2_s">prose-to-code governance</span>
           <p data-t="m2_p">When prose is no longer enough, rules become code. Each component the system adopts becomes an organ with a declared function and a test that proves it is alive. Oversight shifts from execution to measurement.</p>
           <span class="lim" data-t="m2_l">Its limit: code grows and must be watched.</span>
+          <span class="lim" data-t="m2_ya">Already running: ten pieces (the guardian, the canary, the secrets filter…), tested on Linux, Windows and Mac.</span>
+          <div class="acc"><a href="endosymbiosis/" data-href-es="endosimbiosis/" data-t="m2_a1">Read the page and install the kit</a></div>
         </div>
         <div class="etapa e3 rev">
           <span class="est wip" data-t="m3_e">● UNDER CONSTRUCTION · FIRST ORGANS LIVE</span>
@@ -248,25 +255,28 @@ reading core/ …
         <p class="lema" data-t="lema">Words first. Code when words fail.</p>
       </div>
       <div class="pasos">
-        <div class="pasoe rev"><span class="nn">01</span><strong><a href="https://marcogiribaldi.github.io/simbiosis/" data-t="e1_t">Read the manual</a></strong><span class="gris"><span data-t="e1_p">Symbiosis v2.0 · free · Spanish and English</span> · <a href="https://doi.org/10.5281/zenodo.23024312">DOI</a></span></div>
-        <div class="pasoe rev"><span class="nn">02</span><strong><span data-t="e2_t">Download the core</span> <span class="pronto" data-t="soon">soon</span></strong>
+        <div class="pasoe rev"><span class="nn">01</span><strong><a href="symbiosis/" data-href-es="simbiosis/" data-t="e1_t">Read the manual</a></strong><span class="gris"><span data-t="e1_p">Symbiosis v2.1 · free · Spanish and English</span> · <a href="https://doi.org/10.5281/zenodo.23934097">DOI</a></span></div>
+        <div class="pasoe rev"><span class="nn">02</span><strong><a href="symbiosis/#appendix-the-starter-kit" data-href-es="simbiosis/#apendice-el-kit-de-arranque" data-t="e2_t">Build your core</a></strong>
 <pre class="term arbol" data-solo="en"><span class="oro">core/</span>
+<span class="dim">├──</span> start.md
+<span class="dim">├──</span> canary.md
+<span class="dim">├──</span> state.md
 <span class="dim">├──</span> profile.md
 <span class="dim">├──</span> context.md
 <span class="dim">├──</span> agreement.md
-<span class="dim">├──</span> heading.md
-<span class="dim">├──</span> status.md
-<span class="dim">└──</span> canary.md</pre>
-<pre class="term arbol" data-solo="es"><span class="oro">nucleo/</span>
-<span class="dim">├──</span> perfil.md
-<span class="dim">├──</span> contexto.md
-<span class="dim">├──</span> acuerdo.md
-<span class="dim">├──</span> rumbo.md
-<span class="dim">├──</span> estado.md
-<span class="dim">└──</span> canario.md</pre></div>
-        <div class="pasoe rev"><span class="nn">03</span><strong data-t="e3_t">Install the harness</strong>
-          <div class="term cmd"><code><span class="oro">$</span> curl -fsSL https://endosymbiosis.org/empezar.sh | sh</code><span class="pronto" data-t="soon">soon</span><button class="copy" type="button" aria-disabled="true" tabindex="-1">COPY</button></div>
-          <span class="plat">Linux · macOS · Windows (WSL2)</span>
+<span class="dim">├──</span> course.md
+<span class="dim">└──</span> decisions.md</pre>
+<pre class="term arbol" data-solo="es"><span class="oro">core/</span>
+<span class="dim">├──</span> start.md
+<span class="dim">├──</span> canary.md
+<span class="dim">├──</span> state.md
+<span class="dim">├──</span> profile.md
+<span class="dim">├──</span> context.md
+<span class="dim">├──</span> agreement.md
+<span class="dim">├──</span> course.md
+<span class="dim">└──</span> decisions.md</pre></div>
+        <div class="pasoe rev"><span class="nn">03</span><strong><a href="endosymbiosis/#instalar" data-href-es="endosimbiosis/#instalar" data-t="e3_t">Install Endosymbiosis</a></strong>
+          <span class="plat">Linux · macOS · Windows</span>
         </div>
       </div>
     </div>
@@ -274,10 +284,10 @@ reading core/ …
 
   <footer class="pie">
     <span>Marco Giribaldi · <span data-t="pie_i">Independent researcher</span> · <a href="https://orcid.org/0009-0009-7405-8460">ORCID 0009-0009-7405-8460</a></span>
-    <span><span data-t="pie_l">Texts CC BY-SA 4.0</span> · <a href="https://doi.org/10.5281/zenodo.23024312">DOI 10.5281/zenodo.23024312</a> · <a href="https://github.com/MarcoGiribaldi">GitHub</a></span>
+    <span><span data-t="pie_l">Texts CC BY-SA 4.0</span> · <a href="https://doi.org/10.5281/zenodo.23024311">DOI 10.5281/zenodo.23024311</a> · <a href="https://github.com/MarcoGiribaldi">GitHub</a></span>
   </footer>
 </main>
 
-<script type="module" src="app.js?v=d213m"></script>
+<script type="module" src="app.js?v=d229"></script>
 </body>
 </html>

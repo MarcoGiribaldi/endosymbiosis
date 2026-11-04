@@ -182,3 +182,13 @@ h3{font-family:var(--serif);font-weight:600;font-size:26px;margin:0}
   .sellos{font-size:10px;letter-spacing:.8px;gap:8px}
   .sellos span{padding:5px 8px}
 }
+
+/* D229 · botón de Autopoiesis en construcción, con una célula que se arma */
+.b-obra{display:inline-flex;align-items:center;gap:9px;color:var(--frio);border-color:var(--frio);border-style:dashed;opacity:.75;cursor:default}
+.b-obra:hover{background:none;color:var(--frio)}
+.celula{width:18px;height:18px;flex:none}
+.celula .mem{fill:none;stroke:currentColor;stroke-width:1.6;stroke-dasharray:57;stroke-dashoffset:57;animation:celula-mem 3.4s ease-in-out infinite}
+.celula .nuc{fill:currentColor;transform-origin:12px 12px;animation:celula-nuc 3.4s ease-in-out infinite}
+@keyframes celula-mem{0%{stroke-dashoffset:57}55%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:-57}}
+@keyframes celula-nuc{0%,45%{opacity:0;transform:scale(.3)}65%,88%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.3)}}
+@media (prefers-reduced-motion:reduce){.celula .mem,.celula .nuc{animation:none;stroke-dashoffset:0;opacity:1}}

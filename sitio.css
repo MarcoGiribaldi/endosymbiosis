@@ -1,0 +1,23 @@
+/* Barra común de endosymbiosis.org (libro y Endosimbiosis): la misma que la portada. */
+.nav-sitio{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:space-between;align-items:center;padding:16px max(16px,6vw);
+  background:rgba(13,18,16,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid #1f2a24;
+  font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:2px}
+.nav-sitio .marca{color:#c9c2b4;text-decoration:none}
+.nav-sitio .enl{display:flex;flex-wrap:wrap;gap:16px 20px;align-items:center}
+.nav-sitio .enl a{color:#8f9a93;text-decoration:none}.nav-sitio .enl a:hover,.nav-sitio .enl a:focus-visible{color:#ece7dc}
+.nav-sitio .enl a[aria-current]{color:#ece7dc}.nav-sitio .enl a.oro{color:#e3b85c}
+.nav-sitio .lang{color:#8f9a93;border:1px solid #2c3b33;border-radius:999px;padding:5px 11px;text-decoration:none}
+.nav-sitio .lang b{color:#e3b85c;font-weight:400}
+
+/* D229 · C1: en el celular la barra ocupa una sola línea (sin la marca; INICIO lleva a la portada) · C2: el pie común */
+@media (max-width:640px){
+  .nav-sitio{padding:10px 16px;gap:6px;font-size:10.5px;letter-spacing:.5px}
+  .nav-sitio .marca{display:none}
+  .nav-sitio .enl{flex-wrap:nowrap;gap:10px;overflow-x:auto;scrollbar-width:none;width:100%;justify-content:space-between}
+  .nav-sitio .enl::-webkit-scrollbar{display:none}
+  .nav-sitio .lang{padding:3px 7px;white-space:nowrap}
+}
+@media (max-width:380px){.nav-sitio{font-size:10px;letter-spacing:0}.nav-sitio .enl{gap:8px}}
+.pie-sitio{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;max-width:1100px;margin:64px auto 0;padding:24px max(16px,6vw) 40px;
+  border-top:1px solid #1f2a24;font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.5px;color:#8f9a93;background:#0d1210}
+.pie-sitio a{color:#c9c2b4}.pie-sitio a:hover,.pie-sitio a:focus-visible{color:#e3b85c}

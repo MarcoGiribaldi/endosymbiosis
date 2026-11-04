@@ -1,0 +1,33 @@
+/* Páginas de lectura de endosymbiosis.org: el mismo fondo, letras y colores de la portada. */
+:root{--bg:#0d1210;--bg2:#131a17;--tx:#ece7dc;--tx2:#c9c2b4;--tx3:#8f9a93;--regla:#1f2a24;--regla2:#2c3b33;--oro:#e3b85c;--verde:#8fcf9f;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:64px}
+body{margin:0;background:var(--bg);color:var(--tx2);font-family:var(--sans);font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.libro{max-width:70ch;margin:0 auto;padding:48px 16px 96px}
+.libro h1{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;margin:0 0 .3em;color:var(--tx)}
+.libro h2{font-family:var(--serif);font-weight:400;font-size:1.7rem;line-height:1.2;margin:2.4em 0 .6em;padding-bottom:.3em;border-bottom:1px solid var(--regla2);color:var(--tx)}
+.libro h3{font-family:var(--serif);font-weight:600;font-size:1.22rem;margin:1.8em 0 .5em;color:var(--tx)}
+.libro p{margin:0 0 1em}.libro strong{color:var(--tx);font-weight:500}
+.libro a{color:var(--oro)}
+.libro blockquote{margin:1.4em 0;padding:.8em 1.2em;background:var(--bg2);border-left:3px solid var(--oro);border-radius:0 6px 6px 0}
+.libro blockquote p:last-child{margin-bottom:0}
+.libro figure{margin:2em 0;text-align:center;background:var(--bg2);border:1px solid var(--regla);border-radius:8px;padding:16px}
+.libro figure svg{max-width:100%;height:auto}
+.libro figcaption{font-size:.82em;color:var(--tx3);margin-top:.6em;text-align:left}
+.libro pre{background:var(--bg2);border:1px solid var(--regla);padding:1em;border-radius:6px;overflow-x:auto;font-size:.8em;font-family:var(--mono);color:var(--tx2)}
+.libro code{font-family:var(--mono);font-size:.85em;color:var(--verde)}
+.libro table{border-collapse:collapse;margin:1.4em auto;font-size:.92em}.libro td,.libro th{border:1px solid var(--regla2);padding:.45em .75em;vertical-align:top}
+.libro th{color:var(--tx)}
+.libro .tablewrap{overflow-x:auto}
+.libro hr{border:0;border-top:1px solid var(--regla2);margin:2.6em 0}
+.libro ul{padding-left:1.3em}
+.indice{background:var(--bg2);border:1px solid var(--regla);border-radius:8px;padding:14px 18px;margin:1.6em 0 2.4em;font-size:.92em}
+.indice b{font-family:var(--mono);font-size:.72rem;letter-spacing:2px;color:var(--tx3);text-transform:uppercase;font-weight:400}
+.indice ol{margin:.5em 0 0;padding-left:1.3em;columns:2;column-gap:2em}.indice li{break-inside:avoid;margin:.15em 0}
+.indice a{color:var(--tx2);text-decoration:none}.indice a:hover{color:var(--oro)}
+.descargas{display:flex;flex-wrap:wrap;gap:10px;margin:1em 0 0}
+.descargas a{font-family:var(--mono);font-size:.78rem;letter-spacing:1px;padding:9px 16px;border:1px solid var(--oro);border-radius:999px;color:var(--oro);text-decoration:none}
+.descargas a:hover{background:rgba(227,184,92,.12)}
+@media (max-width:640px){body{font-size:17px}.indice ol{columns:1}}
+@media print{.nav-sitio,.indice,.descargas{display:none}body{background:#fff;color:#000}}
