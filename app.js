@@ -65,7 +65,7 @@ const TXT = {
     e_ceja: 'EMPEZAR', e_t: 'Empieza a trabajar junto a la máquina; la última palabra sigue siendo tuya.', // BORRADOR-MARCO
     e1_t: 'Lee el manual', e1_p: 'Simbiosis v2.1 · gratis · español e inglés', e2_t: 'Arma tu núcleo', e3_t: 'Instala Endosimbiosis', soon: 'pronto', // BORRADOR-MARCO
     cita: 'Un colega que asimila tu práctica de trabajo, y un método para que cada tropiezo sume conocimiento.', // BORRADOR-MARCO
-    pie_i: 'Investigador independiente', pie_l: 'Textos CC BY-SA 4.0', demo: 'demo' // BORRADOR-MARCO
+    pie_i: 'Investigador independiente', pie_l: 'Código MIT · Textos CC BY-SA 4.0', demo: 'demo' // BORRADOR-MARCO
   }
 };
 const raiz = document.documentElement;
