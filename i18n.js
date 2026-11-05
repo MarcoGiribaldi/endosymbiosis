@@ -13,7 +13,7 @@ const TXT = {
     h_t: 'Ninguna especie prospera sola.', // BORRADOR-MARCO
     lema: 'Primero las palabras. Código cuando las palabras fallan.', // BORRADOR-MARCO
     h_def: 'Simbiosis es un pacto de convivencia entre personas e IA: leyes que protegen al usuario, código cuando la prosa ya no alcanza, y un sistema que se audita a sí mismo, bajo veto humano.', // BORRADOR-MARCO
-    h_b1: 'Cómo instalar', h_b2: 'Simbiosis · manual v2.1', h_b3: 'Endosimbiosis 1.1', h_b4: 'Autopoiesis · en construcción', // BORRADOR-MARCO
+    h_b1: 'Cómo instalar', h_b2: 'Simbiosis 2.1', h_b3: 'Endosimbiosis 1.1', h_b4: 'Autopoiesis · en construcción', // BORRADOR-MARCO
     h_s1: '● ESTUDIO CON REVISIÓN POR PARES · HAI \'26', h_s2: '● FUNCIONA CON CLAUDE CODE, CODEX Y ANTIGRAVITY', h_s3: '● ABIERTO · CC BY-SA 4.0', h_s4: '● LINUX · WINDOWS · MAC', // BORRADOR-MARCO
     o_ceja: 'ORIGEN', o_t: 'Nació de la práctica diaria, no de un laboratorio.', // BORRADOR-MARCO
     o_p: 'Cada regla de Simbiosis existe porque antes algo salió mal: un acuerdo que la IA olvidó, un error que repitió, un trabajo que destruyó. Cada falla se registró como dato. Cada regla que falló dos veces se volvió código.', // BORRADOR-MARCO
@@ -56,7 +56,7 @@ const TXT = {
     fq2: '¿Con qué modelos funciona?', fa2: 'Con Claude Code, Codex o Antigravity, y también con modelos locales como Qwen, en tu propia máquina. Si cambias de modelo, el método sigue contigo.', // BORRADOR-MARCO
     fq3: '¿Mis datos salen de mi computadora?', fa3: 'El núcleo son archivos simples en tu máquina, bajo tu control. Lo que envías al modelo lo decides tú.', // BORRADOR-MARCO
     e_ceja: 'EMPEZAR', e_t: 'Empieza a trabajar junto a la máquina; la última palabra sigue siendo tuya.', // BORRADOR-MARCO
-    e1_t: 'Lee el manual', e1_p: 'Simbiosis v2.1 · gratis · español e inglés', e2_t: 'Arma tu núcleo', e3_t: 'Instala Endosimbiosis', soon: 'pronto', e3_d: 'Descarga el kit 1.1 (zip, 183 KB)', e3_req: 'Necesitas Python 3.10 o más nuevo y git. En Windows, usa una carpeta sin espacios en el nombre. ¿Ya tienes notas? Cópialas dentro antes de instalar.', e3_guia: 'Guía completa →', e3_ia_t: 'Descomprímelo, abre tu IA en esa carpeta y dile:', e3_ia: 'Descargué endosymbiosis-1.1.zip de endosymbiosis.org y lo descomprimí aquí. Primero comprueba que la huella SHA-256 del zip sea 6f3f4ca273730b783c493c27b2f069a02c2c8bc13f065d09724b3dea774aff07. Después lee README.md y guíame para instalarlo, paso a paso. Los comandos los corro yo.', // BORRADOR-MARCO
+    e1_t: 'Lee el manual', e1_p: 'Simbiosis v2.1 · gratis · español e inglés', e2_t: 'Arma tu núcleo', e3_t: 'Instala Endosimbiosis', soon: 'pronto', e3_d: 'Descarga el kit 1.1', e3_r1: 'Python 3.10 o más nuevo, y git', e3_r2: 'En Windows, una carpeta sin espacios en el nombre', e3_r3: '¿Ya tienes notas? Cópialas dentro antes de instalar', e3_ia_c: 'Para tu IA', e3_copiar: 'Copiar', e3_guia: 'Guía completa de instalación →', e3_ia_t: 'Descomprímelo, abre tu IA en esa carpeta y dile:', e3_ia: 'Descargué endosymbiosis-1.1.zip de endosymbiosis.org y lo descomprimí aquí. Primero comprueba que la huella SHA-256 del zip sea 6f3f4ca273730b783c493c27b2f069a02c2c8bc13f065d09724b3dea774aff07. Después lee README.md y guíame para instalarlo, paso a paso. Los comandos los corro yo.', // BORRADOR-MARCO
     cita: 'Un colega que asimila tu práctica de trabajo, y un método para que cada tropiezo sume conocimiento.', // BORRADOR-MARCO
     pie_i: 'Investigador independiente', pie_l: 'Código MIT · Textos CC BY-SA 4.0', pie_v: '(todas las versiones)', demo: 'demo' // BORRADOR-MARCO
   }
@@ -76,3 +76,11 @@ try { const q = new URLSearchParams(location.search).get('lang'); if (q === 'es'
 poner(idioma);
 document.getElementById('lang').addEventListener('click', () => poner(raiz.dataset.lang === 'en' ? 'es' : 'en'));
 })();
+/* D231: botón «Copiar» de la frase para la IA (Marco: «estilizamos un poco esta parte?») */
+document.querySelectorAll('.copiar').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var pre = b.closest('.frase-ia').querySelector('pre'), o = b.textContent, es = document.documentElement.lang === 'es';
+    var ok = function () { b.textContent = es ? 'Copiado ✓' : 'Copied ✓'; setTimeout(function () { b.textContent = o; }, 1600); };
+    try { navigator.clipboard.writeText(pre.textContent).then(ok, function () {}); } catch (e) {}
+  });
+});
