@@ -674,7 +674,7 @@ Each word of ours, its technical term and what it is. In the text, the technical
 | **seeded failure** | *mutation testing* | an organ's test introduces a known failure and checks that it is detected |
 | **secrets filter** | *pre-commit hook with secret detection* | stops the save (commit) if a key, a labelled password or an ID number gets in |
 | **temporary access** | *just-in-time access* | the person's key opens the private folders for a set time, from one minute to eight hours; never deletion or the cage |
-| **private folders** | *deny-listed paths* | with the guardian in code, no AI reads or writes them, except through temporary access; in prose, the written rule asks for it |
+| **private folders** | *deny-listed paths* | with the guardian in code, the AI doesn't go into them on its own, except through temporary access; the search tool does read whatever it's asked to; in prose, the written rule asks for it |
 | **search tool** | *search of the working tree and the git history* | before saying “it doesn't exist”, it searches today's files and everything that ever went into git |
 | **DAISY** | *Disclosure of AI-uSe in Your Research*: AI-use declaration (*AI disclosure*), measured from git | counts who made each change from the git signatures; the name comes from the article (paper) by Ahmetoglu, Constantinides and Cox (2026) |
 | **logbook** | *decision log* | one line per decision or failure, in the person's own words |

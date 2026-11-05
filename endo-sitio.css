@@ -70,6 +70,26 @@ section > p.prosa{margin:1.1em 0 1.6em !important}
   a{color:#111!important;text-decoration:underline}
   .nav-sitio,.descargas,.toc,nav{display:none!important}
   .piece,.box{break-inside:avoid}
+  .cmd,pre,code,.tablewrap,table{overflow:visible!important;max-width:100%!important}
+  .cmd,pre{white-space:pre-wrap!important;overflow-wrap:anywhere!important;word-break:break-word}
+  ::-webkit-scrollbar{display:none!important}
+  /* D231 (Marco: «eliminar los margenes que encierran el texto», «que los parrafos esten bien») */
+  .piece,.box{border:0!important;border-radius:0!important;padding-left:0!important;padding-right:0!important}
+  .piece{border-top:1px solid #ccc!important;padding-top:10px!important;margin-top:18px!important}
+  .piece,.box{break-inside:auto!important}
+  p,li,dd,blockquote,.prosa,.cmd,tr{break-inside:avoid;orphans:3;widows:3}
+  dt,h2,h3,.kind,.arrow,header{break-after:avoid}
+  section{break-before:page}
+  section#trata{break-before:auto}
+  dl{display:block!important}
+  dt{margin-top:12px;font-weight:600}
+  dd{margin-left:0!important}
+
+  table{table-layout:auto;width:100%!important}
+  td,th{overflow-wrap:break-word;word-break:normal;hyphens:manual}
+  table:not(.glosario) td:first-child,table:not(.glosario) th:first-child{white-space:nowrap}
+  .tablewrap{border:0!important;border-radius:0!important}
+  h3.grupo,.grupo{break-after:avoid;break-before:auto}
   html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   h2,h3{break-after:avoid}
 }

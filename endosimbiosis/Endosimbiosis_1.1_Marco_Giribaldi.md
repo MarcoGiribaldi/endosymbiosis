@@ -674,7 +674,7 @@ Cada palabra nuestra, su término técnico y qué es. En el texto, el término t
 | **falla sembrada** | *prueba de mutación (mutation testing)* | la prueba de un órgano introduce una falla conocida y comprueba que se detecta |
 | **filtro de secretos** | *gancho de pre-commit con detección de secretos (pre-commit hook, secret scanning)* | frena el guardado (commit) si entra una llave, una contraseña etiquetada o un DNI |
 | **acceso temporal** | *acceso justo a tiempo (just-in-time access)* | la clave de la persona abre las carpetas privadas por un tiempo, de un minuto a ocho horas; nunca el borrado ni la jaula |
-| **carpetas privadas** | *rutas denegadas (deny-listed paths)* | con el guardián en código, ninguna IA las lee ni escribe, salvo con el acceso temporal; en prosa, lo pide la regla escrita |
+| **carpetas privadas** | *rutas denegadas (deny-listed paths)* | con el guardián en código, la IA no entra a ellas por su cuenta, salvo con el acceso temporal; el buscador sí lee lo que se le pida; en prosa, lo pide la regla escrita |
 | **buscador** | *búsqueda en el árbol de trabajo y en el historial de git (working tree + git history search)* | antes de decir «no existe», busca en lo de hoy y en todo lo que alguna vez entró a git |
 | **DAISY** | *Disclosure of AI-uSe in Your Research*: declaración de uso de IA (*AI disclosure*), medida desde git | cuenta quién hizo cada cambio según las firmas de git; el nombre viene del artículo (paper) de Ahmetoglu, Constantinides y Cox (2026) |
 | **bitácora** | *registro de decisiones (decision log)* | una línea por decisión o fallo, con las palabras de la persona |
