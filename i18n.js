@@ -71,6 +71,7 @@ function poner(l) {
   try { document.dispatchEvent(new Event('idioma')); } catch (e) {}
 }
 let idioma = 'en';
+try { const n = (navigator.languages && navigator.languages[0]) || navigator.language || ''; if (/^es\b/i.test(n)) idioma = 'es'; } catch (e) {}   // D231: primera visita, el idioma del navegador (Marco: «procede»)
 try { const g = localStorage.getItem('lang'); if (g === 'es' || g === 'en') idioma = g; } catch (e) {}
 try { const q = new URLSearchParams(location.search).get('lang'); if (q === 'es' || q === 'en') idioma = q; } catch (e) {}
 poner(idioma);
