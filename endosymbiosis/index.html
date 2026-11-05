@@ -87,84 +87,120 @@ ul.estado small{flex-basis:100%;font-size:.84rem;color:var(--muted);line-height:
 <header style="display:flex;flex-direction:column;gap:14px">
   <div class="eyebrow">Version 1.1 · November 2026 · Marco Giribaldi · MIT and CC BY-SA 4.0</div>
   <h1>Endosymbiosis — when prose isn't enough, it becomes code</h1>
-  <p class="lede">Endosymbiosis takes the rules of Symbiosis that, written down, weren't enough, and turns them into programs that look after them. The last word is still yours.</p>
-  <div class="descargas"><a href="#instalar">How to install it</a><a href="../downloads/endosymbiosis-1.1.zip" download>Download kit 1.1</a><span class="doi">DOI: 10.5281/zenodo.23934118</span><a href="../symbiosis/">Read Symbiosis</a></div>
+  <p class="lede">Where the written rules of Symbiosis weren't enough, Endosymbiosis puts programs in charge of looking after them. The last word is still yours.</p>
+  <div class="descargas"><a href="#instalar">How to install it</a><a href="../downloads/endosymbiosis-1.1.zip" download>Download kit 1.1</a><a href="Endosymbiosis_1.1_Marco_Giribaldi.pdf">PDF</a><a href="Endosymbiosis_1.1_Marco_Giribaldi.md">Plain text (.md)</a><a href="#citar">How to cite</a><a href="../symbiosis/">Read Symbiosis</a></div>
   <nav class="toc" aria-label="Contents">
-    <a href="#trata">What it's about</a><a href="#depende">Why it depends on Symbiosis</a><a href="#piezas">The pieces</a><a href="#probado">Where it was tested</a><a href="#parches">Upcoming patches</a><a href="#instalar">How to install it</a><a href="#glosario">Glossary</a><a href="#referencias">References</a>
+    <div class="toc-grupo"><span>To read</span><a href="#trata">Why it exists</a><a href="#dia">A day with Endosymbiosis</a><a href="#crece">How an organ grows</a></div><div class="toc-grupo"><span>For reference</span><a href="#depende">Why it depends on Symbiosis</a><a href="#piezas">The pieces</a><a href="#probado">Where it was tested</a><a href="#parches">Upcoming patches</a><a href="#instalar">How to install it</a><a href="#glosario">Glossary</a><a href="#referencias">References</a></div>
   </nav>
 </header>
 
 <section id="trata">
   <div class="eyebrow">1</div>
-  <h2>What it's about</h2>
-  <p>Symbiosis is a pact between a person and their AI: a shared memory, an agreement <span class="tec">(<em>operating policy</em>)</span> that binds both of them, and one clear principle: the user always has the last word. That pact is a contract, a contract made of habits. But habits fail: in a rush, the AI can overlook what is written, and when the model changes or the system grows, what is written gets forgotten.</p>
-  <p>Endosymbiosis turns that contract into structure. When a written rule fails, an <strong>organ <span class="tec">(<em>deterministic guardrail</em>)</span></strong> is born: a small program that looks after that rule. The organ becomes part of the system, is checked at every startup, and reports on how it is working. The organs live in a folder protected by a guardian: the AI reads them and runs them; changing them is up to you (and with the guardian in code, the AI can't change them anyway). Both the AI and the user can propose changes, but only the user authorizes them. The guardian comes in two modes: in prose, its rules are written down and the AI follows them; in code, it also stops the AI. You start in prose. The system does five different jobs:</p>
-  <div class="two">
-    <div class="box"><h3>It prevents the mistake before it happens</h3><p>With the guardian in code, before the AI acts, the system checks what it is about to do. If it tries to delete a file or enter a private folder, the system stops it and explains why. And in both modes, a filter checks every save so that a password or a personal document doesn't get into the history. When it stops a deletion, it tells the AI what to do instead; for example, move the file to a predefined discard folder that only the user can delete.</p></div>
-    <div class="box"><h3>The same rules for every AI in the system</h3><p>With the guardian in code, if a single model is working, it stops that model. If several are working, for example one that does the work and another that reviews it, it stops all of them equally, as long as they work from the same environment. They can use different programs: the written rules are the same for all of them, and the brake in code reaches the programs the guardian is connected to. None of them can modify the folder where the organs live, and turning off the guardian is the user's decision.</p></div>
-    <div class="box"><h3>The last word belongs to the user</h3><p>With the guardian in code, permission stops being a “yes” in the conversation, which can be misread, and becomes temporary access that only the user opens with their password. The AI can propose changes to the organs, but only the user can apply them, just like installing or removing the system. And if the AI needs to work in a private folder, it is the user who opens the way for a few minutes; after that, the permission expires on its own.</p></div>
-    <div class="box"><h3>It detects omissions and contradictions in memory</h3><p>At the start of each session, it compares the list of pending items with its history and, if one has disappeared without being closed or postponed, it warns you and copies what it said. It also points out specific contradictions, such as something closed that is still listed as pending, or an overdue date that isn't flagged. Before claiming that something doesn't exist, it examines the current notes and their whole history, and shows where it looked. It never fixes anything on its own: it warns, and the user decides.</p></div>
-    <div class="box"><h3>It keeps a record of who did what</h3><p>Every change saved to the history carries a signature: which AI wrote it or, if the user did it alone, their mark. Separately, the user's decisions are written down in the logbook in their exact words. At the end of the session, an organ checks the signatures and warns in red if a change was left unsigned: the session doesn't close until the change has an owner. With that data, it prepares a draft AI-use disclosure statement.</p></div>
+  <h2>Why it exists</h2>
+  <p>You ask your AI not to invent what it doesn't know, not to lose your pending items, and to check with you before changing something important. These are simple agreements, and you write them down so you don't have to repeat them every time. But one day an answer treats something doubtful as certain, a task vanishes from the summary, or a change arrives that you never authorized. The instruction was there. It still wasn't followed.</p>
+  <p>So you add a clarification. Then another. Our rules note grew to more than a hundred rules, and nobody could follow them all anymore. Adding rules doesn't fix what just happened: what's missing is someone checking that they are followed. A written rule guides, but it doesn't warn you when someone ignores it.</p>
+  <p>Symbiosis teaches you to build a shared memory with your AI. The working rules live in one note: the agreement. The last word is still yours. All of this runs on habits, and habits are very useful, until the day they fail: in a rush, the AI skips what is written; when you change models or the project grows, what is written gets forgotten. The book itself, in the guide it writes for the AI, says what to do then:</p>
+  <p class="prosa" style="margin:0">If a rule is broken twice, or prose is no longer enough, write down in the status which rule it was and how it failed, and tell the person: turning it into code is the next step, and it only happens when they ask for it.<cite>Symbiosis 2.1, Guide for the Machine</cite></p>
+  <p>Endosymbiosis starts there. When a written rule fails, you hand it to a small program that watches over it for you, without depending on the model's goodwill. One compares your pending items with what you saved in the history and warns you if any disappeared without being closed. Another looks at what the AI is about to do and can stop it before it deletes something. We call each of these programs an <strong>organ</strong> <span class="tec">(<em>deterministic guardrail</em>)</span>.</p>
+  <p>The name comes from biology. In endosymbiosis, one organism comes to live inside another and becomes part of it, like the mitochondrion in the cell: it produces the energy, but the nucleus stays in command. The same thing happens here: the organs do the work, but they don't give the orders. The AI can propose changes; you authorize them.</p>
+  <p>Not everything moves to code: whatever prose looks after well stays in prose. Nor does it replace your memory or write it: the memory is built the way Symbiosis teaches, and Endosymbiosis watches over it from within.</p>
+</section>
+
+<section id="dia">
+  <div class="eyebrow">2</div>
+  <h2>A day with Endosymbiosis</h2>
+  <p>Working with Endosymbiosis is like working with someone who looks after the details while you think about what matters.</p>
+  <h3>At the start</h3>
+  <p>You open your AI and, when the session begins, the first thing it does is take roll call: whether anything was lost since last time, whether anything doesn't add up, whether the organs respond. If everything is fine, you see green; if something isn't right, yellow; and if something failed, red. That way you know where to begin.</p>
+  <h3>While you work</h3>
+  <p>You and your AI work together. If, in a rush or by oversight, it tries to delete something or enter where it shouldn't, something stops it and explains why. What's left over doesn't disappear: it is set aside until you empty it. Your private folders open only when you want them to, and for the time you choose. And before telling you “that doesn't exist”, the AI searches everything you ever saved.</p>
+  <h3>When you save</h3>
+  <p>Before a change goes into the history, an organ checks that no confidential data slips in, such as a password or an ID number. If it finds one, it stops the save and warns you.</p>
+  <h3>At the close</h3>
+  <p>Every change carries the mark of who made it: the AI or you. And your decisions are written down in your own words.</p>
+  <p>None of this takes control away from you. The organs warn you and stop what they already know, but they don't decide: the last word is yours. You can focus on your own work, knowing that someone is looking after what is easily forgotten.</p>
+  <div class="box"><div class="kind">A note on safety</div>
+    <p>Endosymbiosis adapts to what you need: you decide how much safety you want. The care comes in two modes. In prose, the rules are written down and the AI follows them on its own; in the next session, a check makes sure nothing broke. In code, the system stops things before they happen.</p>
+    <p>You start in prose. And when prose isn't enough, the path is always the same: from prose to code, one rule at a time, and only when you decide. Neither mode is a wall: the history and the backups are still your safety net.</p>
   </div>
-  <p>Memory is built the way Symbiosis teaches. Endosymbiosis doesn't replace it or write it: it watches over it from within.</p>
-  <p>The name comes from biology. In endosymbiosis, one organism comes to live inside another and becomes part of it, like the mitochondrion in the cell: it produces the energy, but the nucleus stays in command. The same thing happens here: the organs do the work, but they don't give the orders.</p>
+  <p>Each of these safeguards is an organ, with its own name and its own card. You'll meet them further down.</p>
+</section>
+
+<section id="crece">
+  <div class="eyebrow">3</div>
+  <h2>How an organ grows <span class="tec">(<em>policy-as-code</em>)</span></h2>
+  <p>None of this was designed all at once. A mistake doesn't create a new rule: it's written down in one line, in a logbook. If it repeats, it moves to a list that is checked at the start of every session. If even that isn't enough, it becomes an organ. That's how Endosymbiosis grows, one step at a time.</p>
+  <p>And an organ isn't born finished either: use shows where it gets in the way or where it fails. The organ that stops the AI, which in Endosymbiosis we call the guardian, is the example. The first eight days showed where it got things wrong: of 55 stops, 3 were useful, 2 were doubtful and 50 were pure friction, like an alarm that goes off when you make toast. Sometimes it confused a copy with the original: 17 times it took test copies for the real organs. Other times it confused naming something with doing it: it stopped 11 times because a text mentioned a private folder, even though the AI wasn't entering it. And other times it applied a rule where it didn't belong: it stopped 16 times the deletion of temporary drafts that didn't need to be set aside; it was like asking you to keep every piece of paper you're about to throw away. In addition, several people who don't program found it hard to use with more than one model.</p>
+  <p>That's where 1.0.3 came from, which overreaches less when stopping things and brings prose mode. An auditor who hadn't written the code looked for ways around it over five rounds, until the basics were covered. And the first test on Windows found a bug that no audit had seen: use finds what the lab doesn't.</p>
+  <p>A simple stop is worth more: when it only looks after what matters and doesn't get in the way, you know it is really useful to you. A written rule that fails moves to code, and code that gets in the way is adjusted again through use.</p>
   <div class="two">
-    <div class="box"><h3>What it is</h3><ul class="plain"><li>A way of working: every rule starts out written and, if it fails, moves to code.</li><li>Six organs born from real failures, installed in about five minutes with Python and git.</li><li>A single tool so that human and AI work as one system.</li></ul></div>
-    <div class="box"><h3>What it isn't</h3><ul class="plain"><li>It isn't all code: whatever prose looks after well stays in prose.</li><li>It isn't infallible: it stops the mistakes it already knows, and every new mistake helps improve it.</li><li>It isn't a finished product: it's a research version that its author uses every day.</li></ul></div>
+    <div class="box"><h3>What it is</h3><ul class="plain"><li>A pact of coexistence between you and your AI, now with programs that look after it.</li><li>A way of working: every rule starts out written and, when it fails, it can move to code, if you decide so.</li><li>Seven organs and three supporting pieces, born from real failures, installed in about five minutes with Python and git.</li></ul></div>
+    <div class="box"><h3>What it isn't</h3><ul class="plain"><li>It isn't infallible: it stops the mistakes it already knows, and every new mistake helps improve it.</li><li>It doesn't watch you: it looks after what the AI does; what you do by hand is still yours.</li><li>It isn't a finished product: it's a research version that its author uses every day.</li></ul></div>
   </div>
 </section>
 
+<div class="separa-consulta"><span>For reference</span><p>That was the walk-through. What follows is for reference whenever you need it: where each piece comes from, its cards, the tests, the limits, the installation and the glossary.</p></div>
+
 <section id="depende">
-  <div class="eyebrow">2</div>
+  <div class="eyebrow">4</div>
   <h2>Why it depends on Symbiosis</h2>
-  <p>Symbiosis is the foundation. It teaches you to build a core <span class="tec">(<em>long-term memory</em>)</span> of notes where the rules of the agreement live: they are followed by habit, without programs, and they work with any AI. Endosymbiosis starts from there. It doesn't invent new rules; it takes the ones Symbiosis already wrote down (set aside instead of deleting, don't store passwords, let nothing disappear in silence) and looks after them with code. Without those notes, there would be nothing to look after.</p>
-  <p>Symbiosis itself marks the moment to take that step:</p>
-  <p class="prosa" style="margin:0">If a rule is broken twice, or prose is no longer enough, write down in the status which rule it was and how it failed, and tell the person: turning it into code is the next step, and it only happens when they ask for it.<cite>Symbiosis 2.1, Guide for the Machine</cite></p>
+  <p>Symbiosis is the foundation. It teaches you to build a core <span class="tec">(<em>long-term memory</em>)</span> where the rules of the agreement live: they are followed by habit, without programs, and they work with any AI. Endosymbiosis starts from there. It doesn't invent new rules; it takes the ones Symbiosis already wrote down (set aside instead of deleting, don't store passwords, let nothing disappear in silence) and looks after them with code. Without that core, there would be nothing to look after.</p>
+  <p>Each card quotes the passage of the book it comes from:</p>
+  <ul>
+    <li><strong>Memory</strong> (Step II): the canary, the pre-flight checklist, the logbook, the secrets filter and the search tool.</li>
+    <li><strong>Judgment</strong> (Step III): the cage.</li>
+    <li><strong>The three zones</strong> 🟢🟡🔴 (Step IV): the guardian, set aside instead of deleting, and temporary access.</li>
+    <li><strong>The Credits</strong>: the signature on each change.</li>
+  </ul>
   <div class="tablewrap"><table>
     <thead><tr><th></th><th>Symbiosis</th><th>Endosymbiosis</th></tr></thead>
     <tbody>
       <tr><td><strong>Role</strong></td><td>The foundation: sets the rules and builds the memory</td><td>The reinforcement: looks after those rules with code</td></tr>
-      <tr><td><strong>How it's enforced</strong></td><td>By hand, through habits</td><td>With organs that watch over the rules and are tested at every startup</td></tr>
-      <tr><td><strong>Which AI</strong></td><td>Any, from a chat</td><td>One that works directly with your files</td></tr>
-      <tr><td><strong>Notes</strong></td><td>Six notes and a home note</td><td>The same ones, plus a <a class="ir" href="#registro">logbook</a>: each decision or mistake on one line, with the date and the words of whoever decided</td></tr>
-      <tr><td><strong>When</strong></td><td>From day one</td><td>When a rule fails twice or prose is no longer enough</td></tr>
+      <tr><td><strong>How it's enforced</strong></td><td>By hand, through habits</td><td>With organs that watch over the rules while you work</td></tr>
+      <tr><td><strong>Which AI</strong></td><td>Any, from a chat</td><td>An AI with access to your files (an agent with tool use, <em>tool use</em>). The guardian stops things today in Claude Code, Codex and Antigravity; local models work with limits.</td></tr>
+      <tr><td><strong>Notes</strong></td><td>Seven notes (six plus the home note)</td><td>The same ones, plus a <a class="ir" href="#registro">logbook</a> (the book's decision log): each decision or mistake on one line, with the date and the reason, in the words of whoever decided</td></tr>
+      <tr><td><strong>When</strong></td><td>From day one</td><td>When you decide to move a rule to code because it failed twice or what's written is no longer enough</td></tr>
     </tbody>
   </table></div>
+  <p>In the kit, the notes have fixed English names; what you write inside stays in your language:</p>
+  <div class="tablewrap"><table><thead><tr><th>In the book</th><th>In the kit</th></tr></thead><tbody><tr><td>the profile</td><td><code>core/profile.md</code></td></tr><tr><td>the context</td><td><code>core/context.md</code></td></tr><tr><td>the agreement</td><td><code>core/agreement.md</code></td></tr><tr><td>the heading</td><td><code>core/course.md</code></td></tr><tr><td>the status</td><td><code>core/state.md</code></td></tr><tr><td>the canary</td><td><code>core/canary.md</code></td></tr><tr><td>the home note</td><td><code>core/start.md</code></td></tr><tr><td>the decision log (here, the logbook)</td><td><code>core/decisions.md</code></td></tr></tbody></table></div>
+  <p>And two folders: <code>_QUARANTINE/</code>, the discard folder (the one the book calls <em>_delete</em>), where leftovers are set aside; and <code>vault/</code>, a folder of the kit's own, where what's already closed goes so it isn't loaded at startup.</p>
   <p>Endosymbiosis builds on Symbiosis 2.1. With earlier versions, some habits clash with the organs.</p>
 </section>
 
 <section id="piezas">
-  <div class="eyebrow">3</div>
+  <div class="eyebrow">5</div>
   <h2>The pieces, from prose to code</h2>
   <p>Each piece is presented the same way: what it's for, the written rule it was born from, what used to happen, what it does today, how you know it works, and its limits. The limits matter as much as the rest: a protection that keeps quiet about them promises more than it delivers.</p>
-  <p>Each card opens with a sentence from Symbiosis: the rule that, written down, wasn't enough. The organ is that same rule, now looked after by a program. When the rule is meant for the AI, the sentence comes from the guide that Symbiosis writes for it.</p>
-  <p>A word you'll see often: the history. It's what git keeps every time you make a save (a “commit”): whatever wasn't saved isn't there. No piece is born finished: each one evolves with use. At the end of this section is the guardian's story.</p>
-  <p>Not all of them are programs: the cage is a lock; the pre-flight checklist, a list the canary runs; and the logbook, a note. And the guardian comes in prose and moves to code when prose isn't enough.</p>
+  <p>Each card opens with a quote from <em>Symbiosis</em> that explains where the piece comes from. The book is written for you and for your AI: some quotes speak to you; others address it from the “Guide for the Machine”.</p>
+  <p>A word you'll see often: the history. It's the record that git keeps of the changes you include in each save (a “commit”). Making a commit is not the same as saving the file in your editor: changes you don't include don't end up in the history.</p>
+  <p>Of the ten pieces, seven are organs and three are supporting pieces: the cage is a lock on the organs' folder; the pre-flight checklist is a list that the canary checks at the start of each session; and the logbook is a note of decisions. No piece is born finished: each one evolves with use, as “How an organ grows”, above, explains. The guardian starts in prose, with written rules, and moves to code to really stop things when you decide.</p>
 
   <h3 class="grupo">I · The ones that hold up the system</h3>
   <article class="piece" id="guardian">
     <header><span class="kind">Stops it before it happens</span><h3>The guardian <span class="tec">(<em>PreToolUse hook · policy enforcement point</em>)</span></h3>
-      <p class="para"><strong>What it's for:</strong> so the AI doesn't delete or touch what it shouldn't, even when it's in a hurry.</p></header>
+      <p class="para"><strong>What it's for:</strong> so the AI doesn't delete or touch what it shouldn't, even when it's in a hurry: in code mode, the guardian stops the AI before it happens.</p></header>
     <p class="prosa">The grading isn't paranoia. It's a seat belt: it lets you go fast because you're buckled in.<cite>Symbiosis 2.1, Step IV, The Three Zones</cite></p>
     <div class="arrow">↓ becomes</div>
     <div class="cmd">organs/guardian.py   · prose by default; code with: python3 install.py --guardian on</div>
     <dl>
       <dt>Before</dt><dd>When it was only a written rule, the AI knew it and still, in a hurry, skipped it: it deleted a file to “clean up”, or read a private folder looking for something. You only noticed afterwards.</dd>
       <dt>What it does</dt><dd><p>It comes in two modes.</p>
-        <p><strong>In prose</strong>, the starting mode: the rules are written in the agreement and the AI follows them. It doesn't stop anything. At the start of each session, the <a class="ir" href="#canario">canary</a> checks whether anything was deleted or the organs changed, and if it finds something, it recommends switching to code.</p>
-        <p><strong>In code</strong>, the guardian checks every action of the AI before it happens and stops four things:</p>
+        <p><strong>In prose</strong>, the starting mode: the rules are written in the agreement for the AI to follow. It doesn't stop anything. At the start of each session, the <a class="ir" href="#canario">canary</a> checks whether anything was deleted or the organs changed. If it finds either of those changes, it recommends switching to code.</p>
+        <p><strong>In code</strong>, the guardian checks every action of the AI that passes through it, before it happens, and stops four things:</p>
         <ul><li>deleting files or git history;</li><li>entering the private folders on your list;</li><li>changing the organs (reading them is allowed);</li><li>getting around the <a class="ir" href="#secretos">secrets filter</a>.</li></ul>
-        <p>Everything else goes through, except a command too long to check in time: it stops that too, and asks you to put it in a file. When it stops something, it explains why and what to do instead. For example, if the AI wants to delete a file, it tells it to set the file aside: to move it to a discard folder, where it stays safe until you decide to empty it. The card <a href="#apartar">Set aside instead of deleting</a> explains how.</p>
-        <p>Switching modes is up to you, from your terminal: today it's a rule the AI follows; in the next version it will also ask for a confirmation word (see Upcoming patches).</p></dd>
-      <dt>Inside</dt><dd>It receives the command or the file the AI wants to use. It breaks the command into parts and leaves out whatever is only text (a message, a note). With what's left, it decides “go ahead” or “stopped”, with the reason, almost instantly; and if something fails inside it, it stops.</dd>
-      <dt>How you know it works</dt><dd>Every time you start a session, the canary puts it to the test: it asks it to do forbidden things, like deleting a test file. If the guardian stops them, you see «guardián vivo» (guardian alive). If any gets through, you see «guardián desconectado» (guardian disconnected) in red. In prose there's nothing to test: the canary reminds you that the guardian is in prose.</dd>
-      <dt class="lim">Its limits</dt><dd>It reads the text of the command, not what a program does inside: a hidden deletion can get through. It's a layer, not a wall; the wall is git and the system's backups, which bring back what was lost. With an AI that doesn't consult it, it stops nothing. And sometimes it stops too much: if the AI names a private folder in a command, even just mentioning it, it stops the command; when that happens, it tells you and you take it from there. And it will never close every workaround: it covers the basics, and whatever slips through, the wall brings back.</dd>
+        <p>Everything else goes through, except a command too long to check in time: it stops that too, and asks you to put it in a file. When it stops something, it explains why and what to do instead. For example, if the AI wants to delete a file, it tells it to set the file aside: to move it to a discard folder, where it stays until you decide to empty it. The card <a href="#apartar">Set aside instead of deleting</a> explains how.</p>
+        <p>In code, certain approvals go through your terminal: opening the cage to change an organ, giving the AI temporary access to a private folder, or switching modes. Some ask for your computer's password. That's why you start in prose: it works for someone who doesn't use the terminal yet, and you make the move to code when you feel comfortable.</p>
+        <p>You switch the mode yourself, with a command in your terminal. The problem is that the AI can have a program type that command for it, as if you were the one typing: we confirmed this on November 4, 2026. The next version closes that gap: the guardian will stop that command when it comes from the AI.</p></dd>
+      <dt>Inside</dt><dd>It receives the command or the file the AI wants to use. It splits the command into parts to check its text. With what it finds, it decides whether to let the action through or stop it, and explains why, almost instantly. If something fails inside it, it stops.</dd>
+      <dt>How you know it works</dt><dd>In code, every time you start a session, the canary puts it to the test: it asks it to do forbidden things, like deleting a practice file. If the guardian stops them, you see «guardián vivo» (guardian alive). If any gets through, you see «guardián desconectado» (guardian disconnected) in red. In prose there's no stop to test: the canary reminds you that the guardian is in prose.</dd>
+      <dt class="lim">Its limits</dt><dd><p>It reads the text of the command, not what a program does inside: a hidden deletion can get through. It's a layer, not a wall: git and the system's backups can bring back whatever was saved.</p><p>It only acts in the programs that consult it: today, Claude Code, Codex and Antigravity. It stops the AI, not you.</p><p>Sometimes it stops too much: if the AI names a private folder in a command, even just mentioning it, it stops the command. When that happens, it tells you and you take it from there.</p><p>It covers the basics; it will never close every workaround.</p></dd>
     </dl>
   </article>
 
   <article class="piece" id="jaula">
     <header><span class="kind">Protects the organs</span><h3>The cage <span class="tec">(<em>immutable files</em>)</span></h3>
-      <p class="para"><strong>What it's for:</strong> so the AI can use the organs, but never change them.</p></header>
+      <p class="para"><strong>What it's for:</strong> so the AI can use the organs without changing them, and so you find out if anyone changes them.</p></header>
     <p class="prosa">The machine verifies, when you give it something to check against; it names and proposes, at low cost, within the medium it lives in. You decide, judge, and execute, and you answer for the consequences in the real world.<cite>Symbiosis 2.1, Step III, Six Verbs, Not Two</cite></p>
     <div class="arrow">↓ becomes</div>
     <div class="cmd">organs/   with your computer's lock
@@ -172,10 +208,10 @@ python3 install.py --open    (opens it)
 python3 install.py --close   (locks it again)</div>
     <dl>
       <dt>Before</dt><dd>The organs were programs like any other, and the AI could change them. A rule that the one being watched can rewrite watches nothing: it's like asking a student to grade their own exam.</dd>
-      <dt>What it does</dt><dd>The organs live in a locked folder: the cage. The AI can read them and use them, but not change them. If an organ needs a change, the AI proposes it and you install it: you open the cage from your terminal, apply the change, and lock it again. With the <a class="ir" href="#guardian">guardian</a> in prose there's no lock: the rule is written down, and at the start of each session the <a class="ir" href="#canario">canary</a> checks that the organs haven't changed.</dd>
-      <dt>Inside</dt><dd>The lock isn't something the program invents: it's the same safeguard your computer uses to protect its own files. And on top of that, the guardian stops the AI if it tries to write there.</dd>
-      <dt>How you know it works</dt><dd>At the start of each session, the canary looks at the cage. If the lock is on, it says so: «jaula con candado» (cage locked). If someone removed it, it warns you in yellow so you can put it back.</dd>
-      <dt class="lim">Its limits</dt><dd>On Linux the lock is solid: it can only be removed with the administrator's password. On Mac and Windows it's weaker, like the latch on a door: the same account can remove it, and the canary only warns you at the start of the next session. And in prose there's no lock: the canary compares the organs against a fingerprint that, for now, the AI could rewrite (see Upcoming patches).</dd>
+      <dt>What it does</dt><dd><p>The organs live in the <code>organs/</code> folder: the cage. With the guardian in code, that folder carries a lock. The AI can read the organs and use them. The lock protects the files against changes, with different strength depending on the operating system.</p><p>If an organ needs a change, the AI proposes it and you install it. In code, you open the cage from your terminal, apply the change and lock it again.</p><p>With the guardian in prose there's no lock: the <a class="ir" href="#canario">canary</a> checks it at the start of each session.</p></dd>
+      <dt>Inside</dt><dd><p>The lock is set by the operating system: on Linux, the files are marked as immutable; on Mac and Windows, as read-only. And in code, the <a class="ir" href="#guardian">guardian</a> also stops the AI if it tries to write in <code>organs/</code>.</p><p>In prose, the canary compares each organ against a fingerprint: a summary of the file that makes it possible to detect whether it changed.</p></dd>
+      <dt>How you know it works</dt><dd><p>At the start of each session, the canary checks the lock in code and compares the fingerprints in prose.</p><p>In code, if the cage has its lock, it says so: «jaula con candado» (cage locked). If someone removed it, it warns you in yellow so you can put it back.</p><p>In prose, the check is that each organ keeps its fingerprint. That makes it possible to detect changes; it doesn't prove there is a lock.</p></dd>
+      <dt class="lim">Its limits</dt><dd><p>On Linux the lock is solid: only the administrator can remove it, with their password. The commands to open and close the cage ask you for that password.</p><p>On Mac and Windows it's weaker: the same account can remove the read-only protection. The canary warns you at the start of the next session.</p><p>In prose, the canary detects carelessness, not tricks: the fingerprints are in a file with no lock that the AI could also rewrite (see Upcoming patches).</p></dd>
     </dl>
   </article>
 
@@ -187,29 +223,26 @@ python3 install.py --close   (locks it again)</div>
     <div class="cmd">python3 organs/canary.py</div>
     <dl>
       <dt>Before</dt><dd>It was a written rule: at the start of each session, take roll call by hand, like a pilot before takeoff. But by hand it got skipped, or rushed, and mistakes slipped through. Once, while making a clean copy of the pending list, some tasks were lost and nobody noticed in time: that's forgetting. And another time, a note said a program was still running when we had already retired it: that's lying.</dd>
-      <dt>What it does</dt><dd><p>Now a program takes roll call on its own, every time you start. It looks for two things:</p>
-        <ul><li><strong>what was lost:</strong> a pending item that was once written down and isn't there today, without anyone having closed it. It tells you which one, not just that one is missing;</li><li><strong>what is lying:</strong> a task crossed off on an earlier day, something marked as closed without proof, a duplicated pending item, an overdue date with no warning.</li></ul>
-        <p><strong>It also keeps an eye on the others: that the <a class="ir" href="#guardian">guardian</a> responds, that the <a class="ir" href="#secretos">secrets filter</a> is in place, that the <a class="ir" href="#jaula">cage</a> has its lock, and that there's a recent copy in the history. It shows you all this in green, yellow, or red.</strong></p>
-        <p>With the guardian in prose, it also checks that the organs haven't changed and that nothing was deleted without going through the <a class="ir" href="#apartar">discard folder</a>.</p></dd>
-      <dt>Inside</dt><dd>It compares your list of pending items with everything that was ever saved in the history. Whatever was written down and disappeared without being closed, it flags. Then it checks each organ in its own way. For the guardian, it sets small traps, asking it to do forbidden things, to make sure it really stops them. For the secrets filter, that it's still hooked into the history. For the cage, that it has its lock. And for the history, when the last copy was saved.</dd>
+      <dt>What it does</dt><dd><p>Now, when each session starts, the AI runs a program that takes roll call for it. It's the first step of its home note. It looks for two things:</p><ul><li><strong>what was lost</strong>: a pending item that was once written down and isn't there today, without anyone having closed it. It tells you which one, not just that one is missing;</li><li><strong>what is lying</strong>: a task crossed off on an earlier day, something marked as closed without proof, a duplicated pending item, an overdue date with no warning.</li></ul><p>It also keeps an eye on the others: that the <a class="ir" href="#guardian">guardian</a> responds, that the <a class="ir" href="#secretos">secrets filter</a> is in place, and that there's a recent copy in the history. With the guardian in code, it also checks that the <a class="ir" href="#jaula">cage</a> has its lock. It shows you the result in green, yellow, or red.</p><p>With the guardian in prose, it also compares the organs against their saved fingerprint and checks that nothing was deleted without going through the discard folder.</p></dd>
+      <dt>Inside</dt><dd><p>It compares your list of pending items with everything that was ever saved in the history. Whatever was written down and disappeared without being closed, it flags.</p><p>Then it checks each organ in its own way. With the guardian in code, it sets small traps for it: it asks it to do forbidden things to check whether it stops them. If it lets any through, it shows «guardián desconectado» (guardian disconnected) in red.</p><p>It checks that the secrets filter is still hooked into the history and, with the guardian in code, that the cage has its lock. It also checks when the last copy was saved in the history.</p></dd>
       <dt>How you know it works</dt><dd>Its test hides failures on purpose, like a lost pending item or an old crossed-off task, and requires it to find all of them. If it misses one, the test comes out red.</dd>
-      <dt class="lim">Its limits</dt><dd>It warns, but never fixes: whatever it finds, you decide. It only sees what is written: it doesn't know whether something is really done; you know that. With the guardian in prose it sees carelessness, but not tricks: an AI that wanted to hide something could fool it. And one odd case: if you move the folder somewhere else without reinstalling, the canary keeps looking for the guardian at the old address, doesn't find it, and can still show you green. If you're going to move the folder, uninstall first, then install in the new location.</dd>
+      <dt class="lim">Its limits</dt><dd><p>It warns, but never fixes: whatever it finds, you decide what to do.</p><p>It only sees what is written. It doesn't know whether a fact went stale, like a price that changed, or whether something is really done.</p><p>It detects carelessness, not tricks. An AI that wanted to hide something could fool it.</p><p>If you move the folder, the guardian stays registered at the old address: the canary doesn't find it and warns you in red. To move it, uninstall first and then install again in the new location.</p></dd>
     </dl>
   </article>
 
   <article class="piece" id="chequeos">
     <header><span class="kind">Part of the canary · checks what's specific to your project</span><h3>The pre-flight checklist <span class="tec">(<em>startup checklist</em>)</span></h3>
-      <p class="para"><strong>What it's for:</strong> to check what can't fail in your project before you start working. If the cockpit is in order, the canary can fly.</p></header>
+      <p class="para"><strong>What it's for:</strong> to check what can't fail in your project before you start working.</p></header>
     <p class="prosa">A mistake you don't remember repeats itself; a mistake you remember becomes law.<cite>Symbiosis 2.1, Step II, Memory as an Immune System</cite></p>
     <div class="arrow">↓ becomes</div>
     <div class="cmd">organs/checks.txt   · one line per check:
 name | command | what it should answer</div>
     <dl>
       <dt>Before</dt><dd>Every project has its usual stumbles: an important file that got emptied by accident, a service that stopped responding, a step that always gets forgotten. Each mistake was written down as a rule on the canary's list, to be checked at the start. But the check was done by hand, and when it got skipped, the mistake happened again.</dd>
-      <dt>What it does</dt><dd>Now that list is no longer checked by hand. Each recorded mistake becomes a question the <a class="ir" href="#canario">canary</a> asks on its own, every time you start: “is the important file still full?”, “is the service responding?”. If an answer isn't what it should be, it warns you in red before you start working. And when a new mistake repeats, the AI suggests adding it to the list, and you decide.</dd>
-      <dt>Inside</dt><dd>Each recorded mistake is a line with three parts: its name, the command that checks it, and the correct answer. The canary runs the command and compares. If the answer takes more than ten seconds, or isn't the correct one, it comes out red.</dd>
-      <dt>How you know it works</dt><dd>At startup you see how many questions passed, for example “3/3”. If a line is badly written, it also comes out red, so that a badly recorded mistake doesn't pass for watched.</dd>
-      <dt class="lim">Its limits</dt><dd>It comes empty: you fill it, mistake by mistake, as they show up. It only watches what you wrote down: a new mistake gets through the first time. Writing the command for each question takes some technical skill, but the AI puts it together for you. Nobody but the author has used it yet.</dd>
+      <dt>What it does</dt><dd><p>The AI runs the <a class="ir" href="#canario">canary</a> when each session starts, and the canary goes through the list: “is the important file still full?”, “is the service responding?”. If an answer isn't the one expected, it warns you in red before you start working.</p><p>Writing a mistake in the <a class="ir" href="#registro">logbook</a> is the first step. When it repeats, this list is the middle step: the AI suggests turning it into a question that is checked at the start of each session and, if you agree, you add it yourself, inside the <a class="ir" href="#jaula">cage</a>. If that isn't enough either, the next step is to turn it into an organ.</p></dd>
+      <dt>Inside</dt><dd><p>The list lives in <code>organs/checks.txt</code>, inside the cage. Each check takes one line with three required parts: name, command and expected answer.</p><p>The canary runs each command and compares what it answers with the expected answer. It doesn't tell uppercase from lowercase. If the command takes more than ten seconds or doesn't answer what's expected, the check comes out red.</p><p>To install a line, the procedure depends on the guardian. With the guardian in code, you open the cage with <code>install.py --open</code>, write the line and close it with <code>install.py --close</code>. With the guardian in prose, you write the line and run <code>install.py --guardian off</code> so the canary takes the fingerprint again.</p></dd>
+      <dt>How you know it works</dt><dd>At the start you see how many checks passed, for example “3/3”. If a line has fewer than the three required parts, it shows up in red as «mal escrita» (badly written). That check needs to be fixed.</dd>
+      <dt class="lim">Its limits</dt><dd><p>It comes empty. The AI suggests the lines and you install the ones you decide to add. It only checks what you wrote down. A mistake your checks don't cover can get through without a warning. That all of them pass doesn't guarantee the whole project is fine.</p><p>Writing each command takes some technical skill, but the AI puts it together for you.</p><p>It comes from the 16 automatic checks that the author uses every day in his own system.</p></dd>
     </dl>
   </article>
 
@@ -217,15 +250,15 @@ name | command | what it should answer</div>
   <article class="piece" id="registro">
     <header><span class="kind">A note, not a program · keeps the why</span><h3>The logbook <span class="tec">(<em>decision log</em>)</span></h3>
       <p class="para"><strong>What it's for:</strong> to remember why things are the way they are, in the words of whoever decided.</p></header>
-    <p class="prosa">It isn't yours or the model's, but both of yours: a shared notebook where the decisions, the findings, and the mistakes turned into law all live.<cite>Symbiosis 2.1, Step II, The Third Memory</cite></p>
+    <p class="prosa">It isn't yours or the model's, but of both of you: a shared notebook where the decisions, the findings, and the mistakes turned into law all live.<cite>Symbiosis 2.1, Step II, The Third Memory</cite></p>
     <div class="arrow">↓ becomes</div>
     <div class="cmd">core/decisions.md   · one line per decision or stumble:
-date · what happened · your words · what changed</div>
+date · decision or failure · who · what · “your words”</div>
     <dl>
-      <dt>Before</dt><dd>Stumbles ended up mixed in with the pending items, and got lost. And each new mistake became one more rule in the agreement, the note with the working rules you agree on with your AI. It grew to more than a hundred, and nobody could follow them all anymore.</dd>
-      <dt>What it does</dt><dd>It isn't a program: it's one more note in the core. Each decision or stumble leaves a line, with the date and your exact words. And it has a simple rule: a mistake doesn't create a new rule, it creates a line. If it repeats, it moves to the <a class="ir" href="#chequeos">pre-flight checklist</a>. If even that isn't enough, it becomes an organ. That's how Endosymbiosis grows, one step at a time.</dd>
-      <dt>How you know it works</dt><dd>It works when the system itself can tell you why a rule or an organ exists: the answer is in the logbook, with its date and your words. It also remembers its own mistakes and failures, so they don't repeat. And it keeps the agreement from filling up with rules: if it grows too much, the <a class="ir" href="#canario">canary</a> warns you, because an AI with too many rules can no longer follow them all.</dd>
-      <dt class="lim">Its limits</dt><dd>It's a note, not a program: it only keeps what someone writes. If a decision was made and nobody wrote it down, here it doesn't exist. And no program checks that every one gets written down: it depends on habit, the AI's and yours.</dd>
+      <dt>Before</dt><dd>Stumbles ended up mixed in with the pending items, and got lost. And each new mistake became one more rule in the agreement, until there were too many to follow.</dd>
+      <dt>What it does</dt><dd>It's a note in the core. Each decision or stumble leaves a line, with the date and your exact words. It only grows: nothing is rewritten, and if two lines talk about the same thing, the newer one counts. It's the first step of <a class="ir" href="#crece">How an organ grows</a>: if the mistake repeats, it moves to the <a class="ir" href="#chequeos">pre-flight checklist</a>.</dd>
+      <dt>How you know it works</dt><dd>When you look for why a rule or an organ exists, you find the decision written down, with its date and the words of whoever made it.</dd>
+      <dt class="lim">Its limits</dt><dd>It only keeps what someone writes. If a decision was made and nobody wrote it down, here it doesn't exist. No program checks that every decision gets written down: it depends on habit, the AI's and yours.</dd>
     </dl>
   </article>
 
@@ -234,13 +267,13 @@ date · what happened · your words · what changed</div>
       <p class="para"><strong>What it's for:</strong> so there's a written record of who made each change and who answers for it: what the AI did and what you decided.</p></header>
     <p class="prosa">This book was written in collaboration with artificial intelligence models, which is exactly what it's about. The decisions, the experiences, and the mistakes are mine.<cite>Symbiosis 2.1, Credits</cite></p>
     <div class="arrow">↓ becomes</div>
-    <div class="cmd">python3 organs/daisy.py --declaracion</div>
+    <div class="cmd">python3 organs/daisy.py --declaration</div>
     <dl>
-      <dt>Before</dt><dd>It was a sentence at the end of the work, like the one above: “it was made with AI; the decisions are mine”. It's honest, but nobody can check it. In Symbiosis the two of you work together, but there was no honest way to know where you acted and where the AI did.</dd>
-      <dt>What it does</dt><dd>Like the signature at the bottom of a document, every change that gets saved carries the name of whoever made it: the AI signs with its model's name, and what you do by hand carries your mark. When a change comes from a decision of yours, the AI copies it in your exact words. At the close of each session, the program counts the signatures: how many changes the AI made, how many cite your decision, how many another model reviewed, and how many you made. <strong>It doesn't measure how much you thought: it shows where your decision was written down.</strong> If a change was left unsigned, it marks it in red, and the session doesn't close until you give it an owner. And if you ask, it writes a draft AI-use disclosure statement in the DAISY format, in English because it's meant for journals (see <a href="#referencias">References</a>).</dd>
-      <dt>Inside</dt><dd>It reads the changes in the history since the last close and looks for each one's signature: the model's name, your mark, or your words quoted next to your name. If they all have an owner, or if there were no changes, it shows green. If one is missing, it stops. To give a change an owner you don't need to touch the past: a new, signed change that explains it is enough.</dd>
-      <dt>How you know it works</dt><dd>At the close of each session you see the count: how many changes there were, what share the AI signed, how many cite your decision, how many another model reviewed, and how many you made. And its test builds a practice history with an unsigned change and requires it to stop.</dd>
-      <dt class="lim">Its limits</dt><dd>It sees who wrote each change and where your decision was quoted. It doesn't see how much you thought beforehand, or what was said outside the history, like a chat in another window. If a decision of yours wasn't quoted, for the program it doesn't exist. That's why your judgment is recorded where you stepped in, in your words, and not as a percentage of authorship. That's what we propose adding to DAISY.</dd>
+      <dt>Before</dt><dd>It was a sentence at the end of the work, like the one above: “it was made with AI; the decisions are mine”. It's honest, but nobody can check it. In Symbiosis the two of you work together, but there was no record of where you acted and where the AI did.</dd>
+      <dt>What it does</dt><dd>Like the signature at the bottom of a document, every change that gets saved carries the name of whoever made it: the AI signs with its model's name, and what you do by hand carries your mark. When a change comes from a decision of yours, the AI copies it in your exact words. At the close of each session, the program counts the signatures: how many changes the AI made, how many cite your decision, how many another model reviewed, and how many you made. <strong>It doesn't measure how much you thought: it shows where your decision was written down.</strong> If a change was left unsigned, it marks it in red and asks you to give it an owner before closing.<p>If you ask, it also prepares a draft AI-use disclosure statement in the DAISY format (<em>Disclosure of AI-uSe in Your Research</em>), in English because it's meant for journals (see <a href="#referencias">References</a>).</p></dd>
+      <dt>Inside</dt><dd>It reads the changes in the history since the last close (or those of the last seven days, if there hasn't been one yet) and looks for each one's signature: the model's name, your mark, or your words quoted next to your name. If they all have an owner, it shows green; if there were no changes, it tells you there is nothing to declare. If one is missing, it stops. To give a change an owner you don't need to touch the past: a new, signed change that explains it is enough.</dd>
+      <dt>How you know it works</dt><dd>At the close of each session you see the count. And its test builds a practice history with an unsigned change and requires it to stop it.</dd>
+      <dt class="lim">Its limits</dt><dd>It sees the signatures on each change and where your decision was quoted. It doesn't see how much you thought beforehand, or what was said outside the history, like a chat in another window. If a decision of yours wasn't quoted, for the program it doesn't exist. That's why your judgment is recorded where you stepped in, in your words, and not as a percentage of authorship. That's what we propose adding to DAISY.</dd>
     </dl>
   </article>
 
@@ -248,30 +281,30 @@ date · what happened · your words · what changed</div>
   <article class="piece" id="apartar">
     <header><span class="kind">The path that replaces deleting</span><h3>Set aside instead of deleting <span class="tec">(<em>quarantine · soft delete</em>)</span></h3>
       <p class="para"><strong>What it's for:</strong> so nothing gets lost in a cleanup: whatever's left over is kept aside, and only you empty it.</p></header>
-    <p class="prosa">Deleting stops being a single step with no return and becomes two: setting aside, which can be undone, and emptying, which is yours.<cite>Symbiosis 2.1, Step IV, The Three Zones</cite></p>
+    <p class="prosa">That way, deleting stops being a single step with no return and becomes two: setting aside, which can be undone, and emptying, which is yours.<cite>Symbiosis 2.1, Step IV, The Three Zones</cite></p>
     <div class="arrow">↓ becomes</div>
     <div class="cmd">python3 organs/quarantine.py &lt;file&gt; &lt;reason&gt;</div>
     <dl>
-      <dt>Before</dt><dd>It was a written rule: don't delete, set aside. But in a hurry, the AI sometimes deleted anyway, or “moved” a file by copying it and deleting the original. In the project's history, that showed up as a deletion.</dd>
-      <dt>What it does</dt><dd>Now there's only one way to remove something: set it aside. A program moves whatever's left over to a discard folder, inside a box labeled with the date and the reason, and tells you where it went. Nothing is deleted: the file is still there, with its entire history. You review that folder and empty it when you're sure. And if the AI tries to delete something, the <a class="ir" href="#guardian">guardian</a> stops it and suggests setting it aside: that way it always has a way out that loses nothing.</dd>
-      <dt>Inside</dt><dd>It works like a move with labeled boxes: it looks for the nearest discard folder, makes a box inside it with the date and the reason, and moves the file there. If the history knows the file, it moves it through the history, so it's recorded as a move and not as a deletion, and it reminds you to save that move as a separate change, without mixing it with other work.</dd>
-      <dt>How you know it works</dt><dd>At the start of each session, the <a class="ir" href="#canario">canary</a> looks at the discard folder. If it holds things more than a month old, or it's getting heavy, it reminds you in yellow to review it. And with the guardian in prose, it also warns you if something disappeared without going through it.</dd>
-      <dt class="lim">Its limits</dt><dd>It doesn't empty anything: emptying is always yours. It doesn't set aside the organs' folder. And it only looks after what goes through it: if something is deleted some other way, setting aside doesn't see it; that's what the guardian and the history are for.</dd>
+      <dt>Before</dt><dd>The rule was written down: don't delete, set aside. But in a hurry, the AI sometimes deleted anyway, or “moved” a file by copying it and deleting the original. In the project's history, that showed up as a deletion.</dd>
+      <dt>What it does</dt><dd>To remove something, the AI sets it aside. A program moves whatever's left over to the discard folder (<code>_QUARANTINE/</code>), inside a box labeled with the date and the reason, and tells you where it went. Nothing is deleted: the file is still in that folder, and what was already saved is still in the history. You review that folder and empty it when you're sure. With the <a class="ir" href="#guardian">guardian</a> in code, if the AI tries to delete something, the guardian stops it and tells it to set it aside: that way it has a way out that loses nothing.</dd>
+      <dt>Inside</dt><dd>It works like a move with labeled boxes: it looks for the nearest discard folder (or creates one in the main folder of your project, the “root”), makes a box inside it with the date and the reason, and moves the file there. If the file was already saved in the history, it records the transfer so it counts as a move and not as a deletion, and asks you to save it separately, without mixing it with other work.</dd>
+      <dt>How you know it works</dt><dd>At the start of each session, the <a class="ir" href="#canario">canary</a> looks at the discard folder. If it holds things more than 30 days old or it's over 500 MB, it reminds you in yellow to review it. And with the guardian in prose, it also warns you in red if something saved in the history disappeared without going through it.</dd>
+      <dt class="lim">Its limits</dt><dd>It doesn't empty anything: emptying is always yours, by hand. It doesn't set aside the organs' folder or the pieces that connect the guardian to your AI (the <em>hooks</em>): only you move those. And it only looks after what goes through it: if something is deleted some other way, setting aside doesn't see it; that's what the guardian in code is for or, in prose, the canary.</dd>
     </dl>
   </article>
 
   <article class="piece" id="secretos">
     <header><span class="kind">Part of the guardian · watches what goes into the history</span><h3>The secrets filter <span class="tec">(<em>pre-commit hook · secret scanning</em>)</span></h3>
-      <p class="para"><strong>What it's for:</strong> to protect you from leaking an important piece of data. A password or an ID number that gets into the project's history stays there, and anyone who receives a copy can see it.</p></header>
+      <p class="para"><strong>What it's for:</strong> to protect you from leaking an important piece of data. A password, an access key (<em>API key</em>) or an ID number that gets into the project's history stays there, and anyone who receives a copy can see it.</p></header>
     <p class="prosa">What can't be there: a password or private data.<cite>Symbiosis 2.1, Step II, The Memory Canary</cite></p>
     <div class="arrow">↓ becomes</div>
     <div class="cmd">organs/secret_scan.py   · checks every save in git; works in both of the guardian's modes</div>
     <dl>
-      <dt>Before</dt><dd>It was a written rule: don't store passwords or private data. The AI knew it, but sometimes it slipped. And the danger is real: if an access key (the key your project uses to access a service, such as a paid AI) gets into the history and the project is shared or made public, anyone can use it in your name, and the charges come to you. Whatever gets into the history can't be deleted anymore. It happened to us with something minor: a test ID number got saved twice.</dd>
-      <dt>What it does</dt><dd>Now a program checks every change before it's saved and flags possible sensitive data: a password, an access key, or an ID number. When it sees one, it stops the save and tells you where it is, without showing the data. You weigh the risk and decide: if it's real, you take it out; if it's a false alarm, you save it by hand from your terminal. Your judgment always comes first; the program keeps something important from slipping past you through carelessness.</dd>
-      <dt>Inside</dt><dd>It doesn't understand what's written: it looks for shapes that repeat, the way you'd recognize a fingerprint. Many access keys start the same way (GitHub's, for example, with “ghp_”). A password usually comes after the word “password”. A DNI (a national ID number) is eight digits next to the word DNI. If the new text has one of those shapes, it warns you.</dd>
+      <dt>Before</dt><dd>It was a written rule: don't store passwords or private data. The AI knew it, but sometimes it slipped. If an access key (the key for using a paid service, such as an AI) gets into the history, deleting it from the file doesn't remove it from there: whoever receives a copy can use it in your name, and the charges come to you. It happened to us with something minor: a test ID number got saved twice.</dd>
+      <dt>What it does</dt><dd>Now a program checks the new lines before every save and flags possible sensitive data: a password, an access key or an ID number. When it sees one, it stops the save and tells you where it is, without showing the data. You weigh the risk and decide: if it's real, you take it out; if it's a false alarm, you save it by hand from your terminal.</dd>
+      <dt>Inside</dt><dd>It doesn't understand what's written: it looks for shapes that repeat, the way you'd recognize a fingerprint. Many access keys start the same way (GitHub's, for example, with “ghp_”). A password usually comes after the word “password”. An identity document: for example, the acronym DNI followed by eight digits. If the new text has one of those shapes, it warns you.</dd>
       <dt>How you know it works</dt><dd>Like a warning light on a car's dashboard: if everything's fine, you don't see it; if something fails, it lights up. Every time you start working, the <a class="ir" href="#canario">canary</a> checks that the filter is in place. If it's missing, it warns you in red.</dd>
-      <dt class="lim">Its limits</dt><dd>It only recognizes what looks like a secret: a loose piece of data, or one inside a photo or a PDF, can get through. The final check is yours.</dd>
+      <dt class="lim">Its limits</dt><dd>It doesn't check what was saved before you installed it, or very large files, photos, PDFs or compressed files (“.zip”). Nor does it see a piece of data with no label or known shape, like an ID number without the word “DNI”. With the guardian in prose, nothing prevents the AI from skipping it: only the written rule. The final check is yours.</dd>
     </dl>
   </article>
 
@@ -281,13 +314,13 @@ date · what happened · your words · what changed</div>
     <p class="prosa">If it asks your permission even to read, you get used to saying “yes” without looking, and that automatic “yes” will slip out of you just when it matters.<cite>Symbiosis 2.1, Step IV, The Three Zones</cite></p>
     <div class="arrow">↓ becomes</div>
     <div class="cmd">python3 organs/free.py 30    (opens for 30 minutes)
-python3 organs/free.py fin   (closes early)       · only with the guardian in code</div>
+python3 organs/free.py end   (closes early)       · only with the guardian in code</div>
     <dl>
-      <dt>Before</dt><dd>It was a written rule: the AI doesn't enter your private folders without your permission. But the permission was a word in the chat, and a word gets said on autopilot, gets misread, or the AI assumes it was said.</dd>
-      <dt>What it does</dt><dd>When you want the AI to work in your private folders, you open them yourself, from your terminal and with your computer's password (on Windows, by opening the terminal as administrator), for as long as you choose: half an hour, an afternoon, eight hours at most. When the time is up, they close on their own; you can also close them earlier. The AI can't open them by itself.</dd>
-      <dt>Inside</dt><dd>It writes down the time until which access is open, in a place on the computer where only the administrator can write. Before every action, the <a class="ir" href="#guardian">guardian</a> reads that time. If the entry could have been written by the AI, it doesn't accept it.</dd>
-      <dt>How you know it works</dt><dd>If you type the command without a time, it tells you whether access is open and until when. At the start of each session, the <a class="ir" href="#canario">canary</a> also notes it. And when it expires, the guardian goes back to stopping the AI in your private folders.</dd>
-      <dt class="lim">Its limits</dt><dd>It opens your private folders and nothing else: even while access is open, the AI still can't delete anything or change the organs. It only works if the guardian is in code. And it comes with one condition: never run the AI as the computer's administrator, because then it could grant itself access. On Windows it hasn't been tested in real use yet.</dd>
+      <dt>Before</dt><dd>In Symbiosis it was a written agreement: the AI doesn't enter your private folders without your permission. But the permission was a word in the chat, and a word gets said on autopilot, gets misread, or the AI assumes it was said.</dd>
+      <dt>What it does</dt><dd>When you need it to enter them (your access keys to other machines, “SSH”; your secrets; or the ones you put on the private folders list), you open them yourself, from your terminal and with your computer's password (on Windows, by opening the terminal as administrator), for as long as you choose: half an hour, an afternoon, eight hours at most. When the time is up, or if you restart on Linux and Mac, they close on their own; you can also close them earlier.</dd>
+      <dt>Inside</dt><dd>It writes down the time until which access is open, in a place on the computer where only the administrator can write. Before every action, the <a class="ir" href="#guardian">guardian</a> reads that time. It only accepts the entry if neither the guardian nor the AI can write in that folder.</dd>
+      <dt>How you know it works</dt><dd>If you type the command without a time, it tells you whether access is open and until when. At the start of each session, the <a class="ir" href="#canario">canary</a> also warns you if it's still open. And when it expires, the guardian goes back to stopping the AI in your private folders.</dd>
+      <dt class="lim">Its limits</dt><dd>It opens your private folders and nothing else: even while access is open, the AI still can't delete anything or change the organs. It only works if the guardian is in code. And it comes with one condition: never open the AI as the computer's administrator, because then it could grant itself access.</dd>
     </dl>
   </article>
 
@@ -299,22 +332,20 @@ python3 organs/free.py fin   (closes early)       · only with the guardian in c
     <div class="cmd">python3 organs/search.py "irrigation|drip"</div>
     <dl>
       <dt>Before</dt><dd>It was a written rule: before saying “it doesn't exist”, search. But the AI only looked at what was in plain sight and said “it doesn't exist”, when the answer was saved in an earlier version in the history. Like someone who looks for their keys only on the table and concludes they're lost.</dd>
-      <dt>What it does</dt><dd>Now the AI searches with a program that doesn't stop at the table. It goes through your current files and also the history, where everything that was ever saved remains, even if it was later changed or deleted. When it's done, it tells you whether it found it or not, and in which places it looked. If something is said in several ways, you can search for all of them at once, for example “irrigation” and “drip”.</dd>
-      <dt>Inside</dt><dd>It goes through today's text files. Then it asks the history for every change where that word appeared or disappeared. It combines the two lists and ends with a fixed line, with the count, which the AI copies without making anything up.</dd>
+      <dt>What it does</dt><dd>Now the AI uses a program that goes through today's text files of your project (including the discard folder and the folders you add) and also the whole history, including what was later changed or deleted. When it's done, it tells you whether it found it or not, and in which places it looked. If something is said in several ways, you can search for all of them at once, for example “irrigation” and “drip”.</dd>
+      <dt>Inside</dt><dd>It goes through today's text files. Then it asks the history for every change where that word appeared or disappeared. It combines the two lists and ends with a fixed line: “exists” or “doesn't exist”, with where it looked and the count, so the AI copies it as is.</dd>
       <dt>How you know it works</dt><dd>Its test hides a word in an old version in the history and requires it to find it.</dd>
-      <dt class="lim">Its limits</dt><dd>It searches for words, not ideas: if something was said another way, you have to give it the synonym. An accent mark counts: “café” and “cafe” are two different searches. It doesn't see what was never saved. And it reads everything it's asked to: never hand it a private folder. In a test with our own project, the AI had to read between 14 and 481 times less text than when searching by hand (three searches, estimated), but it also showed us something to improve: some very long lines in the history still weigh too much. That's noted for the next version.</dd>
+      <dt class="lim">Its limits</dt><dd>It searches for words, not ideas: if something was said another way, you have to give it the synonym. Uppercase doesn't matter, but an accent mark does count: “café” and “cafe” are two different searches. It can't find what is neither on disk nor saved in the history, and it doesn't search files that aren't text. And it reads everything it's asked to: never hand it a private folder. In a test with our own project, the AI had to read between 14 and 481 times less text than when searching by hand (three searches, estimated), and it showed us that some very long lines in the history weighed too much: this version already trims them.</dd>
     </dl>
   </article>
 
-  <div class="box" id="crece"><h3>How an organ grows <span class="tec">(<em>policy-as-code</em>)</span></h3>
-    <p>No lab test finds what real use finds. Each organ keeps a record of what it did, and that record shows where it gets in the way or where it fails. Then it gets corrected, without losing the basics, and goes back into use.</p>
-    <p>The guardian is the example. In its first eight days of use it stopped the AI 55 times; when we reviewed the record, only 3 of those stops had protected anything. The rest was friction: it confused reading the organs' folder with writing to it, or a text that merely said “delete” with an actual deletion. And two users with no programming background had trouble using it with several models. That's where version 1.0.3 came from, with a guardian that stops things needlessly less often, and its prose mode. An auditor who hadn't written the code attacked it over five rounds, until the basics were covered without anything being stopped needlessly. And the first test on Windows found a bug that no audit had seen.</p>
-    <p>A simple guardian is more powerful: it looks after only what matters, and that's why nobody turns it off. That's how Endosymbiosis grows: a written rule that fails moves to code, and code that gets in the way is adjusted again through use.</p>
+  <div class="box"><div class="kind">The limits, in your favor</div>
+    <p>The limits can also work in your favor. If you prefer to move more freely, you don't have to turn everything off. In prose, the guardian doesn't stop anything and the AI follows the rules on its own, but the secrets filter still checks every save, and the canary warns you in the next session if something saved was lost or if the organs' folder changed. In code, you can open your private folders for up to eight hours, and the AI still can't delete or change the organs. How much to stop is up to you, from your terminal.</p>
   </div>
 </section>
 
 <section id="probado">
-  <div class="eyebrow">4</div>
+  <div class="eyebrow">6</div>
   <h2>Where it was tested</h2>
   <div class="two">
     <div class="box">
@@ -323,7 +354,7 @@ python3 organs/free.py fin   (closes early)       · only with the guardian in c
         <li><span>Claude Code</span><span class="chip ok">✓ works</span></li>
         <li><span>Codex</span><span class="chip ok">✓ works</span></li>
         <li><span>Antigravity</span><span class="chip ok">✓ works</span><small>Tested in its terminal; the desktop app, not yet.</small></li>
-        <li><span>Local models</span><span class="chip medio">◐ with limits</span><small>It works, but so far with some limitations, depending on the model.</small></li>
+        <li><span>Local models</span><span class="chip medio">◐ with limits</span><small>It works if the model has access to your files; small models have been tested little, and they don't always follow every rule.</small></li>
       </ul>
     </div>
     <div class="box">
@@ -333,17 +364,17 @@ python3 organs/free.py fin   (closes early)       · only with the guardian in c
         <li><span>Windows</span><span class="chip ok">✓ works</span></li>
         <li><span>Mac</span><span class="chip ok">✓ works</span></li>
       </ul>
-      <p class="note">On Linux it's used every day. On Windows and Mac it was installed from scratch and passed all its tests, in both modes, still without an AI working inside it.</p>
+      <p class="note">On Linux it's used every day. On Windows and Mac, 1.1 was installed from scratch and passed its tests in both modes. In addition, other people who don't program already use it in their work, and the guardian stops their AI too. The test with Codex working inside, on Windows, led to a fix that already comes in this version.</p>
     </div>
   </div>
   <div class="two">
     <div class="box">
       <div class="kind">Tool access</div>
       <h3>Your AI needs tool access</h3>
-      <p>That is, it has to be able to read and write your files, not just talk. Without tools, it's left blind.</p>
+      <p>That is, it has to be able to read and write your files, not just talk.</p>
       <div class="barra"><span>Without tools</span><div class="b"><i class="medio" style="width:28.6%"></i></div><b>2 of 7</b></div>
       <div class="barra"><span>With tools</span><div class="b"><i style="width:100%"></i></div><b>7 of 7</b></div>
-      <p class="note">Seven situations from a test business, a small AI, and one run per condition. Without tools, Endosymbiosis's lightweight startup leaves it blind; with tools, it gets everything right. It's a snapshot, not a measurement.</p>
+      <p class="note">Seven situations from a test business, with a small AI model, each situation run once. Without tools it got two of seven right; with access to the files, seven of seven. It's a snapshot, not a measurement.</p>
     </div>
     <div class="box">
       <div class="kind">Daily use</div>
@@ -351,38 +382,40 @@ python3 organs/free.py fin   (closes early)       · only with the guardian in c
       <p>Every organ can fail. Only time in use shows where they fail, under what conditions, and how much they can improve.</p>
       <div class="barra"><span>Stops</span><div class="b"><i class="medio" style="width:100%"></i></div><b>55</b></div>
       <div class="barra"><span>Real dangers</span><div class="b"><i style="width:5.5%"></i></div><b>3</b></div>
-      <p class="note">The <a class="ir" href="#guardian">guardian</a>, over eight days of real work. That, plus the stumbles of people who tried it without knowing how to program, shaped 1.0.3.</p>
+      <p class="note">These are the <a class="ir" href="#guardian">guardian</a>'s stops over eight days of real work. That, plus the stumbles of people who tried it without knowing how to program, shaped the previous version, 1.0.3.</p>
     </div>
   </div>
   <p class="note">Its author has used Symbiosis every day since April 2026, and his first organs since July; the kit for others was born in October. This is documented experience, not a law.</p>
 </section>
 
 <section id="parches">
-  <div class="eyebrow">5</div>
+  <div class="eyebrow">7</div>
   <h2>Upcoming patches</h2>
-  <p>What the system still doesn't do well. When a patch goes in, it comes off this list; when a new limit shows up, it's added here.</p>
+  <p>What 1.1 brings and what is still pending. When a patch goes in, it comes off the list; when a new limit shows up, it's added here.</p>
   <h3>What 1.1 brings</h3>
   <ul class="plain">
-    <li><strong>Dashboard by mission.</strong> The dashboard is organized by mission and raises an alarm when the pending queue grows.</li>
-    <li><strong>Canary with no false green.</strong> It no longer calls something fine that it could not check, and at startup it reports the load of what it reads (the percentage of the AI's window).</li>
-    <li><strong>Guardian in code for Codex too.</strong> Tested with simulated events; the real-world test is under way.</li>
-    <li><strong>MIGRATE.md.</strong> A guide so your AI can migrate, unsupervised, the note system you already had.</li>
-    <li><strong>English names for what the machine reads.</strong> The kit's folders, files and commands (<code>core/</code>, <code>organs/</code>, <code>vault/</code>, <code>_QUARANTINE/</code>, <code>install.py</code>…); <code>--migrate-names</code> moves a core that used the old ones to the new ones.</li>
+    <li><strong>Dashboard by mission.</strong> The dashboard (the screen that sums up the state and your pending items) is organized by mission and raises an alarm when the pending queue grows.</li>
+    <li><strong>A lighter search tool.</strong> It trims very long lines in the history so each search reads less text.</li>
+    <li><strong>A canary without false greens.</strong> It no longer calls something fine that it couldn't check, and at startup it estimates what percentage of the AI's working memory (its “window”) is taken up by what it reads.</li>
+    <li><strong>Guardian in code for Codex too.</strong> Tested with real Codex on Linux and on Windows.</li>
+    <li><strong>MIGRATE.md.</strong> A guide so your AI can migrate the note system you already had with little supervision: it asks you questions at the start and at the end shows you what needs your approval.</li>
+    <li><strong>English names for what the machine reads.</strong> The kit's folders, files and commands (<code>core/</code>, <code>organs/</code>, <code>vault/</code>, <code>_QUARANTINE/</code>, <code>install.py</code>…); <code>--migrate-names</code> updates a core that had the old names.</li>
   </ul>
   <h3>Still pending</h3>
   <ul class="plain">
-    <li><strong>What the canary can't see yet.</strong> If you move the folder without reinstalling, it can report as alive a guardian that no longer responds. Nor does it detect an outdated fact in a note, like a price that changed, or know whether the AI claims to have checked something without doing it.</li>
-    <li><strong>Prose mode and switching modes.</strong> In prose, the canary compares the organs against a fingerprint (a sha256 digest of each file) and against a starting point in git. Both are stored in <code>.endo/guardian_modo.json</code>, a file with no lock and outside git: the rule forbids touching it, but if the AI rewrites it, the canary stays green. And switching to prose or uninstalling (<code>install.py --guardian off</code> or <code>--uninstall</code>) requires an interactive terminal, which a program can fake: in code mode, that's enough to turn off the guardian. To fix this, the fingerprint will move into git, where any change is out in the open, and switching modes will ask for a confirmation word, as uninstalling already does.</li>
-    <li><strong>The guardian and temporary access.</strong> Some convoluted commands for tampering with the guardian's configuration still get through. And if you run the AI as your computer's administrator, it could turn on temporary access to your private folders by itself.</li>
-    <li><strong>A solid lock and real-world testing on Mac and Windows.</strong> There, your own account can remove the lock; the canary warns you at startup, but doesn't prevent it. And it still needs to be used every day on Mac and on Windows.</li>
+    <li><strong>What the canary can't see yet.</strong> It doesn't detect an outdated fact in a note, like a price that changed, or know whether the AI claims to have checked something without doing it.</li>
+    <li><strong>Switching modes.</strong> Switching to prose or uninstalling is done from your terminal, but we confirmed that a program can imitate those commands, so the AI could turn off the guardian without you asking. The canary shows it at the start of the next session, though without an alarm. The next version will make the guardian stop those commands if they come from the AI, and the canary will warn in yellow about every mode change, so you know whether you asked for it.</li>
+    <li><strong>The organs' fingerprint in prose.</strong> Today it lives in a file with no lock; it will move into the history, so its changes are on record.</li>
+    <li><strong>The guardian and temporary access.</strong> Some convoluted commands for tampering with the guardian's configuration still get through. And if you open the AI as your computer's administrator, it could turn on temporary access to your private folders by itself.</li>
+    <li><strong>A firmer lock on Mac and Windows.</strong> There, your own account can remove the lock; the canary warns you at startup, but doesn't prevent it.</li>
+    <li><strong>The migration guide when installing in another folder.</strong> If you install the kit in a different folder, <code>MIGRATE.md</code> isn't copied. In the meantime, your AI can read it from the kit folder.</li>
     <li><strong>Your judgment in the signature on every change and in the logbook.</strong> Today the signature on every change shows where your decision was written down. What's still missing is recording where you asked, corrected, or vetoed, and making sure no decision goes unrecorded.</li>
-    <li><strong>A lighter search tool.</strong> Trimming very long lines in the history so that each search reads even less text.</li>
   </ul>
   <p class="note">Some rules of our system are still in prose rather than code, for practical reasons: they're followed well by habit, or they haven't failed enough yet to deserve a program. Symbiosis explains them.</p>
 </section>
 
 <section id="instalar">
-  <div class="eyebrow">6</div>
+  <div class="eyebrow">8</div>
   <h2>How to install it</h2>
   <p>For anyone who wants to use Endosymbiosis in their own project. It's a single installer, <code>install.py</code>, with two modes for the guardian. You run it yourself from your terminal, by hand or with your AI's help: it guides you and helps you fix problems, but the install step is yours.</p>
 
@@ -397,7 +430,7 @@ python3 organs/free.py fin   (closes early)       · only with the guardian in c
     <div class="box c">
       <div class="kind">When prose isn't enough</div>
       <h3>Code mode</h3>
-      <p>The guardian stops the AI before any action that breaks a rule, and the organs are locked. It gets registered in Claude Code and in Antigravity.</p>
+      <p>The guardian stops the AI when it recognizes an action that breaks a rule, and the organs are locked. It gets registered in Claude Code, Codex and Antigravity. Afterwards, close and reopen your AI; in Codex, also type <code>/hooks</code> inside Codex once to approve it.</p>
       <div class="cmd" style="margin:4px 0 0">python3 install.py --guardian on</div>
       <p class="note">At the end it says «el guardián nació» (the guardian was born).</p>
     </div>
@@ -412,9 +445,9 @@ python3 organs/free.py fin   (closes early)       · only with the guardian in c
 
   <h3>By hand</h3>
   <ol class="plain">
-    <li>Download the kit (<a href="../downloads/endosymbiosis-1.1.zip">endosymbiosis-1.1.zip</a> · DOI: 10.5281/zenodo.23934118), unzip it, and put the folder wherever you want your core to live.</li>
-    <li>Open a terminal in that folder and type <code>python3 install.py</code>. When it asks you to confirm, type <code>yes</code> (or <code>si</code>) and press Enter.</li>
-    <li>It will ask you for the guardian's mode. For prose, just press Enter. For code, type the word <code>code</code> (or <code>código</code>) and press Enter.</li>
+    <li>Download the kit (<a href="../downloads/endosymbiosis-1.1.zip">endosymbiosis-1.1.zip</a> · DOI: 10.5281/zenodo.23934118), unzip it, and put the folder wherever you want your core to live. Its SHA-256 fingerprint is <code>6f3f4ca273730b783c493c27b2f069a02c2c8bc13f065d09724b3dea774aff07</code>: your AI can check it.</li>
+    <li>Open a terminal in that folder and type <code>python3 install.py</code>. When it asks you to confirm, type <code>sí</code> (<code>si</code> also works) or <code>yes</code> and press Enter.</li>
+    <li>It will ask you for the guardian's mode. For prose, just press Enter. For code, type <code>codigo</code> (with or without the accent) and press Enter.</li>
     <li>The installer checks what you already have without overwriting it, copies the core and the organs, sets up the secrets filter, and tests each piece. At the end it should say «el núcleo nació» or «el guardián nació».</li>
   </ol>
   <p>If something fails, copy the whole output and paste it to your AI: “The installer said this. Explain what happened and how to fix it.”</p>
@@ -424,7 +457,7 @@ python3 organs/free.py fin   (closes early)       · only with the guardian in c
     <div class="box">
       <div class="kind">From the kit folder</div>
       <p>Open your AI in the kit folder and tell it:</p>
-      <div class="cmd" style="margin:0;white-space:normal">Read README.md and walk me through installing Endosymbiosis, step by step. I'll run the commands myself.</div>
+      <div class="cmd" style="margin:0;white-space:normal">I downloaded endosymbiosis-1.1.zip from endosymbiosis.org and unzipped it here. First check that the zip's SHA-256 is 6f3f4ca273730b783c493c27b2f069a02c2c8bc13f065d09724b3dea774aff07. Then read README.md and walk me through installing Endosymbiosis, step by step. I'll run the commands myself.</div>
     </div>
     <div class="box">
       <div class="kind">From this page</div>
@@ -442,18 +475,21 @@ python3 organs/free.py fin   (closes early)       · only with the guardian in c
   </div>
 
   <h3>Your first conversation</h3>
-  <p>Open your AI in that folder and tell it: “Read ENDOSYMBIOSIS.md and build my core with me, one question at a time.”</p>
-
-  <h3>If you already had something</h3>
-  <p>Already had a core with the old names? <code>python3 install.py --migrate-names</code></p>
-  <p>Already had your own note system? Tell your AI: “Read MIGRATE.md and migrate mine.”</p>
+  <p>There are two paths, depending on where you're coming from. In both, the folder where you installed the kit becomes your core's folder, and that's where you open your AI.</p>
+  <div class="two">
+    <div class="box"><div class="kind">If you're starting from scratch</div><p>With the kit installed, open your AI in that folder and tell it: “Read ENDOSYMBIOSIS.md and build my core with me, one question at a time.”</p></div>
+    <div class="box"><div class="kind">If you already have your notes</div><p>You built them with the book or with another system. Before installing, copy your notes into the kit folder (copy, don't move: the original stays where it was). Install there, open your AI in that folder and tell it: “Read MIGRATE.md and migrate mine.” First it asks you four questions at once, to recognize your notes; then it moves them into <code>core/</code> with the names in the table in <a class="ir" href="#depende">Why it depends on Symbiosis</a>, without deleting anything, and at the end it shows you what needs your approval. When it finishes, the installer suggests you read ENDOSYMBIOSIS.md; in your case, use MIGRATE.md.</p></div>
+  </div>
+  <p><strong>One exception, before anything else:</strong> if your folder already had Endosymbiosis with the old Spanish names (<code>nucleo/</code>, <code>organos/</code>), update it first from your terminal, in the kit folder: <code>python3 install.py --migrate-names &lt;your core folder&gt;</code> (in place of <code>&lt;your core folder&gt;</code>, type the path of your folder, without the <code>&lt; &gt;</code> signs). That only changes the names; if you also had other notes, you continue afterwards with MIGRATE.md.</p>
 
   <h3>Afterwards</h3>
+  <p>You write your private folders (for example, the one with your clients' data) in <code>organs/denied.txt</code> yourself, one per line. In code, open the cage to edit that file and close it afterwards; in prose, when you're done, run <code>--guardian off</code> so the canary takes the fingerprint again.</p>
   <div class="cmd" style="margin:0">python3 install.py --guardian on    switches the guardian to code (it stops actions)
 python3 install.py --guardian off    switches it back to prose (in prose, it also accepts a change of yours to the organs)
 python3 install.py --open          opens the cage so you can change an organ
 python3 install.py --close         locks it again
-python3 install.py --uninstall    removes everything (asks you to type «quitar» (remove))</div>
+python3 install.py --uninstall    removes what the installation put in place; your notes stay (asks you to type «quitar» (remove))</div>
+  <p><strong>Uninstall before moving or deleting the folder.</strong> The guardian and the secrets filter store their address; if the folder changes place, your AI can be left without tools. If you already moved it, uninstall in the new folder and install again.</p>
   <p>The installer never deletes anything: whatever it replaces, it keeps in the discard folder. And it only leaves the guardian registered if all the tests passed, so it never leaves you with a half-working one. It was tested by installing from scratch on Linux, Windows, and Mac, in both modes.</p>
 </section>
 
@@ -461,44 +497,50 @@ python3 install.py --uninstall    removes everything (asks you to type «quitar�
 <h2>Glossary</h2>
 <p>Each word of ours, its technical term and what it is. In the text, the technical term appears in parentheses the first time; here they are all together.</p>
 <table class="glosario"><thead><tr><th>Our word</th><th>Technical term</th><th>What it is</th></tr></thead><tbody>
-<tr><td><strong>core</strong></td><td><em>external long-term memory</em></td><td>the eight notes the AI reads in full when it starts and brings up to date when it closes</td></tr>
-<tr><td><strong>the agreement</strong></td><td><em>operating policy</em></td><td>the written, numbered rules that govern the AI</td></tr>
+<tr><td><strong>core</strong></td><td><em>external long-term memory</em></td><td>the eight notes (the seven from Symbiosis plus the logbook) that the AI reads when it starts (for the logbook, its last lines) and brings up to date when it closes</td></tr>
+<tr><td><strong>the agreement</strong></td><td><em>operating policy</em></td><td>the written, numbered rules that bind the person and their AI</td></tr>
 <tr><td><strong>organ</strong></td><td><em>deterministic guardrail with a self-test</em></td><td>a small program that watches over one rule without depending on the model's goodwill</td></tr>
-<tr><td><strong>cage</strong></td><td><em>immutable files (immutable on Linux, read-only on Windows and Mac)</em></td><td>the organs/ folder and the program's hooks: the AI reads and runs them, and never changes them</td></tr>
-<tr><td><strong>fingerprint</strong></td><td><em>integrity hash (SHA-256)</em></td><td>the signature of the organs/ folder that the canary compares at every startup</td></tr>
+<tr><td><strong>cage</strong></td><td><em>immutable files (immutable on Linux, read-only on Windows and Mac)</em></td><td>organs/ and the program's hooks: with the lock (in code), the AI reads and runs them, but doesn't change them</td></tr>
+<tr><td><strong>fingerprint</strong></td><td><em>integrity hash (SHA-256)</em></td><td>the signature of organs/ that the canary compares at every startup, in prose mode</td></tr>
 <tr><td><strong>prose / code</strong></td><td><em>passive mode / enforcing mode</em></td><td>in prose the AI follows the rules on its own; in code a program stops it beforehand</td></tr>
-<tr><td><strong>from prose to code</strong></td><td><em>policy-as-code</em></td><td>a rule that has failed twice stops being asked nicely and becomes a program</td></tr>
-<tr><td><strong>guardian</strong></td><td><em>PreToolUse hook, policy enforcement point</em></td><td>checks every action of the AI before it happens and stops it if it breaks a rule</td></tr>
-<tr><td><strong>set aside</strong></td><td><em>quarantine, soft delete</em></td><td>what is left over goes to a discard folder instead of being deleted; the person empties it by hand</td></tr>
+<tr><td><strong>from prose to code</strong></td><td><em>policy-as-code</em></td><td>a rule that wasn't enough, neither written in the logbook nor in the pre-flight checklist, can become a program, when the person decides so</td></tr>
+<tr><td><strong>guardian</strong></td><td><em>PreToolUse hook, policy enforcement point</em></td><td>checks every action of the AI before it happens and, in code mode, stops it if it breaks a rule</td></tr>
+<tr><td><strong>set aside</strong></td><td><em>quarantine, soft delete</em></td><td>what is left over goes to _QUARANTINE/ instead of being deleted; the person empties it by hand</td></tr>
 <tr><td><strong>canary</strong></td><td><em>startup integrity check</em></td><td>takes roll call: lost pending items, notes that lie, overdue deferred items, whether the guardian is alive</td></tr>
 <tr><td><strong>proof of life</strong></td><td><em>negative synthetic test (by analogy, a liveness probe)</em></td><td>the canary sends fake actions that must be stopped; if one gets through, the guardian is disconnected</td></tr>
-<tr><td><strong>seeded failure</strong></td><td><em>mutation testing</em></td><td>each self-test deliberately breaks its own organ and checks that the break is detected</td></tr>
-<tr><td><strong>secrets filter</strong></td><td><em>pre-commit hook with secret detection</em></td><td>stops the commit if a key, a labelled password or an ID number gets in</td></tr>
-<tr><td><strong>temporary access (free)</strong></td><td><em>just-in-time access</em></td><td>the person's key opens the private folders for a few minutes; never deletion or the cage</td></tr>
-<tr><td><strong>private folders</strong></td><td><em>deny-listed paths</em></td><td>what no AI reads or writes</td></tr>
+<tr><td><strong>seeded failure</strong></td><td><em>mutation testing</em></td><td>an organ's test introduces a known failure and checks that it is detected</td></tr>
+<tr><td><strong>secrets filter</strong></td><td><em>pre-commit hook with secret detection</em></td><td>stops the save (commit) if a key, a labelled password or an ID number gets in</td></tr>
+<tr><td><strong>temporary access</strong></td><td><em>just-in-time access</em></td><td>the person's key opens the private folders for a set time, from one minute to eight hours; never deletion or the cage</td></tr>
+<tr><td><strong>private folders</strong></td><td><em>deny-listed paths</em></td><td>with the guardian in code, no AI reads or writes them, except through temporary access; in prose, the written rule asks for it</td></tr>
 <tr><td><strong>search tool</strong></td><td><em>search of the working tree and the git history</em></td><td>before saying “it doesn't exist”, it searches today's files and everything that ever went into git</td></tr>
-<tr><td><strong>DAISY</strong></td><td><em>AI disclosure statement, measured from git</em></td><td>counts who made each change from the git signatures; the name comes from the paper by Ahmetoglu, Constantinides and Cox (2026)</td></tr>
-<tr><td><strong>logbook</strong></td><td><em>decision log</em></td><td>one line per decision or stumble, in the person's own words</td></tr>
-<tr><td><strong>pre-flight checklist</strong></td><td><em>user-defined health checks</em></td><td>one line per check: the command and what it must say; the canary runs it at startup</td></tr>
-<tr><td><strong>queue cap</strong></td><td><em>backlog growth alert</em></td><td>a warning when the list grows faster than it gets closed</td></tr>
+<tr><td><strong>DAISY</strong></td><td><em>Disclosure of AI-uSe in Your Research</em>: AI-use declaration (<em>AI disclosure</em>), measured from git</td><td>counts who made each change from the git signatures; the name comes from the article (paper) by Ahmetoglu, Constantinides and Cox (2026)</td></tr>
+<tr><td><strong>logbook</strong></td><td><em>decision log</em></td><td>one line per decision or failure, in the person's own words</td></tr>
+<tr><td><strong>pre-flight checklist</strong></td><td><em>startup checklist</em></td><td>one line per check: the command and what it must say; the canary runs it at startup</td></tr>
+<tr><td><strong>queue cap</strong></td><td><em>backlog growth alert</em></td><td>a yellow warning when the list of pending items goes past 40, or when more come in during the week than get closed</td></tr>
 <tr><td><strong>one thing, one place</strong></td><td><em>single source of truth</em></td><td>a fact lives in one note only; the others point to it</td></tr>
-<tr><td><strong>the commit signature</strong></td><td><em>git trailer (Co-Authored-By)</em></td><td>each commit says which model wrote it, or carries [humano] (human)</td></tr>
+<tr><td><strong>the signature on each change</strong></td><td><em>git trailer (Co-Authored-By)</em></td><td>each save (commit) says which model wrote it or carries [humano] (human)</td></tr>
 <tr><td><strong>the human veto escalates</strong></td><td><em>human-in-the-loop escalation</em></td><td>what cannot be undone is never decided alone: it goes up to the person</td></tr>
-<tr><td><strong>three zones 🟢🟡🔴</strong></td><td><em>allow / ask / deny</em></td><td>done and reported · plan and a yes · the exact action and an explicit go-ahead</td></tr>
+<tr><td><strong>three zones 🟢🟡🔴</strong></td><td><em>allow / ask / deny</em></td><td>done and reported · plan and a yes · the exact action and “proceed”</td></tr>
 </tbody></table>
 </section>
 <section id="referencias">
-  <div class="eyebrow">7</div>
+  <div class="eyebrow">9</div>
   <h2>References</h2>
   <ul class="plain">
-    <li><strong>Symbiosis.</strong> Giribaldi, M. (2026). <em>Symbiosis — A Manual for a Good Lineage</em>, version 2.1. Spanish original: <em>Simbiosis — Manual para un buen linaje</em>. CC BY-SA 4.0. It's the foundation of Endosymbiosis: the rules the organs look after, and the sentence that opens each card, come from it. All versions: <a href="https://doi.org/10.5281/zenodo.23024311">doi.org/10.5281/zenodo.23024311</a></li>
-    <li><strong>DAISY.</strong> Ahmetoglu, Y., Constantinides, M. &amp; Cox, A. (2026). “AI Disclosure with DAISY”. <em>CHIWORK '26</em>. A form that guides academic authors in declaring how they used AI. The draft disclosure statement that Endosymbiosis prepares follows its format. <a href="https://arxiv.org/abs/2604.02760">arxiv.org/abs/2604.02760</a></li>
+    <li><strong>Symbiosis.</strong> Giribaldi, M. (2026). <em>Symbiosis — A Manual for a Good Lineage</em>, version 2.1. Spanish original: <em>Simbiosis — Manual para un buen linaje</em>. CC BY-SA 4.0. It's the foundation of Endosymbiosis: the rules the organs look after, and the sentence that opens each card, come from it. Version 2.1: <a href="https://doi.org/10.5281/zenodo.23934097">doi.org/10.5281/zenodo.23934097</a> · all versions: <a href="https://doi.org/10.5281/zenodo.23024311">doi.org/10.5281/zenodo.23024311</a></li>
+    <li><strong>DAISY.</strong> Ahmetoglu, Y., Constantinides, M. &amp; Cox, A. (2026). “AI Disclosure with DAISY”. <em>CHIWORK '26</em>. A form that guides those who publish research in declaring how they used AI. The draft disclosure statement that Endosymbiosis prepares follows its format. <a href="https://arxiv.org/abs/2604.02760">arxiv.org/abs/2604.02760</a></li>
   </ul>
+  <h3 id="citar">How to cite</h3>
+  <ul class="plain">
+    <li>Giribaldi, M. (2026). <em>Endosymbiosis 1.1 — when prose isn't enough, it becomes code</em> [software]. Zenodo. <a href="https://doi.org/10.5281/zenodo.23934118">https://doi.org/10.5281/zenodo.23934118</a></li>
+    <li>Giribaldi, M. (2026). <em>Symbiosis — A Manual for a Good Lineage</em> (v2.1). Zenodo. <a href="https://doi.org/10.5281/zenodo.23934097">https://doi.org/10.5281/zenodo.23934097</a></li>
+  </ul>
+
 </section>
 
 <footer>
-  <span>Sources: the Endosymbiosis 1.1 kit (November 3, 2026), its tests on Linux, Windows, Mac, and Antigravity, and Symbiosis 2.1. The quotes from Symbiosis are verbatim, taken from its English edition.</span>
-  <span>Written with Claude Opus 5.5 at Marco's request and reviewed with him card by card. The kit was audited by Claude Fable 5.1; the page was reviewed by Gemini 3.8 Flash and Gemini 4 Argon. Translated from the Spanish original with Claude Opus 5.5.</span>
+  <span>Sources: the Endosymbiosis 1.1 kit (November 3, 2026), its tests on Linux, Windows, Mac, and Antigravity, and Symbiosis 2.1. The Symbiosis quotes come from its English edition.</span>
+  <span>Written with Claude Opus 5.5 at Marco's request and reviewed with him card by card. The kit was audited by Claude Fable 5.1; the page was reviewed by Gemini 3.8 Flash and Gemini 4 Argon.</span>
 </footer>
 </main>
 

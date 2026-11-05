@@ -87,84 +87,120 @@ ul.estado small{flex-basis:100%;font-size:.84rem;color:var(--muted);line-height:
 <header style="display:flex;flex-direction:column;gap:14px">
   <div class="eyebrow">Versión 1.1 · noviembre de 2026 · Marco Giribaldi · MIT y CC BY-SA 4.0</div>
   <h1>Endosimbiosis — cuando la prosa no alcanza, se vuelve código</h1>
-  <p class="lede">Endosimbiosis toma las reglas de Simbiosis que, escritas, no alcanzaron, y las convierte en programas que las cuidan. La última palabra sigue siendo tuya.</p>
-  <div class="descargas"><a href="#instalar">Cómo instalarlo</a><a href="../downloads/endosymbiosis-1.1.zip" download>Descargar el kit 1.1</a><span class="doi">DOI: 10.5281/zenodo.23934118</span><a href="../simbiosis/">Leer Simbiosis</a></div>
+  <p class="lede">Donde las reglas escritas de Simbiosis no bastaron, Endosimbiosis pone programas a cuidarlas. La última palabra sigue siendo tuya.</p>
+  <div class="descargas"><a href="#instalar">Cómo instalarlo</a><a href="../downloads/endosymbiosis-1.1.zip" download>Descargar el kit 1.1</a><a href="Endosimbiosis_1.1_Marco_Giribaldi.pdf">PDF</a><a href="Endosimbiosis_1.1_Marco_Giribaldi.md">Texto (.md)</a><a href="#citar">Cómo citar</a><a href="../simbiosis/">Leer Simbiosis</a></div>
   <nav class="toc" aria-label="Contenido">
-    <a href="#trata">De qué trata</a><a href="#depende">Por qué depende de Simbiosis</a><a href="#piezas">Las piezas</a><a href="#probado">Dónde se probó</a><a href="#parches">Próximos parches</a><a href="#instalar">Cómo instalarlo</a><a href="#glosario">Glosario</a><a href="#referencias">Referencias</a>
+    <div class="toc-grupo"><span>Para leer</span><a href="#trata">Por qué existe</a><a href="#dia">Un día con Endosimbiosis</a><a href="#crece">Cómo crece un órgano</a></div><div class="toc-grupo"><span>Para consultar</span><a href="#depende">Por qué depende de Simbiosis</a><a href="#piezas">Las piezas</a><a href="#probado">Dónde se probó</a><a href="#parches">Próximos parches</a><a href="#instalar">Cómo instalarlo</a><a href="#glosario">Glosario</a><a href="#referencias">Referencias</a></div>
   </nav>
 </header>
 
 <section id="trata">
   <div class="eyebrow">1</div>
-  <h2>De qué trata</h2>
-  <p>Simbiosis es un acuerdo entre una persona y su IA: una memoria compartida, un trato <span class="tec">(<em>operating policy</em>)</span> que obliga a ambos y un principio claro: la última palabra siempre la da el usuario. Ese acuerdo es un contrato, un contrato hecho de costumbres. Pero las costumbres fallan: con el apuro, la IA puede pasar por alto lo escrito, y cuando cambia el modelo o crece el sistema, lo escrito se olvida.</p>
-  <p>Endosimbiosis convierte ese contrato en estructura. Cuando una regla escrita falla, nace un <strong>órgano <span class="tec">(<em>deterministic guardrail</em>)</span></strong>: un programa pequeño que cuida esa regla. Ese órgano se integra al sistema, se comprueba en cada arranque y reporta su funcionamiento. Los órganos viven en una carpeta resguardada por un guardián: la IA los lee y los ejecuta; cambiarlos es cosa tuya (con el guardián en código, además, no puede). Tanto la IA como el usuario pueden proponer cambios, pero solo el usuario los autoriza. El guardián viene en dos modos: en prosa, sus reglas están escritas y la IA las cumple; en código, además la frena. Empiezas en prosa. El sistema cumple cinco trabajos distintos:</p>
-  <div class="two">
-    <div class="box"><h3>Evita el error antes de que ocurra</h3><p>Con el guardián en código, antes de que la IA actúe, el sistema revisa qué va a hacer. Si intenta borrar un archivo o entrar a una carpeta privada, la detiene y explica por qué. Y en los dos modos, un filtro revisa cada guardado para que una contraseña o un documento no entren al historial. Cuando frena un borrado, le indica qué hacer en su lugar; por ejemplo, mover el archivo a una carpeta de descarte predefinida, que solo el usuario puede eliminar.</p></div>
-    <div class="box"><h3>Las mismas reglas para toda IA dentro del sistema</h3><p>Con el guardián en código, si trabaja un solo modelo, lo frena a él. Si trabajan varios, por ejemplo uno que hace el trabajo y otro que lo revisa, los frena a todos por igual, siempre que trabajen desde el mismo entorno. Pueden usar programas distintos: las reglas escritas son las mismas para todos, y el freno en código alcanza a los programas donde el guardián está conectado. Ninguno puede modificar la carpeta donde viven los órganos, y apagar al guardián es decisión del usuario.</p></div>
-    <div class="box"><h3>La última palabra es del usuario</h3><p>Con el guardián en código, el permiso deja de ser un «sí» en la conversación, que se puede malinterpretar, y se vuelve un acceso temporal que solo el usuario abre con su clave. La IA puede proponer cambios en los órganos, pero solo el usuario puede aplicarlos, igual que instalar o quitar el sistema. Y si la IA necesita trabajar en una carpeta privada, es el usuario quien le abre el paso por unos minutos; después, el permiso vence solo.</p></div>
-    <div class="box"><h3>Detecta olvidos y contradicciones en la memoria</h3><p>Al empezar cada sesión, compara la lista de pendientes con su historial y, si alguno desapareció sin haberse cerrado ni postergado, avisa y copia lo que decía. También advierte de contradicciones concretas, como algo cerrado que sigue anotado como pendiente o una fecha vencida sin marcar. Antes de afirmar que algo no existe, examina las notas actuales y todo su historial, y muestra dónde buscó. Nunca corrige nada solo: avisa y el usuario decide.</p></div>
-    <div class="box"><h3>Deja constancia de quién hizo qué</h3><p>Cada cambio que se guarda en el historial lleva una firma: qué IA lo escribió o, si lo hizo el usuario solo, su marca. Por separado, las decisiones del usuario se anotan en la bitácora con sus palabras textuales. Al terminar la sesión, un órgano revisa las firmas y avisa en rojo si un cambio quedó sin firmar: la sesión no se cierra hasta ponerle dueño. Con esos datos prepara un borrador de declaración de uso de IA.</p></div>
+  <h2>Por qué existe</h2>
+  <p>Le pides a tu IA que no invente lo que no sabe, que no pierda tus pendientes, que te consulte antes de cambiar algo importante. Son acuerdos sencillos, y los dejas por escrito para no repetirlos cada vez. Pero un día aparece una respuesta que da por cierto lo dudoso, una tarea desaparece del resumen o un cambio llega sin que lo hayas autorizado. La instrucción estaba ahí. Aun así, no se cumplió.</p>
+  <p>Entonces agregas una aclaración. Después, otra. Nuestra nota de reglas llegó a tener más de cien, y ya nadie podía cumplirlas todas. Agregar reglas no resuelve lo que acaba de pasar: lo que falta es que alguien compruebe que se cumplan. Una regla escrita guía, pero no avisa cuando alguien la pasa por alto.</p>
+  <p>Simbiosis enseña a construir una memoria compartida con tu IA. Las reglas de trabajo quedan en una nota: el trato. La última palabra sigue siendo tuya. Todo eso funciona con costumbres, y las costumbres sirven mucho, hasta el día en que fallan: con el apuro, la IA se salta lo escrito; cuando cambias de modelo o el proyecto crece, lo escrito se olvida. El propio libro, en la guía que escribe para la IA, dice qué hacer entonces:</p>
+  <p class="prosa" style="margin:0">Si una regla se incumple dos veces o la prosa ya no alcanza, anota en el estado cuál fue y cómo falló, y avísale a la persona: convertirla en código es el paso siguiente, y solo se da cuando ella lo pida.<cite>Simbiosis 2.1, Guía para la máquina</cite></p>
+  <p>Endosimbiosis empieza ahí. Cuando una regla escrita falla, le encargas a un programa pequeño que la vigile por ti, sin depender de la buena voluntad del modelo. Uno compara tus pendientes con lo que guardaste en el historial y te avisa si alguno desapareció sin cerrarse. Otro mira lo que la IA está por hacer y puede frenarla antes de que borre. A cada uno de esos programas lo llamamos <strong>órgano</strong> <span class="tec">(<em>deterministic guardrail</em>)</span>.</p>
+  <p>El nombre viene de la biología. En la endosimbiosis, un organismo entra a vivir dentro de otro y se vuelve parte de él, como la mitocondria en la célula: produce la energía, pero el núcleo conserva el mando. Aquí pasa lo mismo: los órganos trabajan, pero no mandan. La IA puede proponer cambios; los autorizas tú.</p>
+  <p>No todo pasa a código: lo que la prosa cuida bien se queda en prosa. Tampoco reemplaza tu memoria ni la escribe: la memoria se construye como enseña Simbiosis, y Endosimbiosis la vigila desde adentro.</p>
+</section>
+
+<section id="dia">
+  <div class="eyebrow">2</div>
+  <h2>Un día con Endosimbiosis</h2>
+  <p>Trabajar con Endosimbiosis se parece a trabajar con alguien que cuida los detalles mientras tú piensas en lo importante.</p>
+  <h3>Al empezar</h3>
+  <p>Abres tu IA y, al iniciar la sesión, lo primero que hace es pasar lista: si algo se perdió desde la última vez, si algo no cuadra, si los órganos responden. Si todo está bien, lo ves en verde; si algo no va bien, en amarillo; y si algo falló, en rojo. Así sabes por dónde empezar.</p>
+  <h3>Mientras trabajas</h3>
+  <p>Tú y tu IA trabajan juntos. Si con el apuro o por descuido ella intenta borrar algo o entrar donde no debe, algo la detiene y le explica por qué. Lo que sobra no desaparece: queda a un lado hasta que tú lo vacíes. Tus carpetas privadas se abren solo cuando tú quieres, y por el tiempo que eliges. Y antes de decirte «eso no existe», la IA busca en todo lo que alguna vez guardaste.</p>
+  <h3>Al guardar</h3>
+  <p>Antes de que un cambio quede en el historial, un órgano revisa que no se cuele un dato confidencial, como una contraseña o un número de documento. Si encuentra uno, frena el guardado y te avisa.</p>
+  <h3>Al cerrar</h3>
+  <p>Cada cambio lleva la marca de quién lo hizo: la IA o tú. Y tus decisiones quedan escritas con tus palabras.</p>
+  <p>Nada de esto te quita el mando. Los órganos avisan y frenan lo que ya conocen, pero no deciden: la última palabra es tuya. Puedes concentrarte en lo tuyo, sabiendo que alguien cuida lo que se olvida con facilidad.</p>
+  <div class="box"><div class="kind">Una nota sobre la seguridad</div>
+    <p>Endosimbiosis se adapta a lo que necesitas: tú decides cuánta seguridad quieres. El cuidado tiene dos modos. En prosa, las reglas quedan escritas y la IA las cumple por su cuenta; en la sesión siguiente se revisa que nada se haya roto. En código, el sistema frena antes de que ocurra.</p>
+    <p>Empiezas en prosa. Y cuando la prosa no alcanza, el camino es siempre el mismo: de la prosa al código, una regla a la vez, y solo cuando tú lo decides. Ningún modo es un muro: el historial y las copias siguen siendo tu red.</p>
   </div>
-  <p>La memoria se construye como enseña Simbiosis. Endosimbiosis no la reemplaza ni la escribe: la vigila desde adentro.</p>
-  <p>El nombre viene de la biología. En la endosimbiosis, un organismo entra a vivir dentro de otro y se vuelve parte de él, como la mitocondria en la célula: produce la energía, pero el núcleo conserva el mando. Aquí pasa lo mismo: los órganos trabajan, pero no mandan.</p>
+  <p>Cada uno de estos cuidados es un órgano, con su nombre y su ficha. Los vas a conocer más abajo.</p>
+</section>
+
+<section id="crece">
+  <div class="eyebrow">3</div>
+  <h2>Cómo crece un órgano <span class="tec">(<em>policy-as-code</em>)</span></h2>
+  <p>Nada de esto se diseñó de una vez. Un error no genera una regla nueva: se anota en una línea, en una bitácora. Si se repite, pasa a una lista que se revisa al empezar cada sesión. Si ni así alcanza, se vuelve un órgano. Así crece Endosimbiosis, un escalón a la vez.</p>
+  <p>Y un órgano tampoco nace terminado: el uso dice dónde molesta o dónde falla. El órgano que frena a la IA, al que en Endosimbiosis llamamos el guardián, es el ejemplo. Los primeros ocho días mostraron dónde se equivocaba: de 55 frenos, 3 fueron útiles, 2 dudosos y 50 pura fricción, como una alarma que suena cuando haces tostadas. A veces confundía una copia con el original: 17 veces tomó copias de prueba por los órganos de verdad. Otras confundía nombrar algo con hacerlo: frenó 11 veces porque un texto mencionaba una carpeta privada, aunque la IA no entraba en ella. Y otras aplicaba una regla fuera de lugar: frenó 16 veces el borrado de borradores temporales que no hacía falta apartar; era como pedirte que guardaras cada papel que vas a tirar. Además, a varias personas que no programan les costó usarlo con más de un modelo.</p>
+  <p>De ahí nació la 1.0.3, que se excede menos al frenar y trae el modo prosa. Un auditor que no había escrito el código buscó cómo saltárselo en cinco rondas, hasta dejar cubierto lo básico. Y la primera prueba en Windows encontró un error que ninguna auditoría había visto: el uso encuentra lo que el laboratorio no ve.</p>
+  <p>Un freno simple sirve más: cuando solo te cuida de lo importante y no molesta, sabes que de verdad te es útil. Una regla escrita que falla pasa a código, y el código que molesta vuelve a ajustarse con el uso.</p>
   <div class="two">
-    <div class="box"><h3>Lo que es</h3><ul class="plain"><li>Una forma de trabajar: cada regla empieza escrita y, si falla, pasa a código.</li><li>Seis órganos nacidos de fallos reales, que se instalan en unos cinco minutos con Python y git.</li><li>Una sola herramienta para que humano e IA trabajen como un solo sistema.</li></ul></div>
-    <div class="box"><h3>Lo que no es</h3><ul class="plain"><li>No es todo código: lo que la prosa cuida bien, se queda en prosa.</li><li>No es infalible: frena los errores que ya conoce, y cada error nuevo sirve para mejorarlo.</li><li>No es un producto terminado: es una versión de investigación que su autor usa a diario.</li></ul></div>
+    <div class="box"><h3>Lo que es</h3><ul class="plain"><li>Un pacto de convivencia entre tú y tu IA, ahora con programas que lo cuidan.</li><li>Una forma de trabajar: cada regla empieza escrita y, cuando falla, puede pasar a código, si tú lo decides.</li><li>Siete órganos y tres piezas de apoyo, nacidos de fallos reales, que se instalan en unos cinco minutos con Python y git.</li></ul></div>
+    <div class="box"><h3>Lo que no es</h3><ul class="plain"><li>No es infalible: frena los errores que ya conoce, y cada error nuevo sirve para mejorarlo.</li><li>No te vigila a ti: cuida lo que hace la IA; lo que tú haces a mano sigue siendo tuyo.</li><li>No es un producto terminado: es una versión de investigación que su autor usa a diario.</li></ul></div>
   </div>
 </section>
 
+<div class="separa-consulta"><span>Para consultar</span><p>Hasta aquí, el recorrido. Lo que sigue es para consultar cuando lo necesites: de dónde sale cada pieza, sus fichas, las pruebas, los límites, la instalación y el glosario.</p></div>
+
 <section id="depende">
-  <div class="eyebrow">2</div>
+  <div class="eyebrow">4</div>
   <h2>Por qué depende de Simbiosis</h2>
-  <p>Simbiosis es la base. Enseña a armar un núcleo <span class="tec">(<em>long-term memory</em>)</span> de notas donde viven las reglas del trato: se cumplen por costumbre, sin programas, y sirven con cualquier IA. Endosimbiosis parte de ahí. No inventa reglas nuevas, sino que toma las que Simbiosis ya dejó escritas (apartar en vez de borrar, no guardar claves, que nada desaparezca en silencio) y las cuida con código. Sin esas notas, no habría qué cuidar.</p>
-  <p>La propia Simbiosis marca el momento de dar el paso:</p>
-  <p class="prosa" style="margin:0">Si una regla se incumple dos veces o la prosa ya no alcanza, anota en el estado cuál fue y cómo falló, y avísale a la persona: convertirla en código es el paso siguiente, y solo se da cuando ella lo pida.<cite>Simbiosis 2.1, Guía para la máquina</cite></p>
+  <p>Simbiosis es la base. Enseña a armar un núcleo <span class="tec">(<em>long-term memory</em>)</span> donde viven las reglas del trato: se cumplen por costumbre, sin programas, y sirven con cualquier IA. Endosimbiosis parte de ahí. No inventa reglas nuevas, sino que toma las que Simbiosis ya dejó escritas (apartar en vez de borrar, no guardar claves, que nada desaparezca en silencio) y las cuida con código. Sin ese núcleo, no habría qué cuidar.</p>
+  <p>Cada ficha cita el pasaje del libro del que sale:</p>
+  <ul>
+    <li><strong>La memoria</strong> (Peldaño II): el canario, la lista de despegue, la bitácora, el filtro de secretos y el buscador.</li>
+    <li><strong>El criterio</strong> (Peldaño III): la jaula.</li>
+    <li><strong>Las tres zonas</strong> 🟢🟡🔴 (Peldaño IV): el guardián, apartar en vez de borrar y el acceso temporal.</li>
+    <li><strong>Los Créditos</strong>: la firma de cada cambio.</li>
+  </ul>
   <div class="tablewrap"><table>
     <thead><tr><th></th><th>Simbiosis</th><th>Endosimbiosis</th></tr></thead>
     <tbody>
       <tr><td><strong>Papel</strong></td><td>La base: pone las reglas y arma la memoria</td><td>El refuerzo: cuida esas reglas con código</td></tr>
-      <tr><td><strong>Cómo se cumple</strong></td><td>A mano, con costumbres</td><td>Con órganos que vigilan las reglas y se prueban en cada arranque</td></tr>
-      <tr><td><strong>Con qué IA</strong></td><td>Cualquiera, desde un chat</td><td>Una que trabaje directamente con los archivos</td></tr>
-      <tr><td><strong>Notas</strong></td><td>Seis notas y un inicio</td><td>Las mismas, más una <a class="ir" href="#registro">bitácora</a>: cada decisión o error en una línea, con la fecha y las palabras de quien decidió</td></tr>
-      <tr><td><strong>Cuándo</strong></td><td>Desde el primer día</td><td>Cuando una regla falla dos veces o la prosa ya no alcanza</td></tr>
+      <tr><td><strong>Cómo se cumple</strong></td><td>A mano, con costumbres</td><td>Con órganos que vigilan las reglas mientras trabajas</td></tr>
+      <tr><td><strong>Con qué IA</strong></td><td>Cualquiera, desde un chat</td><td>Una IA con acceso a tus archivos (un agente con uso de herramientas, <em>tool use</em>). El guardián frena hoy en Claude Code, Codex y Antigravity; los modelos locales funcionan con límites.</td></tr>
+      <tr><td><strong>Notas</strong></td><td>Siete notas (seis más el inicio)</td><td>Las mismas, más una <a class="ir" href="#registro">bitácora</a> (el registro de decisiones del libro): cada decisión o error en una línea, con la fecha y el porqué, en palabras de quien decidió</td></tr>
+      <tr><td><strong>Cuándo</strong></td><td>Desde el primer día</td><td>Cuando decides pasar una regla a código porque falló dos veces o lo escrito ya no basta</td></tr>
     </tbody>
   </table></div>
+  <p>En el kit, las notas tienen nombres fijos en inglés; lo que escribes adentro sigue en tu idioma:</p>
+  <div class="tablewrap"><table><thead><tr><th>En el libro</th><th>En el kit</th></tr></thead><tbody><tr><td>la ficha</td><td><code>core/profile.md</code></td></tr><tr><td>el contexto</td><td><code>core/context.md</code></td></tr><tr><td>el trato</td><td><code>core/agreement.md</code></td></tr><tr><td>el rumbo</td><td><code>core/course.md</code></td></tr><tr><td>el estado</td><td><code>core/state.md</code></td></tr><tr><td>el canario</td><td><code>core/canary.md</code></td></tr><tr><td>el inicio</td><td><code>core/start.md</code></td></tr><tr><td>el registro de decisiones (aquí, la bitácora)</td><td><code>core/decisions.md</code></td></tr></tbody></table></div>
+  <p>Y dos carpetas: <code>_QUARANTINE/</code>, la carpeta de descartes (la que el libro llama <em>_borrar</em>), donde se aparta lo que sobra; y <code>vault/</code>, propia del kit, adonde pasa lo ya cerrado para que no se cargue al arrancar.</p>
   <p>Endosimbiosis parte de Simbiosis 2.1. Con versiones anteriores, algunas costumbres chocan con los órganos.</p>
 </section>
 
 <section id="piezas">
-  <div class="eyebrow">3</div>
+  <div class="eyebrow">5</div>
   <h2>Las piezas, de prosa a código</h2>
   <p>Cada pieza se presenta igual: para qué sirve, la regla escrita de la que nació, qué pasaba antes, qué hace hoy, cómo sabes que funciona y sus límites. Los límites importan tanto como lo demás: una protección que los calla promete más de lo que da.</p>
-  <p>Cada ficha empieza con una frase de Simbiosis: la regla que, escrita, no alcanzó. El órgano es esa misma regla, ahora cuidada por un programa. Cuando la regla es para la IA, la frase sale de la guía que Simbiosis escribe para ella.</p>
-  <p>Una palabra que vas a ver seguido: el historial. Es lo que git guarda cada vez que haces un guardado (un «commit»): lo que no se guardó, no está. Ninguna pieza nace terminada: cada una evoluciona con el uso. Al final de esta sección está el caso del guardián.</p>
-  <p>No todas son programas: la jaula es un candado; la lista de despegue, una lista que corre el canario, y la bitácora, una nota. Y el guardián viene en prosa y pasa a código cuando la prosa no alcanza.</p>
+  <p>Cada ficha empieza con una cita de <em>Simbiosis</em> que explica de dónde sale la pieza. El libro está escrito para ti y para tu IA: algunas citas te hablan a ti; otras se dirigen a ella desde la «Guía para la máquina».</p>
+  <p>Una palabra que vas a ver seguido: el historial. Es el registro que git conserva de los cambios que incluyes en cada guardado (un «commit»). Hacer un commit no es lo mismo que guardar el archivo en tu editor: los cambios que no incluyes no quedan en el historial.</p>
+  <p>De las diez piezas, siete son órganos y tres son piezas de apoyo: la jaula es un candado sobre la carpeta de los órganos; la lista de despegue es una lista que el canario revisa al empezar cada sesión; y la bitácora es una nota de decisiones. Ninguna pieza nace terminada: cada una evoluciona con el uso, como cuenta «Cómo crece un órgano», más arriba. El guardián empieza en prosa, con reglas escritas, y pasa a código para frenar de verdad cuando tú lo decides.</p>
 
   <h3 class="grupo">I · Las que sostienen el sistema</h3>
   <article class="piece" id="guardian">
     <header><span class="kind">Frena antes de que ocurra</span><h3>El guardián <span class="tec">(<em>PreToolUse hook · policy enforcement point</em>)</span></h3>
-      <p class="para"><strong>Para qué sirve:</strong> para que la IA no borre ni toque lo que no debe, aunque tenga prisa.</p></header>
+      <p class="para"><strong>Para qué sirve:</strong> para que la IA no borre ni toque lo que no debe, aunque tenga prisa: en código, la frena antes de que ocurra.</p></header>
     <p class="prosa">La graduación no es paranoia. Es un cinturón de seguridad: te deja ir rápido porque estás sujeto.<cite>Simbiosis 2.1, Peldaño IV, Las tres zonas</cite></p>
     <div class="arrow">↓ se vuelve</div>
     <div class="cmd">organs/guardian.py   · en prosa por defecto; en código con: python3 install.py --guardian on</div>
     <dl>
       <dt>Antes</dt><dd>Cuando era solo una regla escrita, la IA la conocía y, aun así, con prisa, la saltaba: borraba un archivo para «limpiar» o leía una carpeta privada buscando algo. Se notaba después.</dd>
       <dt>Qué hace</dt><dd><p>Viene en dos modos.</p>
-        <p><strong>En prosa</strong>, el modo de partida: las reglas quedan escritas en el trato y la IA las sigue. No frena nada. Al empezar cada sesión, el <a class="ir" href="#canario">canario</a> revisa si algo se borró o si cambiaron los órganos, y si lo encuentra te recomienda pasar a código.</p>
-        <p><strong>En código</strong>, el guardián revisa cada acción de la IA antes de que ocurra y frena cuatro cosas:</p>
+        <p><strong>En prosa</strong>, el modo de partida: las reglas quedan escritas en el trato para que la IA las siga. No frena nada. Al empezar cada sesión, el <a class="ir" href="#canario">canario</a> revisa si algo se borró o si cambiaron los órganos. Si encuentra alguno de esos cambios, te recomienda pasar a código.</p>
+        <p><strong>En código</strong>, el guardián revisa cada acción de la IA que pasa por él, antes de que ocurra, y frena cuatro cosas:</p>
         <ul><li>borrar archivos o la historia de git;</li><li>entrar a las carpetas privadas de tu lista;</li><li>cambiar los órganos (leerlos sí puede);</li><li>saltarse el <a class="ir" href="#secretos">filtro de secretos</a>.</li></ul>
-        <p>Todo lo demás pasa, salvo una orden demasiado larga para revisarla a tiempo: esa también la frena, y te pide ponerla en un archivo. Cuando frena, explica por qué y qué hacer en su lugar. Por ejemplo, si la IA quiere borrar un archivo, le dice que lo aparte: que lo mueva a una carpeta de descartes, donde queda guardado hasta que tú decidas vaciarla. Lo cuenta la ficha <a href="#apartar">Apartar en vez de borrar</a>.</p>
-        <p>Cambiar de modo es cosa tuya, desde tu terminal: hoy es una regla que la IA cumple; en la próxima versión pedirá además una palabra de confirmación (ver Próximos parches).</p></dd>
-      <dt>Por dentro</dt><dd>Recibe la orden o el archivo que la IA quiere usar. Desarma la orden en partes y deja de lado lo que es solo texto (un mensaje, una nota). Con lo que queda decide «sigue» o «frenado», con el motivo, casi al instante; y si algo falla por dentro, frena.</dd>
-      <dt>Cómo sabes que funciona</dt><dd>Cada vez que empiezas una sesión, el canario lo pone a prueba: le pide cosas prohibidas, como borrar un archivo de ensayo. Si el guardián las frena, ves «guardián vivo». Si alguna pasa, ves en rojo «guardián desconectado». En prosa no hay nada que probar: el canario te recuerda que el guardián está en prosa.</dd>
-      <dt class="lim">Sus límites</dt><dd>Lee el texto de la orden, no lo que un programa hace por dentro: un borrado escondido puede pasar. Es una capa, no un muro; el muro son git y las copias del sistema, que devuelven lo perdido. Con una IA que no lo consulta, no frena. Y a veces frena de más: si la IA nombra una carpeta privada en una orden, aunque solo la mencione, la frena; cuando pasa, te lo dice y sigues tú. Y nunca va a cerrar todos los rodeos: cubre lo básico, y lo que se escape lo devuelve el muro.</dd>
+        <p>Todo lo demás pasa, salvo una orden demasiado larga para revisarla a tiempo: esa también la frena y te pide ponerla en un archivo. Cuando frena, explica por qué y qué hacer en su lugar. Por ejemplo, si la IA quiere borrar un archivo, le dice que lo aparte: que lo mueva a una carpeta de descartes, donde queda guardado hasta que tú decidas vaciarla. Lo cuenta la ficha <a href="#apartar">Apartar en vez de borrar</a>.</p>
+        <p>En código, ciertas aprobaciones pasan por tu terminal: abrir la jaula para cambiar un órgano, darle a la IA acceso temporal a una carpeta privada o cambiar de modo. Algunas te piden la clave de tu computadora. Por eso se empieza en prosa: sirve a quien todavía no usa la terminal, y el paso a código lo das cuando te sientas cómodo.</p>
+        <p>El modo lo cambias tú, con una orden en tu terminal. El problema es que la IA puede hacer que un programa escriba esa orden por ella, como si fueras tú: lo comprobamos el 4 de noviembre de 2026. La próxima versión cierra ese hueco: el guardián va a frenar esa orden cuando venga de la IA.</p></dd>
+      <dt>Por dentro</dt><dd>Recibe la orden o el archivo que la IA quiere usar. Separa la orden en partes para revisar su texto. Con lo que encuentra, decide si deja pasar la acción o la frena, y explica por qué, casi al instante. Si algo falla por dentro, frena.</dd>
+      <dt>Cómo sabes que funciona</dt><dd>En código, cada vez que empiezas una sesión, el canario lo pone a prueba: le pide cosas prohibidas, como borrar un archivo de ensayo. Si el guardián las frena, ves «guardián vivo». Si alguna pasa, ves en rojo «guardián desconectado». En prosa no hay un freno que probar: el canario te recuerda que el guardián está en prosa.</dd>
+      <dt class="lim">Sus límites</dt><dd><p>Lee el texto de la orden, no lo que un programa hace por dentro: un borrado escondido puede pasar. Es una capa, no un muro: git y las copias del sistema pueden devolver lo que haya quedado guardado.</p><p>Solo actúa en los programas que lo consultan: hoy, Claude Code, Codex y Antigravity. Frena a la IA, no a ti.</p><p>A veces frena de más: si la IA nombra una carpeta privada en una orden, aunque solo la mencione, la frena. Cuando pasa, te lo dice y sigues tú.</p><p>Cubre lo básico; nunca va a cerrar todos los rodeos.</p></dd>
     </dl>
   </article>
 
   <article class="piece" id="jaula">
     <header><span class="kind">Protege a los órganos</span><h3>La jaula <span class="tec">(<em>immutable files</em>)</span></h3>
-      <p class="para"><strong>Para qué sirve:</strong> para que la IA pueda usar los órganos, pero nunca cambiarlos.</p></header>
+      <p class="para"><strong>Para qué sirve:</strong> para que la IA pueda usar los órganos sin cambiarlos, y para que te enteres si alguien los cambia.</p></header>
     <p class="prosa">La máquina verifica, cuando le das con qué; nombra y propone, a bajo costo, dentro del medio en el que vive. Tú decides, juzgas y ejecutas, y respondes por las consecuencias en el mundo real.<cite>Simbiosis 2.1, Peldaño III, Seis verbos, no dos</cite></p>
     <div class="arrow">↓ se vuelve</div>
     <div class="cmd">organs/   con el candado de tu computadora
@@ -172,10 +208,10 @@ python3 install.py --open    (la abre)
 python3 install.py --close   (la vuelve a cerrar)</div>
     <dl>
       <dt>Antes</dt><dd>Los órganos eran programas como cualquier otro, y la IA podía cambiarlos. Una regla que el vigilado puede reescribir no vigila nada: es como pedirle a un alumno que corrija su propio examen.</dd>
-      <dt>Qué hace</dt><dd>Los órganos viven en una carpeta cerrada con candado: la jaula. La IA puede leerlos y usarlos, pero no cambiarlos. Si un órgano necesita un cambio, la IA lo propone y tú lo instalas: abres la jaula desde tu terminal, aplicas el cambio y la vuelves a cerrar. Con el <a class="ir" href="#guardian">guardián</a> en prosa no hay candado: la regla está escrita, y el <a class="ir" href="#canario">canario</a> revisa al empezar cada sesión que los órganos sigan iguales.</dd>
-      <dt>Por dentro</dt><dd>El candado no lo inventa el programa: es el mismo seguro que tu computadora usa para proteger sus propios archivos. Y además, el guardián frena a la IA si intenta escribir ahí.</dd>
-      <dt>Cómo sabes que funciona</dt><dd>Al empezar cada sesión, el canario mira la jaula. Si tiene su candado, lo dice: «jaula con candado». Si alguien lo quitó, te avisa en amarillo para que lo vuelvas a poner.</dd>
-      <dt class="lim">Sus límites</dt><dd>En Linux el candado es firme: solo se quita con la clave del administrador. En Mac y Windows es más débil, como el seguro de una puerta: la misma cuenta puede quitarlo, y el canario recién te avisa al empezar la sesión siguiente. Y en prosa no hay candado: el canario compara los órganos con una huella que, hoy, la IA podría reescribir (ver Próximos parches).</dd>
+      <dt>Qué hace</dt><dd><p>Los órganos viven en la carpeta <code>organs/</code>: la jaula. Con el guardián en código, esa carpeta lleva un candado. La IA puede leerlos y usarlos. El candado protege los archivos contra cambios, con distinta fuerza según el sistema operativo.</p><p>Si un órgano necesita un cambio, la IA lo propone y tú lo instalas. En código, abres la jaula desde tu terminal, aplicas el cambio y la vuelves a cerrar.</p><p>Con el guardián en prosa no hay candado: el <a class="ir" href="#canario">canario</a> la revisa al empezar cada sesión.</p></dd>
+      <dt>Por dentro</dt><dd><p>El candado lo pone el sistema operativo: en Linux, los archivos se marcan como inmutables; en Mac y Windows, como de solo lectura. Y en código, el <a class="ir" href="#guardian">guardián</a> también frena a la IA si intenta escribir en <code>organs/</code>.</p><p>En prosa, el canario compara cada órgano con una huella: un resumen del archivo que permite detectar si cambió.</p></dd>
+      <dt>Cómo sabes que funciona</dt><dd><p>Al empezar cada sesión, el canario revisa el candado en código y compara las huellas en prosa.</p><p>En código, si la jaula tiene su candado, lo dice: «jaula con candado». Si alguien lo quitó, te avisa en amarillo para que lo vuelvas a poner.</p><p>En prosa, la comprobación es que cada órgano conserve su huella. Eso permite detectar cambios; no demuestra que haya un candado.</p></dd>
+      <dt class="lim">Sus límites</dt><dd><p>En Linux el candado es firme: solo el administrador puede quitarlo con su clave. Los comandos para abrir y cerrar la jaula te piden esa clave.</p><p>En Mac y Windows es más débil: la misma cuenta puede quitar la protección de solo lectura. El canario te avisa al empezar la sesión siguiente.</p><p>En prosa, el canario detecta descuidos, no trampas: las huellas están en un archivo sin candado que la IA también podría reescribir (ver Próximos parches).</p></dd>
     </dl>
   </article>
 
@@ -187,29 +223,26 @@ python3 install.py --close   (la vuelve a cerrar)</div>
     <div class="cmd">python3 organs/canary.py</div>
     <dl>
       <dt>Antes</dt><dd>Era una regla escrita: al empezar cada sesión, pasar lista a mano, como un piloto antes de despegar. Pero a mano se saltaba, o se hacía rápido, y los errores pasaban de largo. Una vez, al pasar en limpio la lista de pendientes, se perdieron tareas y nadie lo notó a tiempo: eso es olvidar. Y en otra ocasión, una nota decía que un programa seguía funcionando, cuando ya lo habíamos retirado: eso es mentir.</dd>
-      <dt>Qué hace</dt><dd><p>Ahora un programa pasa lista solo, cada vez que empiezas. Busca dos cosas:</p>
-        <ul><li><strong>lo que se perdió:</strong> un pendiente que alguna vez estuvo anotado y hoy no está, sin que nadie lo cerrara. Te dice cuál, no solo que falta uno;</li><li><strong>lo que miente:</strong> una tarea tachada de otro día, algo dado por cerrado sin prueba, un pendiente repetido, una fecha vencida sin aviso.</li></ul>
-        <p><strong>Además, vigila a los demás: que el <a class="ir" href="#guardian">guardián</a> responda, que el <a class="ir" href="#secretos">filtro de secretos</a> esté puesto, que la <a class="ir" href="#jaula">jaula</a> tenga su candado y que haya una copia reciente en el historial. Te lo muestra en verde, amarillo o rojo.</strong></p>
-        <p>Con el guardián en prosa, también revisa que los órganos sigan iguales y que nada se haya borrado sin pasar por la <a class="ir" href="#apartar">carpeta de descartes</a>.</p></dd>
-      <dt>Por dentro</dt><dd>Compara tu lista de pendientes con todo lo que alguna vez se guardó en el historial. Lo que estaba anotado y desapareció sin cerrarse, lo marca. Después revisa a cada órgano a su manera. Al guardián le tiende pequeñas trampas, pidiéndole cosas prohibidas, para comprobar que de verdad las frena. Al filtro de secretos, que siga enganchado al historial. A la jaula, que tenga su candado. Y al historial, cuándo se guardó la última copia.</dd>
+      <dt>Qué hace</dt><dd><p>Ahora, al iniciar cada sesión, la IA ejecuta un programa que pasa lista por ella. Es el primer paso de su nota de inicio. Busca dos cosas:</p><ul><li><strong>lo que se perdió</strong>: un pendiente que alguna vez estuvo anotado y hoy no está, sin que nadie lo cerrara. Te dice cuál, no solo que falta uno;</li><li><strong>lo que miente</strong>: una tarea tachada de otro día, algo dado por cerrado sin prueba, un pendiente repetido, una fecha vencida sin aviso.</li></ul><p>Además, vigila a los demás: que el <a class="ir" href="#guardian">guardián</a> responda, que el <a class="ir" href="#secretos">filtro de secretos</a> esté puesto y que haya una copia reciente en el historial. Con el guardián en código, también comprueba que la <a class="ir" href="#jaula">jaula</a> tenga su candado. Te muestra el resultado en verde, amarillo o rojo.</p><p>Con el guardián en prosa, también compara los órganos con su huella guardada y revisa que nada se haya borrado sin pasar por la carpeta de descartes.</p></dd>
+      <dt>Por dentro</dt><dd><p>Compara tu lista de pendientes con todo lo que alguna vez se guardó en el historial. Lo que estaba anotado y desapareció sin cerrarse, lo marca.</p><p>Después revisa a cada órgano a su manera. Con el guardián en código, le tiende pequeñas trampas: le pide cosas prohibidas para comprobar si las frena. Si deja pasar alguna, muestra «guardián desconectado» en rojo.</p><p>Comprueba que el filtro de secretos siga conectado al historial y, con el guardián en código, que la jaula tenga su candado. También revisa cuándo se guardó la última copia en el historial.</p></dd>
       <dt>Cómo sabes que funciona</dt><dd>Su prueba le esconde fallas a propósito, como un pendiente perdido o una tachadura vieja, y exige que las encuentre todas. Si se le escapa una, la prueba sale en rojo.</dd>
-      <dt class="lim">Sus límites</dt><dd>Avisa, pero nunca arregla: lo que encuentra, lo decides tú. Solo ve lo que está escrito: no sabe si algo está listo de verdad; eso lo sabes tú. Con el guardián en prosa ve los descuidos, pero no las trampas: una IA que quiera esconder algo podría engañarlo. Y un caso raro: si cambias la carpeta de lugar sin volver a instalar, el canario sigue buscando al guardián en la dirección vieja, no lo encuentra, y aun así puede darte verde. Si vas a mudar la carpeta, antes desinstala, y después instala en la nueva.</dd>
+      <dt class="lim">Sus límites</dt><dd><p>Avisa, pero nunca arregla: tú decides qué hacer con lo que encuentra.</p><p>Solo ve lo que está escrito. No sabe si un dato quedó viejo, como un precio que cambió, ni si algo está listo de verdad.</p><p>Detecta descuidos, no trampas. Una IA que quiera esconder algo podría engañarlo.</p><p>Si cambias la carpeta de lugar, el guardián sigue anotado en la dirección vieja: el canario no lo encuentra y te avisa en rojo. Para mudarla, desinstala primero y vuelve a instalar en el lugar nuevo.</p></dd>
     </dl>
   </article>
 
   <article class="piece" id="chequeos">
     <header><span class="kind">Parte del canario · revisa lo propio de tu proyecto</span><h3>La lista de despegue <span class="tec">(<em>startup checklist</em>)</span></h3>
-      <p class="para"><strong>Para qué sirve:</strong> para revisar lo que en tu proyecto no puede fallar antes de empezar a trabajar. Si la cabina está en orden, el canario puede volar.</p></header>
+      <p class="para"><strong>Para qué sirve:</strong> para revisar lo que en tu proyecto no puede fallar antes de empezar a trabajar.</p></header>
     <p class="prosa">El error que no se recuerda se repite; el error que se recuerda se vuelve ley.<cite>Simbiosis 2.1, Peldaño II, La memoria como sistema inmune</cite></p>
     <div class="arrow">↓ se vuelve</div>
     <div class="cmd">organs/checks.txt   · una línea por revisión:
 nombre | orden | lo que debe responder</div>
     <dl>
       <dt>Antes</dt><dd>Cada proyecto tiene sus tropiezos de siempre: un archivo importante que se vació sin querer, un servicio que dejó de responder, un paso que siempre se olvida. Cada error se anotaba como regla en la lista del canario, para revisarlo al empezar. Pero la revisión era a mano, y cuando se saltaba, el error se repetía.</dd>
-      <dt>Qué hace</dt><dd>Ahora esa lista ya no se revisa a mano. Cada error anotado se vuelve una pregunta que el <a class="ir" href="#canario">canario</a> hace solo, cada vez que empiezas: «¿el archivo importante sigue lleno?», «¿el servicio responde?». Si una respuesta no es la que debe ser, te avisa en rojo antes de que empieces a trabajar. Y cuando un error nuevo se repite, la IA te propone sumarlo a la lista, y tú decides.</dd>
-      <dt>Por dentro</dt><dd>Cada error anotado es una línea con tres partes: su nombre, la orden que lo comprueba y la respuesta correcta. El canario corre la orden y compara. Si la respuesta tarda más de diez segundos, o no es la correcta, sale en rojo.</dd>
-      <dt>Cómo sabes que funciona</dt><dd>Al empezar ves cuántas preguntas pasaron, por ejemplo «3/3». Si una línea está mal escrita, también sale en rojo, para que un error mal anotado no pase por vigilado.</dd>
-      <dt class="lim">Sus límites</dt><dd>Viene vacía: la llenas tú, error por error, a medida que aparecen. Solo vigila lo que anotaste: un error nuevo pasa la primera vez. Escribir la orden de cada pregunta pide algo de técnica, pero la IA te la arma. Todavía no la usó nadie fuera del autor.</dd>
+      <dt>Qué hace</dt><dd><p>La IA ejecuta el <a class="ir" href="#canario">canario</a> al iniciar cada sesión, y este revisa la lista: «¿el archivo importante sigue lleno?», «¿el servicio responde?». Si una respuesta no es la esperada, te avisa en rojo antes de que empieces a trabajar.</p><p>Anotar un error en la <a class="ir" href="#registro">bitácora</a> es el primer paso. Cuando se repite, esta lista es el paso intermedio: la IA te propone convertirlo en una pregunta que se revisa al empezar cada sesión y, si estás de acuerdo, la agregas tú, dentro de la <a class="ir" href="#jaula">jaula</a>. Si tampoco alcanza, el siguiente paso es convertirlo en un órgano.</p></dd>
+      <dt>Por dentro</dt><dd><p>La lista vive en <code>organs/checks.txt</code>, dentro de la jaula. Cada revisión ocupa una línea con tres partes obligatorias: nombre, orden y respuesta esperada.</p><p>El canario ejecuta cada orden y compara lo que responde con la respuesta esperada. No distingue entre mayúsculas y minúsculas. Si la orden tarda más de diez segundos o no responde lo esperado, la revisión sale en rojo.</p><p>Para instalar una línea, el procedimiento depende del guardián. Con el guardián en código, abres la jaula con <code>install.py --open</code>, escribes la línea y la cierras con <code>install.py --close</code>. Con el guardián en prosa, escribes la línea y ejecutas <code>install.py --guardian off</code> para que el canario vuelva a tomar la huella.</p></dd>
+      <dt>Cómo sabes que funciona</dt><dd>Al empezar ves cuántas revisiones pasaron, por ejemplo «3/3». Si una línea tiene menos de las tres partes obligatorias, aparece en rojo como «mal escrita». Esa revisión necesita corregirse.</dd>
+      <dt class="lim">Sus límites</dt><dd><p>Viene vacía. La IA propone las líneas y tú instalas las que decides incorporar. Solo revisa lo que anotaste. Un error que tus revisiones no contemplan puede pasar sin aviso. Que todas pasen no garantiza que todo el proyecto esté bien.</p><p>Escribir cada orden pide algo de técnica, pero la IA te la arma.</p><p>Nace de los 16 chequeos automáticos que el autor usa a diario en su propio sistema.</p></dd>
     </dl>
   </article>
 
@@ -220,12 +253,12 @@ nombre | orden | lo que debe responder</div>
     <p class="prosa">No es tuya ni del modelo, sino de los dos: un cuaderno común donde viven las decisiones, los hallazgos y los errores vueltos ley.<cite>Simbiosis 2.1, Peldaño II, La tercera memoria</cite></p>
     <div class="arrow">↓ se vuelve</div>
     <div class="cmd">core/decisions.md   · una línea por decisión o tropiezo:
-fecha · qué pasó · tus palabras · qué cambió</div>
+fecha · decisión o fallo · quién · qué · «tus palabras»</div>
     <dl>
-      <dt>Antes</dt><dd>Los tropiezos quedaban mezclados con los pendientes, y se perdían. Y cada error nuevo se volvía otra regla en el trato, la nota con las reglas de trabajo que acuerdas con tu IA. Llegó a tener más de cien, y ya nadie podía cumplirlas todas.</dd>
-      <dt>Qué hace</dt><dd>No es un programa: es una nota más del núcleo. Cada decisión o tropiezo deja una línea, con la fecha y tus palabras exactas. Y tiene una regla simple: un error no genera una regla nueva, genera una línea. Si se repite, pasa a la <a class="ir" href="#chequeos">lista de despegue</a>. Si ni así alcanza, se vuelve un órgano. Así crece Endosimbiosis, un escalón a la vez.</dd>
-      <dt>Cómo sabes que funciona</dt><dd>Funciona cuando el propio sistema te puede decir por qué existe una regla o un órgano: la respuesta está en la bitácora, con su fecha y tus palabras. También recuerda sus propios errores y fallas, para que no se repitan. Y cuida que el trato no se llene de reglas: si crece demasiado, el <a class="ir" href="#canario">canario</a> te avisa, porque una IA con demasiadas reglas ya no puede cumplirlas todas.</dd>
-      <dt class="lim">Sus límites</dt><dd>Es una nota, no un programa: solo guarda lo que alguien escribe. Si una decisión se tomó y nadie la anotó, aquí no existe. Y ningún programa vigila que se anote cada una: depende de la costumbre, de la IA y tuya.</dd>
+      <dt>Antes</dt><dd>Los tropiezos quedaban mezclados con los pendientes, y se perdían. Y cada error nuevo se volvía otra regla en el trato, hasta que fueron demasiadas para cumplirlas.</dd>
+      <dt>Qué hace</dt><dd>Es una nota del núcleo. Cada decisión o tropiezo deja una línea, con la fecha y tus palabras exactas. Solo crece: nada se reescribe, y si dos líneas hablan de lo mismo, vale la más nueva. Es el primer escalón de <a class="ir" href="#crece">Cómo crece un órgano</a>: si el error se repite, pasa a la <a class="ir" href="#chequeos">lista de despegue</a>.</dd>
+      <dt>Cómo sabes que funciona</dt><dd>Cuando buscas por qué existe una regla o un órgano, encuentras la decisión anotada, con su fecha y las palabras de quien la tomó.</dd>
+      <dt class="lim">Sus límites</dt><dd>Solo guarda lo que alguien escribe. Si una decisión se tomó y nadie la anotó, aquí no existe. Ningún programa comprueba que se anote cada decisión: depende de la costumbre, de la IA y tuya.</dd>
     </dl>
   </article>
 
@@ -234,13 +267,13 @@ fecha · qué pasó · tus palabras · qué cambió</div>
       <p class="para"><strong>Para qué sirve:</strong> para que quede escrito quién hizo cada cambio y quién responde por él: lo que hizo la IA y lo que decidiste tú.</p></header>
     <p class="prosa">Este libro se escribió en colaboración con modelos de inteligencia artificial, que es justamente de lo que trata. Las decisiones, las experiencias y los errores son míos.<cite>Simbiosis 2.1, Créditos</cite></p>
     <div class="arrow">↓ se vuelve</div>
-    <div class="cmd">python3 organs/daisy.py --declaracion</div>
+    <div class="cmd">python3 organs/daisy.py --declaration</div>
     <dl>
-      <dt>Antes</dt><dd>Era una frase al final del trabajo, como la de arriba: «se hizo con IA; las decisiones son mías». Es honesta, pero nadie puede comprobarla. En Simbiosis los dos trabajan juntos, pero no había una manera sincera de saber dónde actuaste tú y dónde actuó la IA.</dd>
-      <dt>Qué hace</dt><dd>Como la firma al pie de un documento, cada cambio que se guarda lleva el nombre de quien lo hizo: la IA firma con el nombre de su modelo, y lo que haces tú a mano lleva tu marca. Cuando un cambio nace de una decisión tuya, la IA la copia con tus palabras exactas. Al cerrar cada sesión, el programa cuenta las firmas: cuántos cambios hizo la IA, cuántos llevan tu decisión citada, cuántos revisó otro modelo y cuántos hiciste tú. <strong>No mide cuánto pensaste: muestra dónde quedó escrita tu decisión.</strong> Si un cambio quedó sin firma, lo marca en rojo, y la sesión no se cierra hasta que le pongas dueño. Y si lo pides, escribe un borrador de declaración de uso de IA con el formato DAISY, en inglés porque es para revistas (ver <a href="#referencias">Referencias</a>).</dd>
-      <dt>Por dentro</dt><dd>Lee en el historial los cambios desde el último cierre y busca en cada uno su firma: el nombre del modelo, tu marca, o tus palabras citadas junto a tu nombre. Si todos tienen dueño, o si no hubo cambios, da verde. Si falta uno, frena. Para ponerle dueño no hace falta tocar el pasado: basta un cambio nuevo, firmado, que lo explique.</dd>
-      <dt>Cómo sabes que funciona</dt><dd>Al cerrar cada sesión ves el conteo: cuántos cambios hubo, qué parte firmó la IA, cuántos citan tu decisión, cuántos revisó otro modelo y cuántos hiciste tú. Y su prueba arma un historial de ensayo con un cambio sin firma y exige que lo frene.</dd>
-      <dt class="lim">Sus límites</dt><dd>Ve quién escribió cada cambio y dónde quedó citada tu decisión. No ve cuánto pensaste antes, ni lo que se habló fuera del historial, como una charla en otra ventana. Si una decisión tuya no quedó citada, para el programa no existe. Por eso tu criterio se registra donde intervino, con tus palabras, y no como un porcentaje de autoría. Es lo que proponemos sumarle a DAISY.</dd>
+      <dt>Antes</dt><dd>Era una frase al final del trabajo, como la de arriba: «se hizo con IA; las decisiones son mías». Es honesta, pero nadie puede comprobarla. En Simbiosis los dos trabajan juntos, pero no quedaba registrado dónde actuaste tú y dónde actuó la IA.</dd>
+      <dt>Qué hace</dt><dd>Como la firma al pie de un documento, cada cambio que se guarda lleva el nombre de quien lo hizo: la IA firma con el nombre de su modelo, y lo que haces tú a mano lleva tu marca. Cuando un cambio nace de una decisión tuya, la IA la copia con tus palabras exactas. Al cerrar cada sesión, el programa cuenta las firmas: cuántos cambios hizo la IA, cuántos llevan tu decisión citada, cuántos revisó otro modelo y cuántos hiciste tú. <strong>No mide cuánto pensaste: muestra dónde quedó escrita tu decisión.</strong> Si un cambio quedó sin firma, lo marca en rojo y pide ponerle dueño antes de cerrar.<p>Si lo pides, también prepara un borrador de declaración de uso de IA con el formato DAISY (<em>Disclosure of AI-uSe in Your Research</em>), en inglés porque es para revistas (ver <a href="#referencias">Referencias</a>).</p></dd>
+      <dt>Por dentro</dt><dd>Lee en el historial los cambios desde el último cierre (o los de los últimos siete días, si todavía no hubo uno) y busca en cada uno su firma: el nombre del modelo, tu marca o tus palabras citadas junto a tu nombre. Si todos tienen dueño, da verde; si no hubo cambios, te dice que no hay nada que declarar. Si falta uno, frena. Para ponerle dueño no hace falta tocar el pasado: basta un cambio nuevo, firmado, que lo explique.</dd>
+      <dt>Cómo sabes que funciona</dt><dd>Al cerrar cada sesión ves el conteo. Y su prueba arma un historial de ensayo con un cambio sin firma y exige que lo frene.</dd>
+      <dt class="lim">Sus límites</dt><dd>Ve las firmas de cada cambio y dónde quedó citada tu decisión. No ve cuánto pensaste antes, ni lo que se habló fuera del historial, como una charla en otra ventana. Si una decisión tuya no quedó citada, para el programa no existe. Por eso tu criterio se registra donde intervino, con tus palabras, y no como un porcentaje de autoría. Es lo que proponemos sumarle a DAISY.</dd>
     </dl>
   </article>
 
@@ -252,26 +285,26 @@ fecha · qué pasó · tus palabras · qué cambió</div>
     <div class="arrow">↓ se vuelve</div>
     <div class="cmd">python3 organs/quarantine.py &lt;archivo&gt; &lt;motivo&gt;</div>
     <dl>
-      <dt>Antes</dt><dd>Era una regla escrita: no borrar, apartar. Pero con prisa, la IA a veces borraba igual, o «movía» un archivo copiándolo y borrando el original. En el historial del proyecto, eso quedaba como un borrado.</dd>
-      <dt>Qué hace</dt><dd>Ahora hay un solo camino para quitar algo: apartar. Un programa mueve lo que sobra a una carpeta de descartes, dentro de una caja con la fecha y el motivo, y te dice adónde fue. Nada se borra: el archivo sigue ahí, con su historia entera. Tú revisas esa carpeta y la vacías cuando estés seguro. Y si la IA intenta borrar algo, el <a class="ir" href="#guardian">guardián</a> la frena y le propone apartarlo: así siempre tiene una salida que no pierde nada.</dd>
-      <dt>Por dentro</dt><dd>Funciona como una mudanza con etiqueta: busca la carpeta de descartes más cercana, arma dentro una caja con la fecha y el motivo, y mueve ahí el archivo. Si el historial conoce el archivo, lo mueve por el historial, para que quede anotado como mudanza y no como borrado, y te avisa que guardes esa mudanza en un cambio aparte, sin mezclarla con otro trabajo.</dd>
-      <dt>Cómo sabes que funciona</dt><dd>Al empezar cada sesión, el <a class="ir" href="#canario">canario</a> mira la carpeta de descartes. Si tiene cosas de hace más de un mes, o pesa mucho, te recuerda en amarillo que la revises. Y con el guardián en prosa, también te avisa si algo desapareció sin pasar por ella.</dd>
-      <dt class="lim">Sus límites</dt><dd>No vacía nada: vaciar es siempre tuyo. No aparta la carpeta de los órganos. Y solo cuida lo que pasa por él: si algo se borra por otro camino, apartar no lo ve; para eso están el guardián y el historial.</dd>
+      <dt>Antes</dt><dd>La regla estaba escrita: no borrar, apartar. Pero con prisa, la IA a veces borraba igual, o «movía» un archivo copiándolo y borrando el original. En el historial del proyecto, eso quedaba como un borrado.</dd>
+      <dt>Qué hace</dt><dd>Para quitar algo, la IA lo aparta. Un programa mueve lo que sobra a la carpeta de descartes (<code>_QUARANTINE/</code>), dentro de una caja con la fecha y el motivo, y te dice adónde fue. Nada se borra: el archivo sigue en esa carpeta, y lo que ya estaba guardado sigue en el historial. Tú revisas esa carpeta y la vacías cuando estés seguro. Con el <a class="ir" href="#guardian">guardián</a> en código, si la IA intenta borrar algo, este la frena y le indica apartarlo: así tiene una salida sin perder nada.</dd>
+      <dt>Por dentro</dt><dd>Funciona como una mudanza con etiqueta: busca la carpeta de descartes más cercana (o la crea en la carpeta principal de tu proyecto, la «raíz»), arma dentro una caja con la fecha y el motivo, y mueve ahí el archivo. Si el archivo ya estaba guardado en el historial, registra el traslado para que conste como mudanza y no como borrado, y te pide guardarlo aparte, sin mezclarlo con otro trabajo.</dd>
+      <dt>Cómo sabes que funciona</dt><dd>Al empezar cada sesión, el <a class="ir" href="#canario">canario</a> mira la carpeta de descartes. Si tiene cosas de más de 30 días o supera los 500 MB, te recuerda en amarillo que la revises. Y con el guardián en prosa, también te avisa en rojo si algo guardado en el historial desapareció sin pasar por ella.</dd>
+      <dt class="lim">Sus límites</dt><dd>No vacía nada: vaciar es siempre tuyo, a mano. No aparta la carpeta de los órganos ni las piezas que conectan el guardián con tu IA (los <em>hooks</em>): eso solo lo mueves tú. Y solo cuida lo que pasa por él: si algo se borra por otro camino, apartar no lo ve; para eso están el guardián en código o, en prosa, el canario.</dd>
     </dl>
   </article>
 
   <article class="piece" id="secretos">
     <header><span class="kind">Parte del guardián · cuida lo que entra al historial</span><h3>El filtro de secretos <span class="tec">(<em>pre-commit hook · secret scanning</em>)</span></h3>
-      <p class="para"><strong>Para qué sirve:</strong> para protegerte de que un dato importante se filtre. Una contraseña o un número de documento que entra al historial del proyecto se queda ahí, y lo puede ver cualquiera que reciba una copia.</p></header>
+      <p class="para"><strong>Para qué sirve:</strong> para protegerte de que un dato importante se filtre. Una contraseña, una llave de acceso (<em>API key</em>) o un número de documento que entra al historial del proyecto se queda ahí, y lo puede ver cualquiera que reciba una copia.</p></header>
     <p class="prosa">Lo que no puede estar: una contraseña o un dato privado.<cite>Simbiosis 2.1, Peldaño II, El canario de la memoria</cite></p>
     <div class="arrow">↓ se vuelve</div>
     <div class="cmd">organs/secret_scan.py   · revisa cada guardado en git; funciona en los dos modos del guardián</div>
     <dl>
-      <dt>Antes</dt><dd>Era una regla escrita: no guardar contraseñas ni datos privados. La IA la conocía, pero a veces se le pasaba. Y el peligro es real: si una llave de acceso (la clave con la que tu proyecto usa un servicio, como una IA de pago) entra al historial y el proyecto se comparte o se hace público, cualquiera puede usarla a tu nombre, y los cobros te llegan a ti. Lo que entra al historial ya no se borra. A nosotros nos pasó con algo menor: un número de documento de prueba quedó guardado dos veces.</dd>
-      <dt>Qué hace</dt><dd>Ahora un programa revisa cada cambio antes de que se guarde y señala los posibles datos sensibles: una contraseña, una llave de acceso o un número de documento. Cuando ve uno, detiene el guardado y te dice dónde está, sin mostrar el dato. Tú revisas el riesgo y decides: si es real, lo sacas; si es una falsa alarma, lo guardas a mano desde tu terminal. Tu criterio es siempre lo primero; el programa evita que algo importante se te pase por descuido.</dd>
-      <dt>Por dentro</dt><dd>No entiende lo que está escrito: busca formas que se repiten, como quien reconoce una huella. Muchas llaves de acceso empiezan igual (las de GitHub, por ejemplo, con «ghp_»). Una contraseña suele ir detrás de la palabra «contraseña». Un DNI son ocho números junto a la palabra DNI. Si el texto nuevo tiene una de esas formas, avisa.</dd>
+      <dt>Antes</dt><dd>Era una regla escrita: no guardar contraseñas ni datos privados. La IA la conocía, pero a veces se le pasaba. Si una llave de acceso (la clave para usar un servicio de pago, como una IA) entra al historial, borrarla del archivo no la quita de ahí: quien reciba una copia puede usarla a tu nombre, y los cobros te llegan a ti. A nosotros nos pasó con algo menor: un número de documento de prueba quedó guardado dos veces.</dd>
+      <dt>Qué hace</dt><dd>Ahora un programa revisa las líneas nuevas antes de cada guardado y señala los posibles datos sensibles: una contraseña, una llave de acceso o un número de documento. Cuando ve uno, detiene el guardado y te dice dónde está, sin mostrar el dato. Tú revisas el riesgo y decides: si es real, lo sacas; si es una falsa alarma, lo guardas a mano desde tu terminal.</dd>
+      <dt>Por dentro</dt><dd>No entiende lo que está escrito: busca formas que se repiten, como quien reconoce una huella. Muchas llaves de acceso empiezan igual (las de GitHub, por ejemplo, con «ghp_»). Una contraseña suele ir detrás de la palabra «contraseña». Un documento de identidad: por ejemplo, la sigla DNI seguida de ocho números. Si el texto nuevo tiene una de esas formas, avisa.</dd>
       <dt>Cómo sabes que funciona</dt><dd>Como la luz del tablero de un auto: si todo está bien, no la ves; si algo falla, se prende. Cada vez que empiezas a trabajar, el <a class="ir" href="#canario">canario</a> revisa que el filtro esté puesto. Si falta, te avisa en rojo.</dd>
-      <dt class="lim">Sus límites</dt><dd>Solo reconoce lo que tiene forma de secreto: un dato suelto, o dentro de una foto o un PDF, puede pasar. La última revisión es tuya.</dd>
+      <dt class="lim">Sus límites</dt><dd>No revisa lo que se guardó antes de instalarlo, ni archivos muy grandes, fotos, PDF o comprimidos («.zip»). Tampoco ve un dato sin etiqueta ni forma conocida, como un DNI sin la palabra «DNI». Con el guardián en prosa, nada impide que la IA se lo salte: solo la regla escrita. La última revisión es tuya.</dd>
     </dl>
   </article>
 
@@ -281,13 +314,13 @@ fecha · qué pasó · tus palabras · qué cambió</div>
     <p class="prosa">Si te pide permiso hasta para leer, te acostumbras a decir «sí» sin mirar, y ese «sí» automático se te va a escapar justo cuando importe.<cite>Simbiosis 2.1, Peldaño IV, Las tres zonas</cite></p>
     <div class="arrow">↓ se vuelve</div>
     <div class="cmd">python3 organs/free.py 30    (abre por 30 minutos)
-python3 organs/free.py fin   (cierra antes)       · solo con el guardián en código</div>
+python3 organs/free.py end   (cierra antes)       · solo con el guardián en código</div>
     <dl>
-      <dt>Antes</dt><dd>Era una regla escrita: la IA no entra a tus carpetas privadas sin tu permiso. Pero el permiso era una palabra en el chat, y una palabra se dice en automático, se malinterpreta, o la IA la da por dicha.</dd>
-      <dt>Qué hace</dt><dd>Cuando quieres que la IA trabaje en tus carpetas privadas, las abres tú, desde tu terminal y con la clave de tu computadora (en Windows, abriendo la terminal como administrador), por el tiempo que elijas: media hora, una tarde, como máximo ocho horas. Cuando pasa el tiempo, se cierran solas; también puedes cerrarlas antes. La IA no puede abrirlas por su cuenta.</dd>
-      <dt>Por dentro</dt><dd>Anota hasta qué hora está abierto en un lugar de la computadora donde solo el administrador puede escribir. Antes de cada acción, el <a class="ir" href="#guardian">guardián</a> lee esa hora. Si la anotación la pudo haber escrito la IA, no la acepta.</dd>
-      <dt>Cómo sabes que funciona</dt><dd>Si escribes el comando sin tiempo, te dice si hay un acceso abierto y hasta cuándo. Al empezar cada sesión, el <a class="ir" href="#canario">canario</a> también lo anota. Y cuando vence, el guardián vuelve a frenar a la IA en tus carpetas privadas.</dd>
-      <dt class="lim">Sus límites</dt><dd>Abre tus carpetas privadas y nada más: aunque esté abierto, la IA sigue sin poder borrar ni cambiar los órganos. Solo funciona si el guardián está en código. Y pide una condición: nunca abras la IA como administrador de la computadora, porque así podría darse el acceso ella sola. En Windows todavía no se probó en uso real.</dd>
+      <dt>Antes</dt><dd>En Simbiosis era un acuerdo escrito: la IA no entra a tus carpetas privadas sin tu permiso. Pero el permiso era una palabra en el chat, y una palabra se dice en automático, se malinterpreta, o la IA la da por dicha.</dd>
+      <dt>Qué hace</dt><dd>Cuando necesitas que entre a ellas (tus llaves de acceso a otros equipos, «SSH»; tus secretos; o las que pongas en la lista de carpetas privadas), las abres tú, desde tu terminal y con la clave de tu computadora (en Windows, abriendo la terminal como administrador), por el tiempo que elijas: media hora, una tarde, como máximo ocho horas. Cuando pasa el tiempo, o si reinicias en Linux y Mac, se cierran solas; también puedes cerrarlas antes.</dd>
+      <dt>Por dentro</dt><dd>Anota hasta qué hora está abierto en un lugar de la computadora donde solo el administrador puede escribir. Antes de cada acción, el <a class="ir" href="#guardian">guardián</a> lee esa hora. Solo acepta la anotación si ni él ni la IA pueden escribir en esa carpeta.</dd>
+      <dt>Cómo sabes que funciona</dt><dd>Si escribes el comando sin tiempo, te dice si hay un acceso abierto y hasta cuándo. Al empezar cada sesión, el <a class="ir" href="#canario">canario</a> también te avisa si sigue abierto. Y cuando vence, el guardián vuelve a frenar a la IA en tus carpetas privadas.</dd>
+      <dt class="lim">Sus límites</dt><dd>Abre tus carpetas privadas y nada más: aunque esté abierto, la IA sigue sin poder borrar ni cambiar los órganos. Solo funciona si el guardián está en código. Y pide una condición: nunca abras la IA como administrador de la computadora, porque así podría darse el acceso ella sola.</dd>
     </dl>
   </article>
 
@@ -299,22 +332,20 @@ python3 organs/free.py fin   (cierra antes)       · solo con el guardián en c�
     <div class="cmd">python3 organs/search.py "riego|goteo"</div>
     <dl>
       <dt>Antes</dt><dd>Era una regla escrita: antes de decir «no existe», buscar. Pero la IA miraba solo lo que tenía a la vista y decía «no existe», cuando la respuesta estaba guardada en una versión anterior del historial. Como quien busca las llaves solo en la mesa y concluye que se perdieron.</dd>
-      <dt>Qué hace</dt><dd>Ahora la IA busca con un programa que no se queda en la mesa. Revisa tus archivos de hoy y también el historial, donde queda todo lo que alguna vez se guardó, aunque después se haya cambiado o borrado. Al terminar, te dice si lo encontró o no, y en qué lugares buscó. Si algo se dice de varias maneras, puedes buscarlas todas juntas, por ejemplo «riego» y «goteo».</dd>
-      <dt>Por dentro</dt><dd>Recorre los archivos de texto de hoy. Después le pide al historial todos los cambios donde esa palabra apareció o desapareció. Junta las dos listas y termina con una línea fija, con el conteo, que la IA copia sin inventar.</dd>
+      <dt>Qué hace</dt><dd>Ahora la IA usa un programa que revisa los archivos de texto de hoy de tu proyecto (incluida la carpeta de descartes y las carpetas que tú agregues) y también todo el historial, incluido lo que después cambió o se borró. Al terminar, te dice si lo encontró o no, y en qué lugares buscó. Si algo se dice de varias maneras, puedes buscarlas todas juntas, por ejemplo «riego» y «goteo».</dd>
+      <dt>Por dentro</dt><dd>Recorre los archivos de texto de hoy. Después le pide al historial todos los cambios donde esa palabra apareció o desapareció. Junta las dos listas y termina con una línea fija: «existe» o «no existe», con dónde buscó y el conteo, para que la IA la copie tal cual.</dd>
       <dt>Cómo sabes que funciona</dt><dd>Su prueba esconde una palabra en una versión vieja del historial y exige que la encuentre.</dd>
-      <dt class="lim">Sus límites</dt><dd>Busca palabras, no ideas: si algo se dijo de otra manera, hay que darle el sinónimo. Una tilde cuenta: «árbol» y «arbol» son dos búsquedas. No ve lo que nunca se guardó. Y lee todo lo que se le pida: nunca le pases una carpeta privada. En una prueba con nuestro propio proyecto la IA tuvo que leer entre 14 y 481 veces menos texto que buscando a mano (tres búsquedas, estimado), pero también nos mostró algo que mejorar: algunas líneas muy largas del historial todavía pesan de más. Queda anotado para la próxima versión.</dd>
+      <dt class="lim">Sus límites</dt><dd>Busca palabras, no ideas: si algo se dijo de otra manera, hay que darle el sinónimo. Las mayúsculas no importan, pero una tilde sí cuenta: «árbol» y «arbol» son dos búsquedas. No ve lo que no está en el disco ni quedó en el historial, ni archivos que no sean de texto. Y lee todo lo que se le pida: no le pases una carpeta privada. En una prueba con nuestro propio proyecto la IA tuvo que leer entre 14 y 481 veces menos texto que buscando a mano (tres búsquedas, estimado), y nos mostró que algunas líneas muy largas del historial pesaban de más: esta versión ya las recorta.</dd>
     </dl>
   </article>
 
-  <div class="box" id="crece"><h3>Cómo crece un órgano <span class="tec">(<em>policy-as-code</em>)</span></h3>
-    <p>Ninguna prueba de laboratorio encuentra lo que encuentra el uso. Cada órgano deja un registro de lo que hizo, y ese registro dice dónde molesta o dónde falla. Entonces se corrige, sin perder lo básico, y se vuelve a usar.</p>
-    <p>El guardián es el ejemplo. En sus primeros ocho días de uso frenó 55 veces; al revisar el registro, solo 3 de esos frenos habían protegido algo. El resto era fricción: confundía leer la carpeta de los órganos con escribir en ella, o un texto que solo decía «borrar» con un borrado. Y dos usuarios sin programación tuvieron problemas al usarlo con varios modelos. De ahí nació la versión 1.0.3, con un guardián que frena menos de más y su modo prosa. Un auditor que no escribió el código lo atacó en cinco vueltas, hasta que lo básico quedó cubierto sin que nada frenara de más. Y la primera prueba en Windows encontró un error que ninguna auditoría había visto.</p>
-    <p>Un guardián simple es más poderoso: cuida solo lo importante, y por eso nadie lo apaga. Así crece Endosimbiosis: una regla escrita que falla pasa a código, y el código que molesta vuelve a ajustarse con el uso.</p>
+  <div class="box"><div class="kind">Los límites, a tu favor</div>
+    <p>Los límites también pueden jugar a tu favor. Si prefieres moverte más libre, no hace falta apagarlo todo. En prosa, el guardián no frena y la IA sigue las reglas por su cuenta, pero el filtro de secretos revisa igual cada guardado, y el canario te avisa en la sesión siguiente si algo guardado se perdió o si cambió la carpeta de los órganos. En código, puedes abrir tus carpetas privadas hasta ocho horas, y aun así la IA sigue sin poder borrar ni cambiar los órganos. Cuánto frenar lo decides tú, desde tu terminal.</p>
   </div>
 </section>
 
 <section id="probado">
-  <div class="eyebrow">4</div>
+  <div class="eyebrow">6</div>
   <h2>Dónde se probó</h2>
   <div class="two">
     <div class="box">
@@ -323,7 +354,7 @@ python3 organs/free.py fin   (cierra antes)       · solo con el guardián en c�
         <li><span>Claude Code</span><span class="chip ok">✓ funciona</span></li>
         <li><span>Codex</span><span class="chip ok">✓ funciona</span></li>
         <li><span>Antigravity</span><span class="chip ok">✓ funciona</span><small>Probado en su terminal; la aplicación de escritorio, todavía no.</small></li>
-        <li><span>Modelos locales</span><span class="chip medio">◐ con límites</span><small>Funciona, pero hasta el momento con algunas limitaciones, dependiendo del modelo.</small></li>
+        <li><span>Modelos locales</span><span class="chip medio">◐ con límites</span><small>Funciona si el modelo tiene acceso a tus archivos; con modelos chicos se probó poco, y no siempre siguen todas las reglas.</small></li>
       </ul>
     </div>
     <div class="box">
@@ -333,17 +364,17 @@ python3 organs/free.py fin   (cierra antes)       · solo con el guardián en c�
         <li><span>Windows</span><span class="chip ok">✓ funciona</span></li>
         <li><span>Mac</span><span class="chip ok">✓ funciona</span></li>
       </ul>
-      <p class="note">En Linux se usa a diario. En Windows y Mac se instaló de cero y pasó todas sus pruebas, en los dos modos, todavía sin una IA trabajando adentro.</p>
+      <p class="note">En Linux se usa a diario. En Windows y Mac, la 1.1 se instaló de cero y pasó sus pruebas en los dos modos. Además, otras personas que no programan ya lo usan en su trabajo, y el guardián también frena a sus IA. La prueba con Codex trabajando adentro, en Windows, dejó un arreglo que ya viene en esta versión.</p>
     </div>
   </div>
   <div class="two">
     <div class="box">
       <div class="kind">Acceso a herramientas</div>
       <h3>Tu IA necesita acceso a herramientas</h3>
-      <p>Es decir, poder leer y escribir tus archivos, no solo conversar. Sin herramientas, se queda a ciegas.</p>
+      <p>Es decir, poder leer y escribir tus archivos, no solo conversar.</p>
       <div class="barra"><span>Sin herramientas</span><div class="b"><i class="medio" style="width:28.6%"></i></div><b>2 de 7</b></div>
       <div class="barra"><span>Con herramientas</span><div class="b"><i style="width:100%"></i></div><b>7 de 7</b></div>
-      <p class="note">Siete situaciones de un negocio de prueba, una IA chica y una corrida por condición. Sin herramientas, el arranque liviano de Endosimbiosis la deja a ciegas; con herramientas, acierta todo. Es una foto, no una medida.</p>
+      <p class="note">Fueron siete situaciones de un negocio de prueba, con una IA chica y una sola vez por situación. Sin herramientas acertó dos de siete; con acceso a los archivos, siete de siete. Es una foto, no una medida.</p>
     </div>
     <div class="box">
       <div class="kind">Uso diario</div>
@@ -351,38 +382,40 @@ python3 organs/free.py fin   (cierra antes)       · solo con el guardián en c�
       <p>Todos los órganos pueden fallar. Solo el tiempo de uso muestra dónde fallan, en qué condiciones y cuánto pueden mejorar.</p>
       <div class="barra"><span>Frenos</span><div class="b"><i class="medio" style="width:100%"></i></div><b>55</b></div>
       <div class="barra"><span>Peligros reales</span><div class="b"><i style="width:5.5%"></i></div><b>3</b></div>
-      <p class="note">El <a class="ir" href="#guardian">guardián</a>, en ocho días de trabajo real. Eso, más los tropiezos de quienes lo probaron sin saber programar, dio forma a la 1.0.3.</p>
+      <p class="note">Son los frenos del <a class="ir" href="#guardian">guardián</a> en ocho días de trabajo real. Eso, más los tropiezos de quienes lo probaron sin saber programar, dio forma a la versión anterior, la 1.0.3.</p>
     </div>
   </div>
   <p class="note">Su autor usa Simbiosis a diario desde abril de 2026, y sus primeros órganos desde julio; el kit para otros nació en octubre. Es experiencia documentada, no una ley.</p>
 </section>
 
 <section id="parches">
-  <div class="eyebrow">5</div>
+  <div class="eyebrow">7</div>
   <h2>Próximos parches</h2>
-  <p>Lo que el sistema todavía no hace bien. Cuando un parche entra, sale de esta lista; cuando aparece un límite nuevo, se suma aquí.</p>
+  <p>Lo que trae la 1.1 y lo que sigue pendiente. Cuando un parche entra, sale de la lista; cuando aparece un límite nuevo, se suma aquí.</p>
   <h3>Qué trae la 1.1</h3>
   <ul class="plain">
-    <li><strong>Cabina por misión.</strong> La cabina se ordena por misión y avisa con una alarma cuando la cola de pendientes crece.</li>
-    <li><strong>Canario sin verde falso.</strong> Ya no da por bueno lo que no pudo revisar, y al arrancar informa la carga de lo que lee (el porcentaje de la ventana de la IA).</li>
-    <li><strong>Guardián en código también para Codex.</strong> Probado con eventos simulados; la prueba real está en curso.</li>
-    <li><strong>MIGRATE.md.</strong> Una guía para que tu IA migre, sin supervisión, el sistema de notas que ya tenías.</li>
-    <li><strong>Nombres en inglés para lo que lee la máquina.</strong> Carpetas, archivos y comandos del kit (<code>core/</code>, <code>organs/</code>, <code>vault/</code>, <code>_QUARANTINE/</code>, <code>install.py</code>…); <code>--migrate-names</code> pasa a los nuevos un núcleo que usaba los viejos.</li>
+    <li><strong>Cabina por misión.</strong> La cabina (la pantalla que resume el estado y tus pendientes) se ordena por misión y avisa con una alarma cuando la cola de pendientes crece.</li>
+    <li><strong>El buscador, más liviano.</strong> Recorta las líneas muy largas del historial para leer menos texto en cada búsqueda.</li>
+    <li><strong>El canario, sin verdes falsos.</strong> Ya no da por bueno lo que no pudo revisar, y al arrancar te da una estimación de cuánto ocupa lo que lee: el porcentaje de la memoria de trabajo de la IA (su «ventana»).</li>
+    <li><strong>Guardián en código también para Codex.</strong> Probado con Codex real en Linux y en Windows.</li>
+    <li><strong>MIGRATE.md.</strong> Una guía para que tu IA migre el sistema de notas que ya tenías con poca supervisión: te pregunta al principio y al final te muestra qué necesita tu aprobación.</li>
+    <li><strong>Nombres en inglés para lo que lee la máquina.</strong> Carpetas, archivos y comandos del kit (<code>core/</code>, <code>organs/</code>, <code>vault/</code>, <code>_QUARANTINE/</code>, <code>install.py</code>…); <code>--migrate-names</code> actualiza un núcleo que tenía los nombres viejos.</li>
   </ul>
   <h3>Lo que sigue pendiente</h3>
   <ul class="plain">
-    <li><strong>Lo que el canario todavía no ve.</strong> Si mudas la carpeta sin reinstalar, puede dar por vivo a un guardián que ya no responde. Tampoco detecta un dato viejo en una nota, como un precio que cambió, ni sabe si la IA dice haber comprobado algo sin hacerlo.</li>
-    <li><strong>El modo prosa y el cambio de modo.</strong> En prosa, el canario compara los órganos con una huella (un resumen sha256 de cada archivo) y con un punto de partida en git. Los dos se guardan en <code>.endo/guardian_modo.json</code>, un archivo sin candado y fuera de git: la regla prohíbe tocarlo, pero si la IA lo reescribe, el canario queda en verde. Y pasar a prosa o desinstalar (<code>install.py --guardian off</code> o <code>--uninstall</code>) exige una terminal interactiva, que un programa puede simular: en código, eso alcanza para apagar el guardián. Para corregirlo, la huella pasará a git, donde cualquier cambio queda a la vista, y cambiar de modo pedirá una palabra de confirmación, como ya lo hace la desinstalación.</li>
+    <li><strong>Lo que el canario todavía no ve.</strong> No detecta un dato viejo en una nota, como un precio que cambió, ni sabe si la IA dice haber comprobado algo sin hacerlo.</li>
+    <li><strong>El cambio de modo.</strong> Pasar a prosa o desinstalar se hace desde tu terminal, pero comprobamos que un programa puede imitar esas órdenes, así que la IA podría apagar el guardián sin que lo pidas. El canario lo muestra al empezar la sesión siguiente, aunque sin alarma. La próxima versión hará que el guardián frene esas órdenes si vienen de la IA y que el canario avise en amarillo cada cambio de modo, para que sepas si lo pediste tú.</li>
+    <li><strong>La huella de los órganos en prosa.</strong> Hoy vive en un archivo sin candado; pasará al historial, para que sus cambios queden registrados.</li>
     <li><strong>El guardián y el acceso temporal.</strong> Algunas órdenes rebuscadas para tocar la configuración del guardián todavía pasan. Y si abres la IA como administradora de tu computadora, podría activar sola el acceso temporal a tus carpetas privadas.</li>
-    <li><strong>Un candado firme y pruebas reales en Mac y Windows.</strong> Allí tu misma cuenta puede quitar el candado; el canario te avisa al arrancar, pero no lo impide. Y falta usarlo a diario en Mac y en Windows.</li>
+    <li><strong>Un candado más firme en Mac y Windows.</strong> Allí tu misma cuenta puede quitar el candado; el canario te avisa al arrancar, pero no lo impide.</li>
+    <li><strong>La guía de migración al instalar en otra carpeta.</strong> Si instalas el kit en una carpeta distinta, <code>MIGRATE.md</code> no se copia. Mientras tanto, tu IA puede leerla desde la carpeta del kit.</li>
     <li><strong>Tu criterio en la firma de cada cambio y en la bitácora.</strong> Hoy la firma de cada cambio muestra dónde quedó escrita tu decisión. Falta registrar dónde pediste, corregiste o vetaste, y vigilar que ninguna decisión quede sin anotar.</li>
-    <li><strong>El buscador, más liviano.</strong> Cortar las líneas muy largas del historial para leer todavía menos texto en cada búsqueda.</li>
   </ul>
   <p class="note">Algunas reglas de nuestro sistema siguen en prosa y no en código, por practicidad: se cumplen bien por costumbre, o todavía no fallaron lo bastante para merecer un programa. Simbiosis las explica.</p>
 </section>
 
 <section id="instalar">
-  <div class="eyebrow">6</div>
+  <div class="eyebrow">8</div>
   <h2>Cómo instalarlo</h2>
   <p>Para quien quiera usar Endosimbiosis en su propio proyecto. Es un solo instalador, <code>install.py</code>, con dos modos para el guardián. Lo corres tú desde tu terminal, a mano o con la ayuda de tu IA: ella te guía y te ayuda a corregir, pero el paso de instalar es tuyo.</p>
 
@@ -397,7 +430,7 @@ python3 organs/free.py fin   (cierra antes)       · solo con el guardián en c�
     <div class="box c">
       <div class="kind">Cuando la prosa no alcanza</div>
       <h3>Modo código</h3>
-      <p>El guardián frena a la IA antes de cada acción que rompe una regla, y los órganos quedan con candado. Se registra en Claude Code y en Antigravity.</p>
+      <p>El guardián frena a la IA cuando reconoce una acción que rompe una regla, y los órganos quedan con candado. Se registra en Claude Code, en Codex y en Antigravity. Después, cierra y vuelve a abrir tu IA; en Codex, además, escribe <code>/hooks</code> dentro de Codex una vez para aprobarlo.</p>
       <div class="cmd" style="margin:4px 0 0">python3 install.py --guardian on</div>
       <p class="note">Al final dice «el guardián nació».</p>
     </div>
@@ -412,9 +445,9 @@ python3 organs/free.py fin   (cierra antes)       · solo con el guardián en c�
 
   <h3>A mano</h3>
   <ol class="plain">
-    <li>Descarga el kit (<a href="../downloads/endosymbiosis-1.1.zip">endosymbiosis-1.1.zip</a> · DOI: 10.5281/zenodo.23934118), descomprímelo y pon la carpeta donde quieras tu núcleo.</li>
-    <li>Abre una terminal en esa carpeta y escribe <code>python3 install.py</code>. Cuando te pida confirmar, escribe <code>si</code> o <code>yes</code> y presiona Enter.</li>
-    <li>Te va a preguntar el modo del guardián. Para prosa, solo presiona Enter. Para código, escribe la palabra <code>código</code> y presiona Enter.</li>
+    <li>Descarga el kit (<a href="../downloads/endosymbiosis-1.1.zip">endosymbiosis-1.1.zip</a> · DOI: 10.5281/zenodo.23934118), descomprímelo y pon la carpeta donde quieras tu núcleo. Su huella SHA-256 es <code>6f3f4ca273730b783c493c27b2f069a02c2c8bc13f065d09724b3dea774aff07</code>: tu IA puede comprobarla.</li>
+    <li>Abre una terminal en esa carpeta y escribe <code>python3 install.py</code>. Cuando te pida confirmar, escribe <code>sí</code> (vale también <code>si</code>) o <code>yes</code> y presiona Enter.</li>
+    <li>Te va a preguntar el modo del guardián. Para prosa, solo presiona Enter. Para código, escribe <code>codigo</code> (con o sin tilde) y presiona Enter.</li>
     <li>El instalador revisa lo que ya tienes sin pisarlo, copia el núcleo y los órganos, pone el filtro de secretos y prueba cada pieza. Al final tiene que decir «el núcleo nació» o «el guardián nació».</li>
   </ol>
   <p>Si algo falla, copia la salida entera y pégasela a tu IA: «El instalador dijo esto. Explícame qué pasó y cómo lo corrijo».</p>
@@ -424,7 +457,7 @@ python3 organs/free.py fin   (cierra antes)       · solo con el guardián en c�
     <div class="box">
       <div class="kind">Desde la carpeta del kit</div>
       <p>Abre tu IA en la carpeta del kit y dile:</p>
-      <div class="cmd" style="margin:0;white-space:normal">Lee README.md y guíame para instalar Endosimbiosis, paso a paso. Los comandos los corro yo.</div>
+      <div class="cmd" style="margin:0;white-space:normal">Descargué endosymbiosis-1.1.zip de endosymbiosis.org y lo descomprimí aquí. Primero comprueba que la huella SHA-256 del zip sea 6f3f4ca273730b783c493c27b2f069a02c2c8bc13f065d09724b3dea774aff07. Después lee README.md y guíame para instalar Endosimbiosis, paso a paso. Los comandos los corro yo.</div>
     </div>
     <div class="box">
       <div class="kind">Desde esta página</div>
@@ -442,18 +475,21 @@ python3 organs/free.py fin   (cierra antes)       · solo con el guardián en c�
   </div>
 
   <h3>Tu primera conversación</h3>
-  <p>Abre tu IA en esa carpeta y dile: «Lee ENDOSYMBIOSIS.md y arma mi núcleo conmigo, una pregunta a la vez».</p>
-
-  <h3>Si ya tenías algo</h3>
-  <p>¿Ya tenías un núcleo con los nombres viejos? <code>python3 install.py --migrate-names</code></p>
-  <p>¿Ya tenías tu propio sistema de notas? Dile a tu IA: «Lee MIGRATE.md y migra lo mío».</p>
+  <p>Hay dos caminos, según de dónde vengas. En los dos, la carpeta donde instalaste el kit pasa a ser la de tu núcleo, y ahí abres tu IA.</p>
+  <div class="two">
+    <div class="box"><div class="kind">Si empiezas de cero</div><p>Con el kit ya instalado, abre tu IA en esa carpeta y dile: «Lee ENDOSYMBIOSIS.md y arma mi núcleo conmigo, una pregunta a la vez».</p></div>
+    <div class="box"><div class="kind">Si ya tienes tus notas</div><p>Las armaste con el libro o con otro sistema. Antes de instalar, copia tus notas dentro de la carpeta del kit (copia, no muevas: el original queda donde estaba). Instala ahí, abre tu IA en esa carpeta y dile: «Lee MIGRATE.md y migra lo mío». Primero te hace cuatro preguntas juntas, para reconocer tus notas; después las pasa a <code>core/</code> con los nombres de la tabla de <a class="ir" href="#depende">Por qué depende de Simbiosis</a>, sin borrar nada, y al final te muestra qué necesita tu aprobación. Al terminar, el instalador te sugiere leer ENDOSYMBIOSIS.md; en tu caso, usa MIGRATE.md.</p></div>
+  </div>
+  <p><strong>Una excepción, antes de todo:</strong> si tu carpeta ya tenía Endosimbiosis con los nombres viejos, en español (<code>nucleo/</code>, <code>organos/</code>), actualízala primero desde tu terminal, en la carpeta del kit: <code>python3 install.py --migrate-names &lt;carpeta de tu núcleo&gt;</code> (en lugar de <code>&lt;carpeta de tu núcleo&gt;</code>, escribe la ruta de tu carpeta, sin los signos <code>&lt; &gt;</code>). Eso solo cambia los nombres; si además tenías otras notas, sigues después con MIGRATE.md.</p>
 
   <h3>Después</h3>
+  <p>Tus carpetas privadas (por ejemplo, la de los datos de tus clientes) las anotas tú en <code>organs/denied.txt</code>, una por línea. En código, abre la jaula para editar ese archivo y ciérrala después; en prosa, al terminar corre <code>--guardian off</code> para que el canario tome la huella de nuevo.</p>
   <div class="cmd" style="margin:0">python3 install.py --guardian on    pasa el guardián a código (frena)
 python3 install.py --guardian off    lo vuelve a prosa (en prosa, también acepta un cambio tuyo en los órganos)
 python3 install.py --open          abre la jaula para cambiar un órgano
 python3 install.py --close         la vuelve a cerrar
-python3 install.py --uninstall    quita todo (pide escribir «quitar»)</div>
+python3 install.py --uninstall    quita lo que puso la instalación; tus notas se quedan (pide escribir «quitar»)</div>
+  <p><strong>Antes de mover o borrar la carpeta, desinstala.</strong> El guardián y el filtro de secretos guardan su dirección; si la carpeta cambia de lugar, tu IA puede quedarse sin herramientas. Si ya la moviste, desinstala en la carpeta nueva y vuelve a instalar.</p>
   <p>El instalador nunca borra nada: lo que reemplaza lo guarda en la carpeta de descartes. Y solo deja el guardián registrado si todas las pruebas pasaron, para no dejarte uno a medias. Se probó instalando de cero en Linux, Windows y Mac, en los dos modos.</p>
 </section>
 
@@ -461,39 +497,45 @@ python3 install.py --uninstall    quita todo (pide escribir «quitar»)</div>
 <h2>Glosario</h2>
 <p>Cada palabra nuestra, su término técnico y qué es. En el texto, el término técnico aparece entre paréntesis la primera vez; aquí están todos.</p>
 <table class="glosario"><thead><tr><th>Palabra nuestra</th><th>Término técnico</th><th>Qué es</th></tr></thead><tbody>
-<tr><td><strong>núcleo</strong></td><td><em>memoria de largo plazo externa (long-term memory)</em></td><td>las ocho notas que la IA lee enteras al empezar y deja al día al cerrar</td></tr>
-<tr><td><strong>el trato</strong></td><td><em>política operativa (operating policy)</em></td><td>las reglas escritas, numeradas, que mandan sobre la IA</td></tr>
+<tr><td><strong>núcleo</strong></td><td><em>memoria de largo plazo externa (long-term memory)</em></td><td>las ocho notas (las siete de Simbiosis más la bitácora) que la IA lee al empezar (de la bitácora, sus últimas líneas) y deja al día al cerrar</td></tr>
+<tr><td><strong>el trato</strong></td><td><em>política operativa (operating policy)</em></td><td>las reglas escritas y numeradas que obligan a la persona y a su IA</td></tr>
 <tr><td><strong>órgano</strong></td><td><em>barandilla determinista con autoprueba (deterministic guardrail)</em></td><td>un programa chico que vigila una regla sin depender de la buena voluntad del modelo</td></tr>
-<tr><td><strong>jaula</strong></td><td><em>archivos inmutables (immutable files; inmutables en Linux, solo lectura en Windows y Mac)</em></td><td>organs/ y los ganchos del programa: la IA los lee y los corre, nunca los cambia</td></tr>
-<tr><td><strong>huella</strong></td><td><em>hash de integridad (integrity hash, SHA-256)</em></td><td>la firma de organs/ que el canario compara en cada arranque</td></tr>
-<tr><td><strong>prosa / código</strong></td><td><em>modo pasivo / modo enforcing</em></td><td>en prosa la IA cumple las reglas por su cuenta; en código un programa la frena antes</td></tr>
-<tr><td><strong>de la prosa al código</strong></td><td><em>política como código (policy-as-code)</em></td><td>una regla que falló dos veces deja de pedirse por favor y se vuelve programa</td></tr>
-<tr><td><strong>guardián</strong></td><td><em>gancho previo a la herramienta (PreToolUse hook), punto de aplicación de políticas (policy enforcement point)</em></td><td>revisa cada acción de la IA antes de que ocurra y la frena si rompe una regla</td></tr>
+<tr><td><strong>jaula</strong></td><td><em>archivos inmutables (immutable files; inmutables en Linux, solo lectura en Windows y Mac)</em></td><td>organs/ y los ganchos del programa: con candado (en código), la IA los lee y los corre, pero no los cambia</td></tr>
+<tr><td><strong>huella</strong></td><td><em>hash de integridad (integrity hash, SHA-256)</em></td><td>la firma de organs/ que el canario compara en cada arranque, en modo prosa</td></tr>
+<tr><td><strong>prosa / código</strong></td><td><em>modo pasivo / modo de cumplimiento forzoso (passive / enforcing mode)</em></td><td>en prosa la IA cumple las reglas por su cuenta; en código un programa la frena antes</td></tr>
+<tr><td><strong>de la prosa al código</strong></td><td><em>política como código (policy-as-code)</em></td><td>una regla que no alcanzó, ni anotada en la bitácora ni en la lista de despegue, puede volverse programa, cuando la persona lo decide</td></tr>
+<tr><td><strong>guardián</strong></td><td><em>gancho previo a la herramienta (PreToolUse hook), punto de aplicación de políticas (policy enforcement point)</em></td><td>revisa cada acción de la IA antes de que ocurra y, en modo código, la frena si rompe una regla</td></tr>
 <tr><td><strong>apartar</strong></td><td><em>cuarentena (quarantine, soft delete)</em></td><td>lo que sobra va a _QUARANTINE/ en vez de borrarse; la persona vacía a mano</td></tr>
 <tr><td><strong>canario</strong></td><td><em>chequeo de integridad al arranque (startup integrity check)</em></td><td>pasa lista: pendientes perdidos, notas que mienten, diferidos vencidos, guardián vivo</td></tr>
 <tr><td><strong>prueba de vida</strong></td><td><em>prueba sintética negativa (negative synthetic test; por analogía, liveness probe)</em></td><td>el canario manda acciones falsas que deben frenarse; si una pasa, el guardián está desconectado</td></tr>
-<tr><td><strong>falla sembrada</strong></td><td><em>prueba de mutación (mutation testing)</em></td><td>cada autoprueba rompe su propio órgano a propósito y comprueba que lo detecta</td></tr>
-<tr><td><strong>filtro de secretos</strong></td><td><em>gancho de pre-commit con detección de secretos (pre-commit hook, secret scanning)</em></td><td>frena el commit si entra una llave, una contraseña etiquetada o un DNI</td></tr>
-<tr><td><strong>acceso temporal (libre)</strong></td><td><em>acceso justo a tiempo (just-in-time access)</em></td><td>la clave de la persona abre las carpetas vedadas por unos minutos; nunca el borrado ni la jaula</td></tr>
-<tr><td><strong>carpetas vedadas</strong></td><td><em>rutas denegadas (deny-listed paths)</em></td><td>lo que ninguna IA lee ni escribe</td></tr>
-<tr><td><strong>buscador</strong></td><td><em>búsqueda en el árbol de trabajo y en el historial de git</em></td><td>antes de decir «no existe», busca en lo de hoy y en todo lo que alguna vez entró a git</td></tr>
-<tr><td><strong>DAISY</strong></td><td><em>declaración de uso de IA (AI disclosure), medida desde git</em></td><td>cuenta quién hizo cada cambio según las firmas de git; el nombre viene del paper de Ahmetoglu, Constantinides y Cox (2026)</td></tr>
+<tr><td><strong>falla sembrada</strong></td><td><em>prueba de mutación (mutation testing)</em></td><td>la prueba de un órgano introduce una falla conocida y comprueba que se detecta</td></tr>
+<tr><td><strong>filtro de secretos</strong></td><td><em>gancho de pre-commit con detección de secretos (pre-commit hook, secret scanning)</em></td><td>frena el guardado (commit) si entra una llave, una contraseña etiquetada o un DNI</td></tr>
+<tr><td><strong>acceso temporal</strong></td><td><em>acceso justo a tiempo (just-in-time access)</em></td><td>la clave de la persona abre las carpetas privadas por un tiempo, de un minuto a ocho horas; nunca el borrado ni la jaula</td></tr>
+<tr><td><strong>carpetas privadas</strong></td><td><em>rutas denegadas (deny-listed paths)</em></td><td>con el guardián en código, ninguna IA las lee ni escribe, salvo con el acceso temporal; en prosa, lo pide la regla escrita</td></tr>
+<tr><td><strong>buscador</strong></td><td><em>búsqueda en el árbol de trabajo y en el historial de git (working tree + git history search)</em></td><td>antes de decir «no existe», busca en lo de hoy y en todo lo que alguna vez entró a git</td></tr>
+<tr><td><strong>DAISY</strong></td><td><em>Disclosure of AI-uSe in Your Research</em>: declaración de uso de IA (<em>AI disclosure</em>), medida desde git</td><td>cuenta quién hizo cada cambio según las firmas de git; el nombre viene del artículo (paper) de Ahmetoglu, Constantinides y Cox (2026)</td></tr>
 <tr><td><strong>bitácora</strong></td><td><em>registro de decisiones (decision log)</em></td><td>una línea por decisión o fallo, con las palabras de la persona</td></tr>
-<tr><td><strong>lista de despegue</strong></td><td><em>chequeos de salud del usuario (user-defined health checks)</em></td><td>una línea por chequeo: comando y lo que debe decir; el canario lo corre al empezar</td></tr>
-<tr><td><strong>tope de cola</strong></td><td><em>alarma de crecimiento de la cola (backlog growth alert)</em></td><td>aviso cuando la lista crece más rápido de lo que se cierra</td></tr>
+<tr><td><strong>lista de despegue</strong></td><td><em>lista de chequeos al arranque (startup checklist)</em></td><td>una línea por chequeo: comando y lo que debe decir; el canario lo corre al empezar</td></tr>
+<tr><td><strong>tope de cola</strong></td><td><em>alarma de crecimiento de la cola (backlog growth alert)</em></td><td>aviso en amarillo cuando la lista de pendientes pasa de 40, o cuando en la semana entran más de los que se cierran</td></tr>
 <tr><td><strong>una cosa, un lugar</strong></td><td><em>fuente única de verdad (single source of truth)</em></td><td>un hecho vive en una sola nota; las demás apuntan a ella</td></tr>
-<tr><td><strong>la firma del commit</strong></td><td><em>tráiler de git (git trailer, Co-Authored-By)</em></td><td>cada commit dice qué modelo lo escribió o lleva [humano]</td></tr>
+<tr><td><strong>la firma de cada cambio</strong></td><td><em>tráiler de git (git trailer, Co-Authored-By)</em></td><td>cada guardado (commit) dice qué modelo lo escribió o lleva [humano]</td></tr>
 <tr><td><strong>el veto humano asciende</strong></td><td><em>escalamiento con persona en el bucle (human-in-the-loop)</em></td><td>lo irreversible nunca se decide solo: sube a la persona</td></tr>
 <tr><td><strong>tres zonas 🟢🟡🔴</strong></td><td><em>permitir / preguntar / denegar (allow / ask / deny)</em></td><td>se hace y se cuenta · plan y sí · acción exacta y «procedé»</td></tr>
 </tbody></table>
 </section>
 <section id="referencias">
-  <div class="eyebrow">7</div>
+  <div class="eyebrow">9</div>
   <h2>Referencias</h2>
   <ul class="plain">
-    <li><strong>Simbiosis.</strong> Giribaldi, M. (2026). <em>Simbiosis — Manual para un buen linaje</em>, versión 2.1. En inglés: <em>Symbiosis — A Manual for a Good Lineage</em>. CC BY-SA 4.0. Es la base de Endosimbiosis: de ahí salen las reglas que cuidan los órganos y las frases de cada ficha. Todas las versiones: <a href="https://doi.org/10.5281/zenodo.23024311">doi.org/10.5281/zenodo.23024311</a></li>
-    <li><strong>DAISY.</strong> Ahmetoglu, Y., Constantinides, M. y Cox, A. (2026). «AI Disclosure with DAISY». <em>CHIWORK '26</em>. Un formulario que guía a los autores académicos para declarar cómo usaron la IA. El borrador de declaración que prepara Endosimbiosis sigue su formato. <a href="https://arxiv.org/abs/2604.02760">arxiv.org/abs/2604.02760</a></li>
+    <li><strong>Simbiosis.</strong> Giribaldi, M. (2026). <em>Simbiosis — Manual para un buen linaje</em>, versión 2.1. En inglés: <em>Symbiosis — A Manual for a Good Lineage</em>. CC BY-SA 4.0. Es la base de Endosimbiosis: de ahí salen las reglas que cuidan los órganos y las frases de cada ficha. Versión 2.1: <a href="https://doi.org/10.5281/zenodo.23934097">doi.org/10.5281/zenodo.23934097</a> · todas las versiones: <a href="https://doi.org/10.5281/zenodo.23024311">doi.org/10.5281/zenodo.23024311</a></li>
+    <li><strong>DAISY.</strong> Ahmetoglu, Y., Constantinides, M. y Cox, A. (2026). «AI Disclosure with DAISY». <em>CHIWORK '26</em>. Un formulario que guía a quienes publican investigación para declarar cómo usaron la IA. El borrador de declaración que prepara Endosimbiosis sigue su formato. <a href="https://arxiv.org/abs/2604.02760">arxiv.org/abs/2604.02760</a></li>
   </ul>
+  <h3 id="citar">Cómo citar</h3>
+  <ul class="plain">
+    <li>Giribaldi, M. (2026). <em>Endosimbiosis 1.1 — cuando la prosa no alcanza, se vuelve código</em> [software]. Zenodo. <a href="https://doi.org/10.5281/zenodo.23934118">https://doi.org/10.5281/zenodo.23934118</a></li>
+    <li>Giribaldi, M. (2026). <em>Simbiosis — Manual para un buen linaje</em> (v2.1). Zenodo. <a href="https://doi.org/10.5281/zenodo.23934097">https://doi.org/10.5281/zenodo.23934097</a></li>
+  </ul>
+
 </section>
 
 <footer>

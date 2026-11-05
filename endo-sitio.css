@@ -50,3 +50,26 @@ nav.toc{counter-reset:toc}
 nav.toc a{counter-increment:toc;font-size:16.5px;line-height:1.75;padding:.15em 0 .15em 1.6em;text-indent:-1.6em}
 nav.toc a::before{content:counter(toc) ". ";display:inline-block;width:1.6em;text-indent:0;color:#c9c2b4}
 .descargas .doi{font-family:var(--f-mono);font-size:.78rem;letter-spacing:1px;padding:9px 4px;color:#9a9a9a;align-self:center}
+/* D231 · reestructura: el índice en dos grupos (para leer · para consultar) y el separador antes de la consulta */
+nav.toc .toc-grupo{break-inside:avoid;margin-bottom:.4em}
+nav.toc .toc-grupo span{display:block;font-family:var(--f-mono);font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:#e3b85c;margin:.2em 0 .35em}
+.separa-consulta{margin:3.2em 0 1.2em;padding-top:1.4em;border-top:1px solid #2a3630}
+.separa-consulta span{display:block;font-family:var(--f-mono);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:#e3b85c}
+.separa-consulta p{color:#8f9a93;font-size:.95rem;margin:.4em 0 0}
+#dia h3{margin-top:1.6em}
+/* D231 · aire alrededor de una cita de Simbiosis suelta en una sección (Marco: «dale un espaciado despues de citar simbiosis»); el estilo en línea margin:0 de la fuente pierde ante !important */
+section > p.prosa{margin:1.1em 0 1.6em !important}
+.piece .prosa + .arrow{margin-top:1.1em}
+/* D231: impresión y PDF en claro (Marco: «actualiza los pdf») */
+@page{margin:14mm;background:#fff}
+@media print{
+  :root,:root[data-theme],html[data-theme="dark"],html,body,main,.libro{background:#fff!important;color:#111!important}
+  *{color:#111!important;background:transparent!important;box-shadow:none!important;text-shadow:none!important}
+  .piece,.box,.tablewrap,.cmd,table,td,th{background:#fff!important;border-color:#bbb!important}
+  .cmd,code{background:#f3f3f3!important}
+  a{color:#111!important;text-decoration:underline}
+  .nav-sitio,.descargas,.toc,nav{display:none!important}
+  .piece,.box{break-inside:avoid}
+  html,body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h2,h3{break-after:avoid}
+}
