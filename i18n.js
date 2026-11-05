@@ -24,7 +24,7 @@ const TXT = {
     ba_ceja: 'ANTES Y DESPUÉS', ba_sin: 'SIN SYMBIOSIS', ba_con: 'CON SYMBIOSIS', // BORRADOR-MARCO
     ba_a1: 'Cada sesión empieza en blanco.', ba_b1: 'Cada sesión retoma donde terminó la anterior.', // BORRADOR-MARCO
     ba_a2: 'Vuelves a explicarlo todo.', ba_b2: 'El núcleo recuerda; tú decides.', // BORRADOR-MARCO
-    ba_a3: 'Una IA puede destruir tu trabajo.', ba_b3: 'Nada se borra nunca sin tu aprobación.', // BORRADOR-MARCO
+    ba_a3: 'Una IA puede destruir tu trabajo.', ba_b3: 'Lo que sobra se aparta; vaciar es tuyo.', // BORRADOR-MARCO
     ba_a4: 'Confías en lo que dice.', ba_b4: 'Cada afirmación muestra dónde buscó.', // BORRADOR-MARCO
     ba_a5: 'El mismo error vuelve.', ba_b5: 'Un error que se repite se vuelve código.', // BORRADOR-MARCO
     m_ceja: 'EL MÉTODO · TRES ETAPAS', m_t: 'Cada etapa empieza donde la anterior llega a su límite.', // BORRADOR-MARCO
@@ -39,7 +39,7 @@ const TXT = {
     m3_l: 'Ya en marcha: un doctor diario e invariantes que se verifican solos.', // BORRADOR-MARCO
     pr_ceja: 'DE LA PALABRA AL CÓDIGO', pr_t: 'Cada regla nace como ley escrita; si las palabras fallan, el código se encarga de que se respete.', // BORRADOR-MARCO
     c1: 'regla en prosa', c2: 'olvidada', c3: 'registrada como dato', c4: 'olvidada otra vez', c5: 'se vuelve código', c6: 'se verifica a diario', // BORRADOR-MARCO
-    q1: '«Nada se borra nunca sin tu aprobación.»', q2: '«Una regla olvidada dos veces se vuelve código.»', // BORRADOR-MARCO
+    q1: '«Lo que sobra se aparta; vaciar es tuyo.»', q2: '«Una regla olvidada dos veces se vuelve código.»', // BORRADOR-MARCO
     q3: '«Nunca digas “no existe” sin decir dónde buscaste.»', q4: '«Quien escribe una regla nunca la revisa.»', // BORRADOR-MARCO
     w_ceja: 'FUNCIONA DONDE TRABAJAS', w_t: 'El método no está atado a una sola interfaz ni a un solo modelo.', // BORRADOR-MARCO
     w1_t: 'Cualquier terminal', w1_p: 'Todo el método funciona en una consola simple, con menos gráficos y las mismas reglas.', // BORRADOR-MARCO
@@ -58,7 +58,7 @@ const TXT = {
     e_ceja: 'EMPEZAR', e_t: 'Empieza a trabajar junto a la máquina; la última palabra sigue siendo tuya.', // BORRADOR-MARCO
     e1_t: 'Lee el manual', e1_p: 'Simbiosis v2.1 · gratis · español e inglés', e2_t: 'Arma tu núcleo', e3_t: 'Instala Endosimbiosis', soon: 'pronto', e3_d: 'Descarga el kit 1.1 (zip, 183 KB)', e3_ia_t: 'Descomprímelo, abre tu IA en esa carpeta y dile:', e3_ia: 'Descargué endosymbiosis-1.1.zip de endosymbiosis.org y lo descomprimí aquí. Primero comprueba que la huella SHA-256 del zip sea 6f3f4ca273730b783c493c27b2f069a02c2c8bc13f065d09724b3dea774aff07. Después lee README.md y guíame para instalarlo, paso a paso. Los comandos los corro yo.', // BORRADOR-MARCO
     cita: 'Un colega que asimila tu práctica de trabajo, y un método para que cada tropiezo sume conocimiento.', // BORRADOR-MARCO
-    pie_i: 'Investigador independiente', pie_l: 'Código MIT · Textos CC BY-SA 4.0', demo: 'demo' // BORRADOR-MARCO
+    pie_i: 'Investigador independiente', pie_l: 'Código MIT · Textos CC BY-SA 4.0', pie_v: '(todas las versiones)', demo: 'demo' // BORRADOR-MARCO
   }
 };
 const raiz = document.documentElement;

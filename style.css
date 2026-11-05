@@ -54,7 +54,7 @@ figcaption b,.leyenda b,.vcap b{color:var(--oro);font-weight:500}
 .leyenda[data-on="3"] b{color:var(--verde)}.leyenda[data-on="4"] b{color:var(--frio)}
 .ventana:not(.fig1){display:none}
 /* el problema, medido */
-.cita{font-family:var(--mono);font-size:12px;color:var(--tx4)}
+.cita{font-family:var(--mono);font-size:12px;color:var(--tx3)}
 .cifras{display:flex;flex-wrap:wrap;gap:16px}
 .cifra{flex:1 1 200px;padding:26px;border-radius:12px}
 .cifra .n{font-family:var(--serif);font-size:64px;line-height:1}

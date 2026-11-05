@@ -696,4 +696,4 @@ Cada palabra nuestra, su término técnico y qué es. En el texto, el término t
 
 - Giribaldi, M. (2026). *Endosimbiosis 1.1 — cuando la prosa no alcanza, se vuelve código* [software]. Zenodo. [https://doi.org/10.5281/zenodo.23934118](https://doi.org/10.5281/zenodo.23934118)
 - Giribaldi, M. (2026). *Simbiosis — Manual para un buen linaje* (v2.1). Zenodo. [https://doi.org/10.5281/zenodo.23934097](https://doi.org/10.5281/zenodo.23934097)
-   Fuentes: el kit de Endosimbiosis 1.1 (3 de noviembre de 2026), sus pruebas en Linux, Windows, Mac y Antigravity, y Simbiosis 2.1. Las frases de Simbiosis son textuales. Escrito con Claude Opus 5.5 a pedido de Marco y revisado con él ficha por ficha. El kit lo auditó Claude Fable 5.1; la página la revisaron Gemini 3.8 Flash y Gemini 4 Argon.
+   Fuentes: el kit de Endosimbiosis 1.1 (publicado el 4 de noviembre de 2026), sus pruebas en Linux, Windows, Mac y Antigravity, y Simbiosis 2.1. Las frases de Simbiosis son textuales. Escrito con Claude Opus 5.5 a pedido de Marco y revisado con él ficha por ficha. El kit lo auditó Claude Fable 5.1; la página la revisaron Gemini 3.8 Flash y Gemini 4 Argon.

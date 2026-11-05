@@ -107,7 +107,7 @@
         <div class="th sin" role="columnheader" data-t="ba_sin">WITHOUT SYMBIOSIS</div><div class="th con" role="columnheader" data-t="ba_con">WITH SYMBIOSIS</div>
         <div class="td sin" data-t="ba_a1">Every session starts blank.</div><div class="td" data-t="ba_b1">Every session resumes where the last one stopped.</div>
         <div class="td sin" data-t="ba_a2">You explain everything again.</div><div class="td" data-t="ba_b2">The core remembers; you decide.</div>
-        <div class="td sin" data-t="ba_a3">An AI can destroy your work.</div><div class="td" data-t="ba_b3">Nothing is ever deleted without your approval.</div>
+        <div class="td sin" data-t="ba_a3">An AI can destroy your work.</div><div class="td" data-t="ba_b3">What's left over is set aside; emptying is yours.</div>
         <div class="td sin" data-t="ba_a4">You trust what it says.</div><div class="td" data-t="ba_b4">Every claim shows where it looked.</div>
         <div class="td sin" data-t="ba_a5">The same mistake comes back.</div><div class="td" data-t="ba_b5">A mistake that repeats becomes code.</div>
       </div>
@@ -165,21 +165,21 @@
       </div>
       <div class="ventana v-int" aria-hidden="true"><span class="vcap"><b data-t="f3_t">FIG. 3 · ORGANS.</b></span></div>
       <div class="pares">
-        <div class="par rev"><p class="regla-t" data-t="q1">“Nothing is ever deleted without your approval.”</p>
-<pre class="term tipeo">$ rm -rf notes/
+        <div class="par rev"><p class="regla-t" data-t="q1">“What's left over is set aside; emptying is yours.”</p>
+<pre class="term tipeo" lang="en">$ rm -rf notes/
 <span class="rojo">✖ guard: deletion blocked</span>
   move it to _BORRAR/2026-10-14-reason/ — the person empties it</pre></div>
         <div class="par rev"><p class="regla-t" data-t="q2">“A rule forgotten twice becomes code.”</p>
-<pre class="term tipeo">$ invariants
+<pre class="term tipeo" lang="en">$ invariants
   ✅ deletion   ✅ sensitive data   ✅ secrets
   ✅ core review by non-author   …
 <span class="verde">INVARIANTS 16/16 ✅</span></pre></div>
         <div class="par rev"><p class="regla-t" data-t="q3">“Never say ‘it doesn't exist’ without saying where you looked.”</p>
-<pre class="term tipeo">NOT FOUND: the March invoice
+<pre class="term tipeo" lang="en">NOT FOUND: the March invoice
 Searched in: files · git history · status notes
 Status: not found with these routes</pre></div>
         <div class="par rev"><p class="regla-t" data-t="q4">“Whoever writes a rule never reviews it.”</p>
-<pre class="term tipeo">change to core rules · author: model A
+<pre class="term tipeo" lang="en">change to core rules · author: model A
 review: model B (different) → <span class="wip">CONDITIONAL</span>
   3 objections → applied → <span class="verde">APPROVED</span></pre></div>
       </div>
@@ -195,7 +195,7 @@ review: model B (different) → <span class="wip">CONDITIONAL</span>
       <div class="ventana v-auto" aria-hidden="true"><span class="vcap"><b data-t="f4_t">FIG. 4 · SELF-REPAIR.</b></span></div>
       <div class="tres">
         <div class="col3 rev">
-<pre class="term caja3">$ symbiosis status
+<pre class="term caja3" lang="en">$ symbiosis status
 core      ✅ ready
 guard     ✅ ready
 memory    ✅ last close D41
@@ -203,14 +203,14 @@ pending   2 yours · 1 head</pre>
           <strong data-t="w1_t">Any terminal</strong><span class="gris" data-t="w1_p">The whole method runs in a plain console, with less graphics and the same rules.</span>
         </div>
         <div class="col3 ancha rev">
-          <div class="consola" role="img" aria-label="Demo: the cockpit console of a working session">
+          <div class="consola" role="img" aria-label="Demo: the cockpit console of a working session" lang="en">
             <div class="tabs"><span class="tab on">simbiosis</span><span class="tab">claude</span><span class="tab">agy</span><span class="demo" data-t="demo">demo</span></div>
             <div class="pant" aria-hidden="true"><div class="l dim">Tuesday · session D42 · core: example-project</div><div class="l"><b>Now</b>    head busy · working with you</div><div class="l"><b>Today</b></div><div class="hoy"><div class="l"><span class="dim">14:02</span> <span class="ok">●</span> rule "non-author review" back to green</div><div class="l"><span class="dim">13:48</span> <span class="ok">●</span> organ "backup" revived</div><div class="l"><span class="dim">13:30</span> <span class="ok">●</span> organ "reader" replaced: same pattern, new model</div></div><div class="l">Organs <span class="org ok">7/7</span> · Rules <span class="rul ok">19/19</span> · <span class="ok">●</span> doctor · last close D41</div><div class="l"><b>Pending</b></div><div class="l">👤 you   review the weekly summary</div><div class="l">👤 you   approve the plan for the reader upgrade</div><div class="l">🧠 head  re-run the rules after the replacement</div><div class="l prompt"><span class="pr">❯</span> <span class="cmdl">symbiosis status</span><span class="cursor">▌</span></div><div class="salida"></div></div>
           </div>
           <strong data-t="w2_t">Herdr cockpit</strong><span class="gris" data-t="w2_p">A terminal workspace with a live cockpit: organs, rules and pending work at a glance.</span>
         </div>
         <div class="col3 rev">
-<pre class="term caja3"><span class="oro">$</span> codex   <span class="dim"># or claude · agy</span>
+<pre class="term caja3" lang="en"><span class="oro">$</span> codex   <span class="dim"># or claude · agy</span>
 reading core/ …
   profile ✓  agreement ✓  heading ✓
   status ✓   canary ✓
@@ -288,7 +288,7 @@ reading core/ …
 
   <footer class="pie">
     <span>Marco Giribaldi · <span data-t="pie_i">Independent researcher</span> · <a href="https://orcid.org/0009-0009-7405-8460">ORCID 0009-0009-7405-8460</a></span>
-    <span><span data-t="pie_l">Code MIT · Texts CC BY-SA 4.0</span> · <a href="https://doi.org/10.5281/zenodo.23024311">DOI 10.5281/zenodo.23024311</a> · <a href="https://github.com/MarcoGiribaldi">GitHub</a></span>
+    <span><span data-t="pie_l">Code MIT · Texts CC BY-SA 4.0</span> · <a href="https://doi.org/10.5281/zenodo.23024311">DOI 10.5281/zenodo.23024311</a> <span data-t="pie_v">(all versions)</span> · <a href="https://github.com/MarcoGiribaldi">GitHub</a></span>
   </footer>
 </main>
 
