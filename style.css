@@ -59,6 +59,7 @@ figcaption b,.leyenda b,.vcap b{color:var(--oro);font-weight:500}
 .cifra{flex:1 1 200px;padding:26px;border-radius:12px}
 .cifra .n{font-family:var(--serif);font-size:64px;line-height:1}
 .cifra .l{font-family:var(--mono);font-size:12px;letter-spacing:1px;margin-top:10px}
+.cifras-t{flex:1 1 100%;font-family:var(--mono);font-size:12px;letter-spacing:1px;opacity:.75} /* D233 A2 */
 .mal{border:1px solid #5a3a2a;background:#1a1411}.mal .n{color:var(--rojo)}.mal .l{color:#c9a99a}
 .bien{border:1px solid var(--borde2);background:#111a15}.bien .n{color:var(--verde)}.bien .l{color:#9fc2ab}
 /* antes y después */

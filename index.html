@@ -26,7 +26,7 @@
 <canvas id="escena" aria-hidden="true"></canvas>
 
 <nav class="nav" aria-label="Main">
-  <span class="marca">SYMBIOSIS · MARCO GIRIBALDI</span>
+  <span class="marca" data-t="marca">SYMBIOSIS · MARCO GIRIBALDI</span>
   <span class="enl">
     <a href="#portada" class="opt" data-t="n_ini">HOME</a><a href="symbiosis/" data-href-es="simbiosis/" class="opt" data-t="n_sim">SYMBIOSIS</a><a href="endosymbiosis/" data-href-es="endosimbiosis/" class="opt" data-t="n_endo">ENDOSYMBIOSIS</a><a href="#empezar" class="oro" data-t="n_emp">START</a>
     <button id="lang" class="lang" type="button" aria-label="Language / Idioma"><span data-on="en">EN</span> / <span data-on="es">ES</span></button>
@@ -67,8 +67,8 @@
       <div class="sellos">
         <span data-t="h_s1">● PEER-REVIEWED STUDY · HAI '26</span>
         <span data-t="h_s2">● WORKS WITH CLAUDE CODE, CODEX AND ANTIGRAVITY</span>
-        <span data-t="h_s4">● LINUX · WINDOWS · MAC</span>
-        <span data-t="h_s3">● OPEN · CC BY-SA 4.0</span>
+        <span data-t="h_s4">● LINUX · WINDOWS · macOS</span>
+        <span data-t="h_s3">● CODE MIT · TEXTS CC BY-SA 4.0</span>
       </div>
     </div>
     <figure class="fig1 ventana">
@@ -90,13 +90,14 @@
       <div class="rev">
         <span class="ceja" data-t="p_ceja">THE PROBLEM, MEASURED</span>
         <h2 data-t="p_t">A memory you cannot check is worse than no memory.</h2>
-        <p data-t="p_p">In a controlled study, an agent with a corrupted memory carried falsehoods into executable output in all three tasks. With the correct memory, or with no memory at all, it made none of those errors. Prose alone is not enough to keep a memory clean.</p>
+        <p data-t="p_p">We gave an AI a memory containing three false data points. In all three tasks we gave it, it used them as if they were true, and never flagged them. With the correct memory, or with no memory at all, that did not happen once. That is why writing rules is not enough: you have to be able to check what the memory says.</p>
         <span class="cita" data-t="p_cita">Giribaldi, HAI '26 · doi:10.1145/3841580.3845736 (in press) · Poster Track C #27 · ID 1166</span>
       </div>
       <div class="cifras rev">
-        <div class="cifra mal"><div class="n">3/3</div><div class="l" data-t="p_l1">TASKS WITH FALSEHOODS · CORRUPTED MEMORY</div></div>
-        <div class="cifra bien"><div class="n">0/3</div><div class="l" data-t="p_l3">TASKS WITH FALSEHOODS · CORRECT MEMORY</div></div>
-        <div class="cifra bien"><div class="n">0/3</div><div class="l" data-t="p_l2">TASKS WITH FALSEHOODS · NO MEMORY</div></div>
+        <div class="cifras-t" data-t="p_lt">TASKS WHERE THE AI USED FALSE DATA</div>
+        <div class="cifra mal"><div class="n">3/3</div><div class="l" data-t="p_l1">MEMORY WITH FALSE DATA</div></div>
+        <div class="cifra bien"><div class="n">0/3</div><div class="l" data-t="p_l3">CORRECT MEMORY</div></div>
+        <div class="cifra bien"><div class="n">0/3</div><div class="l" data-t="p_l2">NO MEMORY</div></div>
       </div>
     </div>
   </section>
@@ -108,8 +109,8 @@
         <div class="th sin" role="columnheader" data-t="ba_sin">WITHOUT SYMBIOSIS</div><div class="th con" role="columnheader" data-t="ba_con">WITH SYMBIOSIS</div>
         <div class="td sin" data-t="ba_a1">Every session starts blank.</div><div class="td" data-t="ba_b1">Every session resumes where the last one stopped.</div>
         <div class="td sin" data-t="ba_a2">You explain everything again.</div><div class="td" data-t="ba_b2">The core remembers; you decide.</div>
-        <div class="td sin" data-t="ba_a3">An AI can destroy your work.</div><div class="td" data-t="ba_b3">What's left over is set aside; emptying is yours.</div>
-        <div class="td sin" data-t="ba_a4">You trust what it says.</div><div class="td" data-t="ba_b4">Every claim shows where it looked.</div>
+        <div class="td sin" data-t="ba_a3">An AI can destroy your work.</div><div class="td" data-t="ba_b3">Nothing is deleted outright: what's left over is set aside, and you decide when to delete it for good.</div>
+        <div class="td sin" data-t="ba_a4">You trust what it says.</div><div class="td" data-t="ba_b4">Before saying “it doesn't exist”, the AI shows where it looked.</div>
         <div class="td sin" data-t="ba_a5">The same mistake comes back.</div><div class="td" data-t="ba_b5">A mistake that repeats becomes code.</div>
       </div>
     </div>
@@ -125,7 +126,7 @@
       <div class="etapas">
         <div class="etapa e1 rev">
           <span class="est ok" data-t="m1_e">● PUBLISHED · V2.1</span>
-          <h3>Symbiosis</h3>
+          <h3 data-t="m1_h">Symbiosis</h3>
           <span class="sub" data-t="m1_s">lineage-based human–AI integration</span>
           <p data-t="m1_p">Laws, still in prose, that protect the user. The memory lives outside the machine and the person stays in charge of it. The machine verifies, names and proposes; the person decides, judges and executes.</p>
           <span class="lim" data-t="m1_l">Its limit: prose gets contaminated.</span>
@@ -133,7 +134,7 @@
         </div>
         <div class="etapa e2 rev">
           <span class="est ok" data-t="m2_e">● PUBLISHED · V1.1</span>
-          <h3>Endosymbiosis</h3>
+          <h3 data-t="m2_h">Endosymbiosis</h3>
           <span class="sub" data-t="m2_s">prose-to-code governance</span>
           <p data-t="m2_p">When prose is no longer enough, rules become code. Each component the system adopts becomes an organ with a declared function and a test that proves it is alive. Oversight shifts from execution to measurement.</p>
           <span class="lim" data-t="m2_l">Its limit: code grows and must be watched.</span>
@@ -141,11 +142,11 @@
           <div class="acc"><a href="endosymbiosis/" data-href-es="endosimbiosis/" data-t="m2_a1">Read the page and install the kit</a></div>
         </div>
         <div class="etapa e3 rev">
-          <span class="est wip" data-t="m3_e">● UNDER CONSTRUCTION · FIRST ORGANS LIVE</span>
+          <span class="est wip" data-t="m3_e">● UNDER CONSTRUCTION</span>
           <h3>Autopoiesis</h3>
           <span class="sub" data-t="m3_s">micro-organisms that sustain the system as it grows</span>
-          <p data-t="m3_p">A system that audits and organises itself to preserve the symbiosis. It is judged by deterministic tests, never by another model's opinion; the repairer never repairs itself, and the human veto moves up the stack.</p>
-          <span class="lim" data-t="m3_l">Already running: a daily doctor and self-checking invariants.</span>
+          <p data-t="m3_p">A system that audits and organizes itself to preserve the symbiosis. It is judged by deterministic tests, never by another model's opinion; the repairer never repairs itself, and the human veto moves up the stack.</p>
+          <span class="lim" data-t="m3_l">Already running: a daily health check and fixed rules that verify themselves.</span>
         </div>
       </div>
     </div>
@@ -166,7 +167,7 @@
       </div>
       <div class="ventana v-int" aria-hidden="true"><span class="vcap"><b data-t="f3_t">FIG. 3 · ORGANS.</b></span></div>
       <div class="pares">
-        <div class="par rev"><p class="regla-t" data-t="q1">“What's left over is set aside; emptying is yours.”</p>
+        <div class="par rev"><p class="regla-t" data-t="q1">“Nothing is deleted outright: what's left over is set aside, and you decide when to delete it for good.”</p>
 <pre class="term tipeo" lang="en">$ rm -rf notes/
 <span class="rojo">✖ guard: deletion blocked</span>
   move it to _QUARANTINE/2026-11-04-reason/ — the person empties it</pre></div>
@@ -201,7 +202,7 @@ core      ✅ ready
 guard     ✅ ready
 memory    ✅ last close D41
 pending   2 yours · 1 head</pre>
-          <strong data-t="w1_t">Any terminal</strong><span class="gris" data-t="w1_p">The whole method runs in a plain console, with less graphics and the same rules.</span>
+          <strong data-t="w1_t">Any terminal</strong><span class="gris" data-t="w1_p">The whole method runs in a plain text window: no dashboard, same rules.</span>
         </div>
         <div class="col3 ancha rev">
           <div class="consola" role="img" aria-label="Demo: the cockpit console of a working session" lang="en">
@@ -225,11 +226,11 @@ reading core/ …
   <section class="sec" id="evidencia">
     <div class="col">
       <div class="rev">
-        <span class="ceja" data-t="t_ceja">WHAT WE ARE TESTING</span>
-        <p class="nota"><span class="nl" data-t="t_nl">● EARLY RESULTS ARE POSITIVE</span> <span data-t="t_n">— several of these mechanisms already run every day and are working as intended. They remain hypotheses until they are measured on more people and more time.</span></p>
+        <span class="ceja" data-t="t_ceja">WHAT WE ARE EVALUATING</span>
+        <p class="nota"><span class="nl" data-t="t_nl">● EARLY EVALUATION RESULTS ARE POSITIVE</span> <span data-t="t_n">— several people already use it in their own work, and most of its mechanisms work as intended. They are in supervised use: we keep evaluating them to improve them. Try it yourself and send us your report, without client data, to marcoelio@endosymbiosis.org.</span></p>
       </div>
       <div class="hipos">
-        <div class="hipo oro rev"><strong>H1</strong> <span data-t="h1">A curated external memory reduces re-explaining and lost decisions, compared with no memory or an accumulated one.</span></div>
+        <div class="hipo oro rev"><strong>H1</strong> <span data-t="h1">A reviewed external memory avoids repeated explanations and lost decisions, compared with no memory or keeping everything unreviewed.</span></div>
         <div class="hipo verde rev"><strong>H2</strong> <span data-t="h2">Promoting a rule to code after two violations reduces the recurrence of that class of failure.</span></div>
         <div class="hipo verde rev"><strong>H3</strong> <span data-t="h3">Separating author and verifier catches more errors than self-review.</span></div>
         <div class="hipo frio rev"><strong>H4</strong> <span data-t="h4">With the method, non-programming experts produce working software in their own domain.</span></div>
@@ -241,7 +242,7 @@ reading core/ …
     <div class="col">
       <span class="ceja rev" data-t="f_ceja">QUESTIONS</span>
       <div class="preg">
-        <div class="rev"><strong data-t="fq1">Do I need to know how to code?</strong><span data-t="fa1">No. The core is a few short text notes; the model reads them and keeps them up to date.</span></div>
+        <div class="rev"><strong data-t="fq1">Do I need to know how to code?</strong><span data-t="fa1">Not to get started: Symbiosis is a few short text notes your AI reads and keeps up to date. Installing the Endosymbiosis kit means running a few commands, and your AI walks you through them step by step.</span></div>
         <div class="rev"><strong data-t="fq2">Which models does it work with?</strong><span data-t="fa2">With Claude Code, Codex or Antigravity, and also with local models such as Qwen, on your own machine. If you switch models, the method comes with you.</span></div>
         <div class="rev"><strong data-t="fq3">Does my data leave my computer?</strong><span data-t="fa3">The core is plain files on your machine, under your control. What you send to the model is your choice.</span></div>
       </div>
@@ -281,7 +282,7 @@ reading core/ …
           <a class="b b-chico" href="downloads/endosymbiosis-1.1.zip" download><span data-t="e3_d">Download kit 1.1</span></a>
           <span class="plat" title="SHA-256 6f3f4ca273730b783c493c27b2f069a02c2c8bc13f065d09724b3dea774aff07"><span class="nw">zip · 183 KB</span> · <span class="nw">SHA-256 6f3f4ca2…aff07</span> · <a href="https://doi.org/10.5281/zenodo.23934118">DOI</a></span>
           <ul class="req">
-            <li data-t="e3_r1">Python 3.10 or newer, and git</li>
+            <li data-t="e3_r1">Python 3.10 or later, and Git</li>
             <li data-t="e3_r2">On Windows, a folder with no spaces in its name</li>
             <li data-t="e3_r3">Already have notes? Copy them inside before installing</li>
           </ul>
