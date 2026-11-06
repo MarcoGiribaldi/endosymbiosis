@@ -18,9 +18,9 @@ const TXT = {
     o_ceja: 'ORIGEN', o_t: 'Nació de la práctica diaria, no de un laboratorio.', // BORRADOR-MARCO
     o_p: 'Cada regla de Simbiosis existe porque antes algo salió mal: un acuerdo que la IA olvidó, un error que repitió, un trabajo que destruyó. Cada falla se registró como dato. Cada regla que falló dos veces se volvió código.', // BORRADOR-MARCO
     p_ceja: 'EL PROBLEMA, MEDIDO', p_t: 'Una memoria que no puedes verificar es peor que no tener memoria.', // BORRADOR-MARCO
-    p_p: 'En un estudio controlado, un agente con la memoria corrupta llevó falsedades a su salida ejecutable en las tres tareas. Sin memoria, no cometió ninguno de esos errores. La prosa sola no alcanza para mantener limpia una memoria.', // BORRADOR-MARCO
-    p_cita: 'Giribaldi, HAI \'26 · doi:10.1145/3841580.3845736 (en prensa)', // BORRADOR-MARCO
-    p_l1: 'TAREAS CON FALSEDADES · MEMORIA CORRUPTA', p_l2: 'TAREAS CON FALSEDADES · SIN MEMORIA', // BORRADOR-MARCO
+    p_p: 'En un estudio controlado, un agente con la memoria corrupta llevó falsedades a su salida ejecutable en las tres tareas. Con la memoria correcta, o sin ninguna memoria, no cometió ninguno de esos errores. La prosa sola no alcanza para mantener limpia una memoria.', // BORRADOR-MARCO
+    p_cita: 'Giribaldi, HAI \'26 · doi:10.1145/3841580.3845736 (en prensa) · Póster Track C n.º 27 · ID 1166', // BORRADOR-MARCO
+    p_l1: 'TAREAS CON FALSEDADES · MEMORIA CORRUPTA', p_l2: 'TAREAS CON FALSEDADES · SIN MEMORIA', p_l3: 'TAREAS CON FALSEDADES · MEMORIA CORRECTA', // BORRADOR-MARCO
     ba_ceja: 'ANTES Y DESPUÉS', ba_sin: 'SIN SYMBIOSIS', ba_con: 'CON SYMBIOSIS', // BORRADOR-MARCO
     ba_a1: 'Cada sesión empieza en blanco.', ba_b1: 'Cada sesión retoma donde terminó la anterior.', // BORRADOR-MARCO
     ba_a2: 'Vuelves a explicarlo todo.', ba_b2: 'El núcleo recuerda; tú decides.', // BORRADOR-MARCO
