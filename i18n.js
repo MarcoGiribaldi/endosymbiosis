@@ -3,7 +3,7 @@
 (function () {
 const TXT = {
   es: { // BORRADOR-MARCO
-    n_ini: 'INICIO', n_sim: 'SIMBIOSIS', n_endo: 'ENDOSIMBIOSIS', n_emp: 'EMPEZAR', // BORRADOR-MARCO
+    n_ini: 'INICIO', n_sim: 'SIMBIOSIS', n_endo: 'ENDOSIMBIOSIS', n_est: 'ESTUDIOS', n_emp: 'EMPEZAR', // BORRADOR-MARCO
     marca: 'SIMBIOSIS · MARCO GIRIBALDI', m1_h: 'Simbiosis', m2_h: 'Endosimbiosis', // D233 auditoría A3 (aprobado por Marco)
     r_lin: 'LINAJE', r_org: 'ÓRGANOS', r_aut: 'AUTORREPARACIÓN', // BORRADOR-MARCO
     f1_t: 'FIG. 1 · LINAJE.', f1_c: 'Cada sesión es una célula, y las células cambian. El hilo que las atraviesa es lo que queda; la luz que lleva es lo que una sesión entrega a la siguiente.', // BORRADOR-MARCO

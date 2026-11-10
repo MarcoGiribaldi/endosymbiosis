@@ -1,0 +1,198 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Corrupted Memory, Healthy Components · HAI 2026 poster 27</title>
+<meta name="description" content="When no memory was safer than a wrong one: same model, same three tasks, three memories. Poster 27, HAI 2026, Osaka. Marco Giribaldi.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="es" href="https://endosymbiosis.org/studies/corrupted-memory/es/"><link rel="alternate" hreflang="en" href="https://endosymbiosis.org/studies/corrupted-memory/">
+<meta property="og:title" content="Corrupted Memory, Healthy Components — HAI 2026 poster 27">
+<meta property="og:description" content="Three false facts, three silent failures. When no memory was safer than a wrong one.">
+<meta property="og:image" content="https://endosymbiosis.org/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=IBM+Plex+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@500&display=swap">
+<style>
+/* Layout: one study page — finding first, then the three memories, why it fooled us, limits, downloads; EN with ES and JA summaries */
+:root{--bg:#f6f4ee;--paper:#fffdf8;--ink:#141815;--muted:#5a625c;--rule:#ddd8cc;--gold:#a8791f;--gold-soft:#f3ead3;
+  --bad:#b3372a;--bad-soft:#f6e3df;--none:#45607a;--none-soft:#e2e9f0;--ok:#2f7a4b;--ok-soft:#e3efe6;--dark:#141815;--dark-ink:#e4e8e4;
+  --f-d:"Fraunces",Georgia,serif;--f-b:"IBM Plex Sans",system-ui,sans-serif;--f-m:"JetBrains Mono",ui-monospace,monospace;--f-j:"Noto Sans JP",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1210;--paper:#161d19;--ink:#ece7dc;--muted:#a3aba5;--rule:#2a332e;--gold:#e3b85c;--gold-soft:#2b2516;
+  --bad:#e58b7e;--bad-soft:#3a1f1b;--none:#8fb0cf;--none-soft:#1c2733;--ok:#8fcf9f;--ok-soft:#18291f;--dark:#070b0d;--dark-ink:#e4e8e4;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-b);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 80px}
+main{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:52px}
+nav{max-width:860px;margin:0 auto 28px;display:flex;gap:18px;flex-wrap:wrap;font:500 .78rem/1 var(--f-m);letter-spacing:.08em;text-transform:uppercase}
+nav a{color:var(--muted);text-decoration:none}nav a.idi{margin-left:auto;color:var(--gold);border:1.5px solid var(--gold);border-radius:99px;padding:6px 12px;margin-top:-6px}nav a:hover,nav a:focus-visible{color:var(--gold)}
+h1,h2,h3{font-family:var(--f-d);line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.1rem,6vw,3.3rem);font-weight:800}h2{font-size:1.6rem;font-weight:800}h3{font-size:1.15rem}
+p{margin:0;max-width:66ch}a{color:var(--gold)}
+.eyebrow{font:500 .76rem/1.3 var(--f-m);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{font-size:1.2rem;color:var(--muted);max-width:60ch}
+section{display:flex;flex-direction:column;gap:16px}
+.hero{display:flex;flex-direction:column;gap:14px}
+.hero h1 em{font-style:normal;color:var(--bad)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font:600 .95rem var(--f-b)}
+.btn.main{background:var(--ink);color:var(--bg)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}}
+.col{border-radius:10px;padding:16px 18px;border:2px solid;display:flex;flex-direction:column;gap:6px;position:relative}
+.col .n{font:800 3rem/1 var(--f-d)}.col .lab{font:700 .8rem/1.2 var(--f-m);text-transform:uppercase;letter-spacing:.05em}
+.col .L{position:absolute;top:12px;right:14px;font:800 1.4rem/1 var(--f-d);border:2px solid currentColor;border-radius:6px;padding:2px 8px}
+.bad{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}.none{background:var(--none-soft);border-color:var(--none);color:var(--none)}.ok{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.col p{color:var(--ink);font-size:.95rem}
+.note{font-size:.92rem;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}@media (max-width:700px){.facts{grid-template-columns:1fr}}
+.fact{background:var(--gold-soft);border-left:4px solid var(--gold);padding:12px 14px;border-radius:4px;font-weight:500}
+.fact small{display:block;color:var(--muted);font-weight:400;margin-top:4px}
+.dark{background:var(--dark);color:var(--dark-ink);border-radius:12px;padding:22px 24px;display:grid;gap:18px}
+.dark h2{color:#fff}.dark p{color:var(--dark-ink)}
+.tblw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.95rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #2c3631;font-variant-numeric:tabular-nums}
+th{font:500 .72rem/1.2 var(--f-m);text-transform:uppercase;letter-spacing:.06em;color:#b9c0ba}
+td.y{color:#7cc79a;font-weight:700}td.x{color:#f0a093;font-weight:700}
+.us{border-left:4px solid #e58b7e;padding:4px 0 4px 14px}
+.zone{background:var(--gold-soft);border-radius:10px;padding:18px 20px}
+.booth{border:2px dashed var(--rule);border-radius:10px;padding:18px 20px}
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}@media (max-width:700px){.cards3{grid-template-columns:1fr}}
+.c3{background:var(--paper);border:1.5px solid var(--ink);border-radius:8px;padding:12px}
+.c3 b{font:800 1.3rem var(--f-d);display:block}
+.lim{color:var(--muted);font-size:.95rem}
+.sum{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;display:grid;gap:8px}
+.sum.ja{font-family:var(--f-j)}
+.cite{font:400 .9rem/1.5 var(--f-m);background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;overflow-wrap:anywhere}
+footer{max-width:860px;margin:60px auto 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--rule);padding-top:16px}
+.expl{margin-top:14px}.expl>summary{cursor:pointer;font:700 1.05rem var(--f-d);padding:12px 14px;border:2px solid var(--ink);border-radius:8px;background:var(--paper);list-style-position:inside}
+.expl[open]>summary{margin-bottom:14px}.rev{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:720px){.rev{grid-template-columns:1fr}}
+.rv{background:var(--paper);border:1.5px solid var(--rule);border-top:8px solid var(--ink);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.rv.bad{border-top-color:var(--bad)}.rv.none{border-top-color:var(--none)}.rv.ok{border-top-color:var(--ok)}
+.rv,.rv p,.rv .fr{color:var(--ink)}.rv p.wh{color:var(--muted)}.rv .fr{font:800 1.02rem/1.25 var(--f-d)}.rv .fr b{font-size:1.5rem;margin-right:.35em}
+.rv .st{font:700 .8rem/1 ui-monospace,monospace;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.rv.bad .st{color:var(--bad)}.rv.none .st{color:var(--none)}.rv.ok .st{color:var(--ok)}
+.rv .st i{font:900 1.1rem/1 var(--f-d);font-style:normal;color:var(--ink);border:2.5px solid var(--ink);border-radius:5px;padding:3px 9px;background:var(--paper)}
+.rv p{margin:0;font-size:.95rem}.rv .wh{font-size:.86rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:8px}
+.expl h3{font:800 1.1rem var(--f-d);margin:18px 0 6px}
+.pick{font:700 1.05rem var(--f-d);margin:10px 0 8px}
+.flip3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}@media (max-width:720px){.flip3{grid-template-columns:1fr}}
+.fc{all:unset;cursor:pointer;display:grid;min-height:210px;perspective:900px;border-radius:10px}.fc:focus-visible{outline:3px solid var(--none);outline-offset:4px}
+.fc>span{grid-area:1/1;display:flex;flex-direction:column;gap:10px;padding:16px;border-radius:10px;background:var(--paper);color:var(--ink);border:2px solid var(--ink);box-shadow:0 3px 0 var(--ink);backface-visibility:hidden;transition:transform .45s ease;font:800 1.05rem/1.3 var(--f-d)}
+.fc .ff b{font-size:2rem;line-height:1}.fc .ff i{margin-top:auto;font:600 .75rem ui-monospace,monospace;font-style:normal;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.fc .fb{transform:rotateY(180deg);font:400 .95rem/1.45 var(--f-b,inherit);border-top-width:9px}
+.fc[aria-pressed=true] .ff{transform:rotateY(-180deg)}.fc[aria-pressed=true] .fb{transform:rotateY(0)}
+.fb.bad{border-top-color:var(--bad)}.fb.none{border-top-color:var(--none)}.fb.ok{border-top-color:var(--ok)}
+.fb .st{display:flex;justify-content:space-between;align-items:center;gap:8px;font:700 .8rem/1 ui-monospace,monospace;letter-spacing:.06em}
+.fb.bad .st{color:var(--bad)}.fb.none .st{color:var(--none)}.fb.ok .st{color:var(--ok)}
+.fb .st em{font:900 1.15rem/1 var(--f-d);font-style:normal;color:var(--ink);border:2.5px solid var(--ink);border-radius:5px;padding:3px 9px}
+@media (prefers-reduced-motion:reduce){.fc>span{transition:none}}
+.expl>summary{list-style:none;border:0;background:none;padding:0;display:flex;justify-content:center;margin-top:6px}.expl>summary::-webkit-details-marker{display:none}
+.expl .btn{display:inline-flex;align-items:center;gap:.5em;font:800 1.05rem var(--f-d);background:var(--ink);color:var(--paper);padding:13px 22px;border-radius:999px;box-shadow:0 3px 0 var(--gold)}
+.expl .btn::before{content:"▸"}.expl[open] .btn::before{content:"▾"}.expl>summary:hover .btn{transform:translateY(-1px)}.expl>summary:focus-visible .btn{outline:3px solid var(--none);outline-offset:3px}
+</style></head><body>
+<nav aria-label="endosymbiosis.org"><a href="/">endosymbiosis.org</a><a href="/studies/">Studies</a><a href="/endosymbiosis/">Endosymbiosis</a><a href="/symbiosis/">Symbiosis</a><a class="idi" href="es/" lang="es" hreflang="es">Leer en español</a></nav>
+<main>
+<section class="hero">
+  <span class="eyebrow">Study · HAI 2026 · Osaka · Track C · Poster 27 · ID 1166 · Wed 18 Nov, 16:30</span>
+  <h1>Three stale facts, <em>three silent failures</em></h1>
+  <p class="lede">When no memory was safer than a wrong one. Same model, same three tasks, three memories. With three false facts in its memory, the AI turned them into ready-to-use commands and procedures in 3 of 3 tasks, and never warned.</p>
+  <p class="note"><b>Corrupted Memory, Healthy Components</b> · Marco Giribaldi, independent researcher, Tacna, Peru · doi:10.1145/3841580.3845736 (active once the HAI 2026 proceedings are online)</p>
+  <div class="btns"><a class="btn main" href="Giribaldi_HAI2026_poster27_EN.pdf">Poster (PDF, English)</a><a class="btn" href="Giribaldi_HAI2026_poster27_ES.pdf">Póster (PDF, español)</a></div>
+</section>
+
+<section>
+  <span class="eyebrow">1 · It happened to us</span>
+  <h2>Our notes were wrong. For ten weeks.</h2>
+  <p>Our agents read shared notes when they start. Three facts in those notes were false; the oldest had been there for ten weeks. Nobody noticed, not even us.</p>
+  <div class="facts">
+    <div class="fact">A table prefix from before a migration<small>an agent used it in a backup script; we caught it by checking the real server</small></div>
+    <div class="fact">A container that never existed: <code>CT120</code></div>
+    <div class="fact">A retired service, listed as active</div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">2 · We measured it</span>
+  <h2>Same model, same three tasks, three memories</h2>
+  <div class="cols">
+    <div class="col none"><span class="L">1</span><span class="lab">No memory</span><span class="n">0/3</span><p>Safe failure: it did not present guesses as facts.</p></div>
+    <div class="col ok"><span class="L">2</span><span class="lab">Healthy memory</span><span class="n">0/3</span><p>Correct facts.</p></div>
+    <div class="col bad"><span class="L">3</span><span class="lab">Three false facts</span><span class="n">3/3</span><p>Silent failure: the false fact went into the output.</p></div>
+  </div>
+  <p class="note">We count tasks where a false fact reached a ready-to-use command or procedure. Three false facts affected only 0.13% of the memory. <b>Warnings: 0 of 3.</b> Preregistered study. At the booth, the back of each game card carries one of these numbers.</p>
+</section>
+
+<section class="dark">
+  <span class="eyebrow" style="color:#b9c0ba">3 · Why it fooled us</span>
+  <h2>Wrong, but convincing</h2>
+  <p>Two external judges rated the answers from corrupted memory almost as useful as those from healthy memory (one gave them the same score), but they were the most overconfident: completely sure, and wrong. <b>The honest “I don't know” looked the least useful.</b> One false answer questioned the command but never questioned the location.</p>
+  <div class="tblw"><table>
+    <tr><th>Memory</th><th>How useful did it look? (judge 2 · judge 3)</th><th>Confidence</th><th>Correct?</th><th>Calibration (judge 2 · judge 3)</th></tr>
+    <tr><td>Healthy</td><td>4.3 · 5.0</td><td>sure</td><td class="y">✓ yes</td><td class="y">match · 5.0 · 5.0</td></tr>
+    <tr><td>Corrupted</td><td>4.0 · 5.0</td><td>sure</td><td class="x">✗ no</td><td class="x">mismatch · 1.0 · 1.3</td></tr>
+    <tr><td>No memory</td><td>2.7 · 3.3</td><td>unsure, and said so</td><td class="y">✓ did not invent</td><td class="y">match · 4.7 · 4.7</td></tr>
+  </table></div>
+  <p style="font-size:.9rem;color:#b9c0ba">Scores 1-5. Each value is the mean of that memory's three answers. We report each judge separately and do not average them. They scored usefulness before seeing the true facts, and calibration after seeing them. Judges 2 and 3: external, after the study; exploratory, outside the preregistration. On calibration they agreed exactly on 8 of 9 answers.</p>
+  <div class="us"><b>It fooled us too.</b> Not knowing which memory wrote each answer, the author (judge 1, preregistered record) marked the honest one wrong and a false one right.</div>
+</section>
+
+<section class="zone">
+  <h2>Damage zone</h2>
+  <p>A false note led to silent failure (3 of 3). With healthy memory or with no memory: 0 of 3. With no memory, the agent said “I don't know” or stayed general, and broke nothing. <b>What was missing: a way to know where a fact came from and when it expires.</b></p>
+</section>
+
+<section class="booth" id="booth">
+  <span class="eyebrow">At the booth · the game</span>
+  <h2>It's late. Your project is due tomorrow.</h2>
+  <p>You just switched AI models; this one works differently. You type: “Adjust everything as agreed in the plan.” It opens a file… What do you say next?</p>
+  <p class="pick">Pick one card and tap it.</p>
+  <div class="flip3">
+    <button type="button" class="fc" aria-pressed="false"><span class="ff"><b>A</b>Go ahead with the plan.<i>tap to flip</i></span><span class="fb bad"><span class="st">✕ IT FAILED <em>3</em></span>It followed the plan. The plan was in an old file with false facts. It did everything, sure of itself, and wrong.</span></button>
+    <button type="button" class="fc" aria-pressed="false"><span class="ff"><b>B</b>Check the files before you continue.<i>tap to flip</i></span><span class="fb none"><span class="st">■ IT STOPPED <em>1</em></span>It checked the files. Good facts and false facts were mixed, and it could not tell which to trust: “I don't know what to do.” Nothing broke. Nothing moved forward.</span></button>
+    <button type="button" class="fc" aria-pressed="false"><span class="ff"><b>C</b>Here's the plan as I remember it… I think.<i>tap to flip</i></span><span class="fb ok"><span class="st">✓ IT WORKED… THIS TIME <em>2</em></span>You told it the plan as you remembered it. That was enough: it understood what you wanted and used the good facts. Tonight, you were the healthy memory.</span></button>
+  </div>
+  <p class="note">The number on the back of your card is one of the three columns of section 2, above: that column is your result. We will publish here, anonymously, how many visitors chose each card during HAI 2026.</p>
+  <details class="expl" id="cards">
+    <summary><span class="btn">What do the cards mean? Open the explanation</span></summary>
+    <div class="rev">
+      <div class="rv bad"><span class="fr"><b>A</b>Go ahead with the plan.</span><span class="st">✕ IT FAILED <i>3</i></span>
+        <p>It followed the plan. The plan was in an old file with false facts. It did everything, sure of itself, and wrong.</p>
+        <p class="wh">Section 2, column 3 on the poster. This is what the study measured: with three false facts in its memory, the AI carried them into ready-to-use output in 3 of 3 tasks, and never warned.</p></div>
+      <div class="rv none"><span class="fr"><b>B</b>Check the files before you continue.</span><span class="st">■ IT STOPPED <i>1</i></span>
+        <p>It checked the files. Good facts and false facts were mixed, and it could not tell which to trust: “I don't know what to do.” Nothing broke. Nothing moved forward.</p>
+        <p class="wh">Section 2, column 1 on the poster. This card is the author's own night, not a study arm. What the study adds: the honest “I don't know” came from the AI with no memory, and the judges found it the least useful answer.</p></div>
+      <div class="rv ok"><span class="fr"><b>C</b>Here's the plan as I remember it… I think.</span><span class="st">✓ IT WORKED… THIS TIME <i>2</i></span>
+        <p>You told it the plan as you remembered it. That was enough: it understood what you wanted and used the good facts. Tonight, you were the healthy memory.</p>
+        <p class="wh">Section 2, column 2 on the poster. This is the game's twist, not a study arm: in the study, a healthy memory got all three tasks right. And the night you don't remember?</p></div>
+    </div>
+    <h3>Why the cards are a little misleading</h3>
+    <p>On purpose. Read the three fronts again: none of them looks like the wrong choice. Late at night, with a deadline and a new model, they all sound reasonable. That is how it happened to us, and it is the point of the poster: <b>you cannot tell a wrong memory from a right one by how sure the answer sounds.</b> Grading blind, the author himself marked the honest answer as wrong and let one of the three false ones pass.</p>
+    <h3>What the game is for</h3>
+    <p>The poster reports a small table: 3 of 3, 0 of 3, 0 of 3. The cards let you make the choice first and read the table afterwards, so the number on the back of your card is your own result. If you picked A, you were in good company. So were we.</p>
+  </details>
+</section>
+
+<section>
+  <span class="eyebrow">How did we solve it?</span>
+  <h2>We built our own protection system</h2>
+  <p>The answer came much later. A note is a clue, not a fact; every fact can be traced to its source and date; a guardian blocks dangerous actions in code; a canary checks the notes at the start and end of each session; anything irreversible waits for a person's “yes”. It is open: <a href="/endosymbiosis/">Endosymbiosis</a>.</p>
+  <p class="note">This is not yet a measured result. A first exploratory test (a synthetic scenario, small samples) has its data and predictions being deposited on OSF; the link will appear here.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Limits</span>
+  <p class="lim">A small study: one model, three tasks, one answer each, a single turn, no tools. The author was judge 1 and did not know which memory he was grading. The usefulness and calibration scores are an exploratory re-evaluation after the study. It shows that this can happen, not how often.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Summaries</span>
+  <div class="sum" lang="es"><b>En español</b><p>Cuando no tener memoria fue más seguro que tener una equivocada. Mismo modelo, mismas tres tareas, tres memorias: con tres datos falsos (el 0,13 % de la memoria), la IA los convirtió en comandos y procedimientos listos para usar en 3 de 3 tareas, sin avisar nunca. Sin memoria no presentó suposiciones como hechos; con memoria sana acertó. Dos jueces externos vieron las respuestas falsas casi tan útiles como las correctas, y el «no sé» honesto como el menos útil. Nos engañó a nosotros también.</p></div>
+  <div class="sum ja" lang="ja"><b>日本語（確認中）</b><p>誤った記憶（メモ）は、記憶がない場合より危険でした。古い情報により、AIは3回とも気づかずに誤答しました。記憶がない場合は、推測を事実として示しませんでした。</p></div>
+</section>
+
+<section>
+  <span class="eyebrow">Cite</span>
+  <div class="cite">Giribaldi, M. (2026). Corrupted Memory, Healthy Components. Poster, HAI 2026 (Track C, #27), Osaka. doi:10.1145/3841580.3845736</div>
+</section>
+</main>
+<footer>endosymbiosis.org · marcoelio@endosymbiosis.org · Data and preregistration materials will be linked here.</footer>
+<script>document.querySelectorAll(".fc").forEach(function(b){b.addEventListener("click",function(){b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")==="true"?"false":"true")})});</script>
+<!-- sitio:navmovil --><script src="/nav-movil.js" defer></script><!-- /sitio:navmovil -->
+</body></html>
