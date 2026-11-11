@@ -86,7 +86,7 @@ footer{max-width:860px;margin:60px auto 0;color:var(--muted);font-size:.85rem;bo
 .expl>summary{list-style:none;border:0;background:none;padding:0;display:flex;justify-content:center;margin-top:6px}.expl>summary::-webkit-details-marker{display:none}
 .expl .btn{display:inline-flex;align-items:center;gap:.5em;font:800 1.05rem var(--f-d);background:var(--ink);color:var(--paper);padding:13px 22px;border-radius:999px;box-shadow:0 3px 0 var(--gold)}
 .expl .btn::before{content:"▸"}.expl[open] .btn::before{content:"▾"}.expl>summary:hover .btn{transform:translateY(-1px)}.expl>summary:focus-visible .btn{outline:3px solid var(--none);outline-offset:3px}
-</style></head><body>
+.hab{margin:0;padding:0;list-style:none;counter-reset:h;display:grid;gap:10px}.hab li{counter-increment:h;display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:2px 10px;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}.hab li::before{content:counter(h);grid-row:1/4;font:800 1.5rem/1 var(--f-d);color:var(--gold)}.hab li span{grid-column:2;color:var(--muted);font-size:.95rem}.hab li .hj{font-family:var(--f-j);font-size:.85rem}.p2c{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}@media (max-width:700px){.p2c{grid-template-columns:1fr}}.p2c div{border:1.5px solid var(--ink);border-radius:8px;padding:10px 12px;display:grid;gap:2px}.p2c span{color:var(--muted);font-size:.92rem}.hojas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}@media (max-width:700px){.hojas{grid-template-columns:1fr}}.hojas img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff}</style></head><body>
 <nav aria-label="endosymbiosis.org"><a href="/">endosymbiosis.org</a><a href="/studies/">Studies</a><a href="/endosymbiosis/">Endosymbiosis</a><a href="/symbiosis/">Symbiosis</a><a class="idi" href="es/" lang="es" hreflang="es">Leer en español</a></nav>
 <main>
 <section class="hero">
@@ -172,7 +172,13 @@ footer{max-width:860px;margin:60px auto 0;color:var(--muted);font-size:.85rem;bo
 <section>
   <span class="eyebrow">How did we solve it?</span>
   <h2>We built our own protection system</h2>
-  <p>The answer came much later. A note is a clue, not a fact; every fact can be traced to its source and date; a guardian blocks dangerous actions in code; a canary checks the notes at the start and end of each session; anything irreversible waits for a person's “yes”. It is open: <a href="/endosymbiosis/">Endosymbiosis</a>.</p>
+  <p>The answer came much later. This is the sheet we hand out at the booth: five habits our AI team now follows.</p>
+  <ol class="hab"><li><b>A note is a clue, not a fact.</b><span>Before acting, the AI checks the note against the real system.</span><span class="hj" lang="ja">メモは手がかりで、事実ではありません。実行前に実際のシステムと照らし合わせます。</span></li><li><b>Every fact can be traced to its source and its date.</b><span>The history records when each line was written and by whom; decisions keep the person's own words.</span><span class="hj" lang="ja">すべての情報は、出どころと日付をたどれます。</span></li><li><b>A guardian stops dangerous actions.</b><span>Deleting or overwriting is blocked by code, before it happens, not by a promise.</span><span class="hj" lang="ja">危険な操作は、実行される前にプログラムが止めます。</span></li><li><b>A canary checks the notes.</b><span>At the start and end of each session, it looks for what is missing or no longer true.</span><span class="hj" lang="ja">毎回、開始時と終了時に、不足している情報や古くなった情報を確認します。</span></li><li><b>The human has the final say.</b><span>Anything that cannot be undone waits for a person's “yes”.</span><span class="hj" lang="ja">元に戻せない操作は、人の「はい」を待ちます。</span></li></ol>
+  <h3>From prose to code</h3>
+  <p>Our rules start as plain sentences. When a sentence fails, it becomes code that cannot be skipped.</p>
+  <div class="p2c"><div><b>A rule in words</b><span>“nothing gets deleted”</span></div><div><b>It fails once</b><span>a tired night, a new model</span></div><div><b>It becomes code</b><span>the guardian blocks it</span></div></div>
+  <p><b>A rule that only lives in memory can fail. A rule in code holds even when you are tired.</b></p>
+  <p><a href="/endosymbiosis/">Endosymbiosis</a>: an open kit to give your own AI a small core of notes, a guardian and a canary. Works with the AI you already use. <a href="/symbiosis/">Symbiosis</a>: the method behind it, how one person and several AIs share memory without fooling each other.</p>
   <p class="note">This is not yet a measured result. It comes from a first exploratory test (a synthetic scenario, small samples). Its data, predictions and scripts are open on OSF: <a href="https://osf.io/586cq/">osf.io/586cq</a>.</p>
 </section>
 
@@ -185,6 +191,13 @@ footer{max-width:860px;margin:60px auto 0;color:var(--muted);font-size:.85rem;bo
   <span class="eyebrow">Summaries</span>
   <div class="sum" lang="es"><b>En español</b><p>Cuando no tener memoria fue más seguro que tener una equivocada. Mismo modelo, mismas tres tareas, tres memorias: con tres datos falsos (el 0,13 % de la memoria), la IA los convirtió en comandos y procedimientos listos para usar en 3 de 3 tareas, sin avisar nunca. Sin memoria no presentó suposiciones como hechos; con memoria sana acertó. Dos jueces externos vieron las respuestas falsas casi tan útiles como las correctas, y el «no sé» honesto como el menos útil. Nos engañó a nosotros también.</p></div>
   <div class="sum ja" lang="ja"><b>日本語（確認中）</b><p>誤った記憶（メモ）は、記憶がない場合より危険でした。古い情報により、AIは3回とも気づかずに誤答しました。記憶がない場合は、推測を事実として示しませんでした。</p></div>
+</section>
+
+<section id="handout">
+  <span class="eyebrow">The handout</span>
+  <h2>The sheet we give out at the booth</h2>
+  <p class="note">Both sides, as printed. Tap a page to see it larger.</p>
+  <div class="hojas"><a href="handout_EN-1.jpg"><img src="handout_EN-1.jpg" alt="Handout, side 1: How we solved it, five habits" loading="lazy" width="909" height="1286"></a><a href="handout_EN-2.jpg"><img src="handout_EN-2.jpg" alt="Handout, side 2: From prose to code" loading="lazy" width="909" height="1286"></a></div>
 </section>
 
 <section>

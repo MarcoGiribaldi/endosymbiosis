@@ -86,7 +86,7 @@ footer{max-width:860px;margin:60px auto 0;color:var(--muted);font-size:.85rem;bo
 .expl>summary{list-style:none;border:0;background:none;padding:0;display:flex;justify-content:center;margin-top:6px}.expl>summary::-webkit-details-marker{display:none}
 .expl .btn{display:inline-flex;align-items:center;gap:.5em;font:800 1.05rem var(--f-d);background:var(--ink);color:var(--paper);padding:13px 22px;border-radius:999px;box-shadow:0 3px 0 var(--gold)}
 .expl .btn::before{content:"▸"}.expl[open] .btn::before{content:"▾"}.expl>summary:hover .btn{transform:translateY(-1px)}.expl>summary:focus-visible .btn{outline:3px solid var(--none);outline-offset:3px}
-</style></head><body>
+.hab{margin:0;padding:0;list-style:none;counter-reset:h;display:grid;gap:10px}.hab li{counter-increment:h;display:grid;grid-template-columns:2.2rem minmax(0,1fr);gap:2px 10px;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:12px 14px}.hab li::before{content:counter(h);grid-row:1/4;font:800 1.5rem/1 var(--f-d);color:var(--gold)}.hab li span{grid-column:2;color:var(--muted);font-size:.95rem}.hab li .hj{font-family:var(--f-j);font-size:.85rem}.p2c{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}@media (max-width:700px){.p2c{grid-template-columns:1fr}}.p2c div{border:1.5px solid var(--ink);border-radius:8px;padding:10px 12px;display:grid;gap:2px}.p2c span{color:var(--muted);font-size:.92rem}.hojas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}@media (max-width:700px){.hojas{grid-template-columns:1fr}}.hojas img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:8px;background:#fff}</style></head><body>
 <nav aria-label="endosymbiosis.org"><a href="/">endosymbiosis.org</a><a href="/studies/">Estudios</a><a href="/endosimbiosis/">Endosimbiosis</a><a href="/simbiosis/">Simbiosis</a><a class="idi" href="../" lang="en" hreflang="en">Read in English</a></nav>
 <main>
 <section class="hero">
@@ -172,7 +172,13 @@ footer{max-width:860px;margin:60px auto 0;color:var(--muted);font-size:.85rem;bo
 <section>
   <span class="eyebrow">¿Cómo lo resolvimos?</span>
   <h2>Creamos nuestro propio sistema de protección</h2>
-  <p>La respuesta llegó mucho después. Una nota es una pista, no un hecho; cada dato se puede rastrear hasta su origen y su fecha; un guardián frena en código las acciones peligrosas; un canario revisa las notas al empezar y al terminar cada sesión; lo que no se puede deshacer espera el «sí» de una persona. Es abierto: <a href="/endosimbiosis/">Endosimbiosis</a>.</p>
+  <p>La respuesta llegó mucho después. Esta es la hoja que entregamos en la caseta: cinco hábitos que sigue hoy nuestro equipo de IA.</p>
+  <ol class="hab"><li><b>Una nota es una pista, no un hecho.</b><span>Antes de actuar, la IA compara la nota con el sistema real.</span><span class="hj" lang="ja">メモは手がかりで、事実ではありません。実行前に実際のシステムと照らし合わせます。</span></li><li><b>Cada dato se puede rastrear: de dónde vino y de cuándo es.</b><span>El historial guarda cuándo se escribió cada línea y quién la escribió; las decisiones conservan las palabras de la persona.</span><span class="hj" lang="ja">すべての情報は、出どころと日付をたどれます。</span></li><li><b>Un guardián frena las acciones peligrosas.</b><span>Borrar o sobrescribir lo frena el código, antes de que pase; no una promesa.</span><span class="hj" lang="ja">危険な操作は、実行される前にプログラムが止めます。</span></li><li><b>Un canario revisa las notas.</b><span>Al empezar y al terminar cada sesión, busca lo que falta o ya no es cierto.</span><span class="hj" lang="ja">毎回、開始時と終了時に、不足している情報や古くなった情報を確認します。</span></li><li><b>La última palabra es de la persona.</b><span>Lo que no se puede deshacer espera el «sí» de una persona.</span><span class="hj" lang="ja">元に戻せない操作は、人の「はい」を待ちます。</span></li></ol>
+  <h3>De la prosa al código</h3>
+  <p>Nuestras reglas empiezan como frases simples. Cuando una frase falla, se vuelve código que no se puede saltar.</p>
+  <div class="p2c"><div><b>Una regla en palabras</b><span>«nada se borra»</span></div><div><b>Falla una vez</b><span>una noche cansada, un modelo nuevo</span></div><div><b>Se vuelve código</b><span>el guardián lo frena</span></div></div>
+  <p><b>Una regla que solo vive en la memoria puede fallar. Una regla en código se cumple aunque estés cansado.</b></p>
+  <p><a href="/endosimbiosis/">Endosimbiosis</a>: un kit abierto para darle a tu propia IA un núcleo chico de notas, un guardián y un canario. Funciona con la IA que ya usas. <a href="/simbiosis/">Simbiosis</a>: el método detrás, cómo una persona y varias IA comparten memoria sin engañarse.</p>
   <p class="note">Todavía no es un resultado medido. Sale de una primera prueba exploratoria (un escenario sintético, muestras chicas). Sus datos, predicciones y programas están abiertos en OSF: <a href="https://osf.io/586cq/">osf.io/586cq</a>.</p>
 </section>
 
@@ -185,6 +191,13 @@ footer{max-width:860px;margin:60px auto 0;color:var(--muted);font-size:.85rem;bo
   <span class="eyebrow">Resúmenes</span>
   <div class="sum" lang="en"><b>In English</b><p>When no memory was safer than a wrong one. Same model, same three tasks, three memories: with three false facts (0.13% of the memory), the AI turned them into ready-to-use commands and procedures in 3 of 3 tasks, and never warned. With no memory it did not present guesses as facts; with healthy memory it was correct. Two external judges rated the false answers almost as useful as the correct ones, and the honest “I don't know” as the least useful. It fooled us too.</p></div>
   <div class="sum ja" lang="ja"><b>日本語（確認中）</b><p>誤った記憶（メモ）は、記憶がない場合より危険でした。古い情報により、AIは3回とも気づかずに誤答しました。記憶がない場合は、推測を事実として示しませんでした。</p></div>
+</section>
+
+<section id="handout">
+  <span class="eyebrow">La hoja</span>
+  <h2>La hoja que entregamos en la caseta</h2>
+  <p class="note">Las dos caras, como se imprimen. Toca una página para verla más grande.</p>
+  <div class="hojas"><a href="../handout_ES-1.jpg"><img src="../handout_ES-1.jpg" alt="Hoja, cara 1: cómo lo resolvimos, cinco hábitos" loading="lazy" width="909" height="1286"></a><a href="../handout_ES-2.jpg"><img src="../handout_ES-2.jpg" alt="Hoja, cara 2: de la prosa al código" loading="lazy" width="909" height="1286"></a></div>
 </section>
 
 <section>
